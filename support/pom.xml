@@ -8,7 +8,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>com.hz.support</groupId>
-    <artifactId>support</artifactId>
+    <artifactId>starter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modelVersion>4.0.0</modelVersion>
     <name>support</name>

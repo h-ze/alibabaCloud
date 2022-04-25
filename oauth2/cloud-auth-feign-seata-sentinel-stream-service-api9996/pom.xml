@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-auth-feign-seata-sentinel-stream-hz.service-api9996</artifactId>
+    <artifactId>cloud-auth-feign-seata-sentinel-stream-service-api9996</artifactId>
     <dependencies>
 
         <!-- Spring Cloud Stream与RabbitMQ集成 -->

@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-auth-feign-seata-service-consumer-api9994</artifactId>
+    <artifactId>cloud-auth-feign-seata-hz.service-consumer-api9994</artifactId>
 
     <dependencies>
         <!--注册中心客户端-->
@@ -36,14 +36,14 @@
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>com.baomidou</groupId>-->
-<!--            <artifactId>mybatis-plus-boot-starter</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.baomidou</groupId>-->
-<!--            <artifactId>mybatis-plus-generator</artifactId>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.baomidou</groupId>-->
+        <!--            <artifactId>mybatis-plus-boot-starter</artifactId>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.baomidou</groupId>-->
+        <!--            <artifactId>mybatis-plus-generator</artifactId>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
@@ -167,10 +167,10 @@
                     <artifactId>discovery-plugin-admin-center-starter</artifactId>
                     <version>${nepxion.version}</version>
                 </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>de.codecentric</groupId>-->
-<!--            <artifactId>spring-boot-admin-starter-hz.client</artifactId>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>de.codecentric</groupId>-->
+        <!--            <artifactId>spring-boot-admin-starter-hz.client</artifactId>-->
+        <!--        </dependency>-->
         <!-- activemq -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
