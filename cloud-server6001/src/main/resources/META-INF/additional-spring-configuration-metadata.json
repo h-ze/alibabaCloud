@@ -1,0 +1,18 @@
+{
+  "properties": [
+    {
+      "name": "spring.cloud.service-registry.auto-registration.enabled",
+      "type": "java.lang.String",
+      "description": "Description for spring.cloud.service-registry.auto-registration.enabled."
+    },
+    {
+      "name": "logging.classpath",
+      "type": "java.lang.String",
+      "description": "Description for logging.classpath."
+    },
+    {
+      "name": "logging.classpath",
+      "type": "java.lang.String",
+      "description": "Description for logging.classpath."
+    }
+  ] }

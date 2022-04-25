@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.hz.springcloud</groupId>
+    <artifactId>springcloudParent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <name>springcloudParent</name>
+    <description>Demo project for Spring Boot</description>
+
+    <packaging>pom</packaging>
+    <!-- packaging pom 总工程-->
+
+    <modules>
+        <module>cloud-commons</module>
+        <module>cloud-server6001</module>
+        <module>cloudAlibaba-customer84</module>
+        <module>cloudAlibaba-order80</module>
+        <module>cloudAlibaba-provider-payment9001</module>
+        <module>cloudAlibaba-provider-payment9003</module>
+        <module>cloudAlibaba-sentinel-provider9004</module>
+        <module>cloudAlibaba-sentinel-provider9005</module>
+
+        <module>oauth2</module>
+        <module>support</module>
+
+        <!--<module>cloud-order80</module>
+        <module>cloud-eureka6890</module>
+        <module>cloud-provider-payment8001</module>
+        <module>cloud-eurekaconsumer8087</module>
+        <module>cloud-openFeignProvider8101</module>
+        <module>cloud-openFeignConsumer8102</module>
+        <module>cloud-hystrix8103</module>
+        <module>cloud-consumer-feign-order80</module>
+        <module>cloud-hystrix-dashboard9001</module>
+        <module>cloud-gateway9100</module>
+        <module>cloud-config-center3344</module>
+        <module>cloud-config-client3355</module>
+        <module>cloud-config-client3366</module>
+        <module>cloud-stream-rabbitmq-provider8801</module>
+        <module>cloud-stream-rabbitmq-consumer8802</module>
+        <module>cloud-stream-rabbitmq-consumer8803</module>
+
+
+        <module>cloudAlibaba-provider-payment9001</module>
+        <module>cloudAlibaba-provider-payment9003</module>
+        <module>cloudAlibaba-order80</module>
+        <module>cloudAlibaba-server6000</module>
+        <module>cloudAlibaba-config-nacos-client3377</module>
+        <module>cloudAlibaba-sentinel-service8401</module>
+        <module>cloudAlibaba-sentinel-provider9004</module>
+        <module>cloudAlibaba-sentinel-provider9005</module>
+        <module>cloudAlibaba-customer84</module>
+        <module>cloudAlibaba-seata-order-service2001</module>
+        <module>cloudAlibaba-seata-storage-service2002</module>
+        <module>cloudAlibaba-seata-account-service2003</module>
+        <module>cloud-gatewayOauth2-9999</module>
+
+        <module>cloud-grpc</module>
+        <module>cloud-GRPC</module>
+        <module>cloud-GRPCSERVER</module>
+        <module>cloud-GRPCCLIENT</module>-->
+    </modules>
+
+    <!--统一管理jar包版本-->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <junit.version>4.12</junit.version>
+        <lombok.version>1.18.10</lombok.version>
+        <log4j.version>1.2.17</log4j.version>
+        <mysql.version>5.1.47</mysql.version>
+        <druid.version>1.1.16</druid.version>
+        <mybatis.spring.boot.version>1.3.0</mybatis.spring.boot.version>
+        <commons.version>3.12.0</commons.version>
+        <openfeign.version>2.1.2.RELEASE</openfeign.version>
+        <http.version>4.5.6</http.version>
+        <fastjson.version>1.2.51</fastjson.version>
+        <swagger.version>2.7.0</swagger.version>
+
+        <mybatis-plus.version>3.3.2</mybatis-plus.version>
+        <skywalking.version>8.7.0</skywalking.version>
+        <xxljob.version>2.3.0</xxljob.version>
+        <nepxion.version>6.11.0</nepxion.version>
+        <knife4j.version>3.0.3</knife4j.version>
+        <fastjson.version>1.2.78</fastjson.version>
+        <spring.boot.admin.version>2.3.1</spring.boot.admin.version>
+        <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+        <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
+        <!--<maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>-->
+        <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+        <maven.jar.version>3.2.0</maven.jar.version>
+        <maven.surefire.version>2.22.2</maven.surefire.version>
+        <maven.versions.plugin.version>2.8.1</maven.versions.plugin.version>
+        <maven.sonar.version>3.6.0.1398</maven.sonar.version>
+        <maven.jacoco.version>0.8.3</maven.jacoco.version>
+    </properties>
+
+    <!--子模块继承之后，提供作用：锁定版本+子module不用写groupId和version-->
+    <!-- dependencyManagement只是声明依赖，并不引入实现，因此子项目需要显示的声明需要用的依赖-->
+    <dependencyManagement><!--定义规范，但不导入-->
+        <dependencies>
+            <dependency>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>3.0.0</version>
+            </dependency>
+            <!--spring boot 2.2.2-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.2.2.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--spring cloud Hoxton.SR1-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Hoxton.SR1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--spring cloud 阿里巴巴-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2.2.1.RELEASE</version>
+                <!--如果需要使用seata1.2版本以上的，这里的alibabab-dependencies版本需要改变！！！巨坑啊，搞了一晚上。。。-->
+                <!-- <version>2.1.0.RELEASE</version>-->
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--mysql-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+                <scope>runtime</scope>
+            </dependency>
+            <!-- druid-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <!--mybatis-->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.spring.boot.version}</version>
+            </dependency>
+            <!--junit-->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+            <!--log4j-->
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+
+            <!-- 公共包 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-openfeign</artifactId>
+                <version>${openfeign.version}</version>
+            </dependency>
+
+            <!-- 引入httpClient-->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${http.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpmime</artifactId>
+                <version>${http.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!-- 引入swagger -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+    <!--热启动插件-->
+    <!--<build>
+        <finalName>springCloud父工程</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <addResources>true</addResources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>-->
+
+    <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+
+        <!-- 全局打包替换属性-->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.yml</include>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>**/*.jks</include>
+                </includes>
+            </resource>
+        </resources>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>1.8<!--${java.version}--></source>
+                        <target>1.8<!--${java.version}--></target>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+                <!-- resources资源插件 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven-resources-plugin.version}</version>
+                    <configuration>
+                        <delimiters>
+                            <delimiter>@</delimiter>
+                        </delimiters>
+                        <useDefaultDelimiters>false</useDefaultDelimiters>
+                        <encoding>UTF-8</encoding>
+                        <!-- 后缀为pem、pfx的证书文件,字体不过滤，解决字体无法显示 -->
+                        <nonFilteredFileExtensions>
+                            <nonFilteredFileExtension>pem</nonFilteredFileExtension>
+                            <nonFilteredFileExtension>pfx</nonFilteredFileExtension>
+                            <nonFilteredFileExtension>p12</nonFilteredFileExtension>
+                            <nonFilteredFileExtension>key</nonFilteredFileExtension>
+                            <nonFilteredFileExtension>woff</nonFilteredFileExtension>
+                            <nonFilteredFileExtension>woff2</nonFilteredFileExtension>
+                            <nonFilteredFileExtension>eot</nonFilteredFileExtension>
+                            <nonFilteredFileExtension>ttf</nonFilteredFileExtension>
+                            <nonFilteredFileExtension>svg</nonFilteredFileExtension>
+                        </nonFilteredFileExtensions>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven.jar.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                </plugin>
+                <!--生成源码jar包-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven-source-plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <!-- java文档插件 -->
+                <!--                <plugin>-->
+                <!--                    <groupId>org.apache.maven.plugins</groupId>-->
+                <!--                    <artifactId>maven-javadoc-plugin</artifactId>-->
+                <!--                    <version>${maven-javadoc-plugin.version}</version>-->
+                <!--                </plugin>-->
+                <!-- 版本号管理，https://blog.csdn.net/bluetjs/article/details/90295973，一键更新子模块版本号 mvn -N versions:update-child-modules,mvn versions:set -DnewVersion=1.0.0.RELEASE -DgenerateBackupPoms=false  -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>versions-maven-plugin</artifactId>
+                    <version>${maven.versions.plugin.version}</version>
+                    <configuration>
+                        <generateBackupPoms>false</generateBackupPoms>
+                    </configuration>
+                </plugin>
+                <!-- maven单元测试插件，上传sonar分析覆盖率，参考资料:
+                             https://www.pkslow.com/archives/maven-jacoco-sonar
+                           执行如下maven命令：
+                             mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install -Pcoverage-per-test  sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=admin -Dsonar.password=admin -Dsonar.scm.provider=git
+                            -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven.surefire.version}</version>
+                    <configuration>
+                        <testFailureIgnore>true</testFailureIgnore>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${maven.jacoco.version}</version>
+                    <configuration>
+                        <!--<skip>${maven.test.skip}</skip>-->
+                        <destFile>${basedir}/target/coverage-reports/jacoco-unit.exec</destFile>
+                        <dataFile>${basedir}/target/coverage-reports/jacoco-unit.exec</dataFile>
+                        <output>file</output>
+                        <append>true</append>
+                        <!--<excludes>
+                            <exclude>com/pkslow/basic/containsperformance/**</exclude>
+                            <exclude>com/pkslow/basic/ReadPropertiesFile</exclude>
+                        </excludes>-->
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>jacoco-initialize</id>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                            <phase>test-compile</phase>
+                        </execution>
+                        <execution>
+                            <id>jacoco-site</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>report</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>post-test</id>
+                            <phase>test</phase>
+                            <goals>
+                                <goal>report</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <!-- sonar分析代码质量插件-->
+                <plugin>
+                    <groupId>org.sonarsource.scanner.maven</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                    <version>${maven.sonar.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <!--<plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <addResources>true</addResources>
+                </configuration>
+            </plugin>
+        </plugins>-->
+    </build>
+
+    <!-- 对于yaml文件properties可以直接打包替换，yaml有问题，暂时写死吧
+            可以在profile里面写死固定的环境参数，yaml读取pom参数
+            生产环境的时候，只需要spring.profiles.active=@profile.active@，打包即可
+            目前分为4套环境，dev:开发环境  fat:测试环境 uat:集成环境 pro:生产环境
+            https://docs.spring.io/spring-boot/docs/2.5.3/maven-plugin/reference/htmlsingle
+       -->
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <profile.active>dev</profile.active>
+                <service.nacos.host>121.4.54.189</service.nacos.host>
+                <service.nacos.port>8848</service.nacos.port>
+                <service.nacos.username>nacos</service.nacos.username>
+                <service.nacos.password>nacos</service.nacos.password>
+                <service.nacos.namespace>37bbdab4-de3f-4c07-927a-7b0fdb66348e</service.nacos.namespace>
+                <service.seata.application>seata-server</service.seata.application>
+                <service.seata.tx-service-group>default_tx_group</service.seata.tx-service-group>
+                <service.group>SEATA_GROUP</service.group>
+                <service.metadata.group>discovery-guide-group</service.metadata.group>
+                <service.metadata.env>dev</service.metadata.env>
+                <service.metadata.version>${project.version}</service.metadata.version>
+                <service.metadata.region>qa</service.metadata.region>
+                <service.metadata.zone>zone</service.metadata.zone>
+                <service.log.root>/logs</service.log.root>
+                <service.admin.username>admin</service.admin.username>
+                <service.admin.password>admin</service.admin.password>
+
+                <service.mysql.user>root</service.mysql.user>
+                <service.mysql.password>hz15858</service.mysql.password>
+
+                <service.rabbit.user>hz</service.rabbit.user>
+                <service.rabbit.password>hz15858</service.rabbit.password>
+                <service.rabbit.port>5672</service.rabbit.port>
+                <service.rabbit.address>8.142.46.67</service.rabbit.address>
+
+                <service.redis.address>8.142.46.67</service.redis.address>
+                <service.redis.database>0</service.redis.database>
+                <service.redis.port>6379</service.redis.port>
+                <service.redis.password>hz15858</service.redis.password>
+            </properties>
+            <!--            <activation>-->
+            <!--                <jdk>[1.8,)</jdk>-->
+            <!--                <activeByDefault>true</activeByDefault>-->
+            <!--            </activation>-->
+        </profile>
+        <profile>
+            <id>fat</id>
+            <properties>
+                <profile.active>fat</profile.active>
+                <service.nacos.host>121.4.54.189</service.nacos.host>
+                <service.nacos.port>8848</service.nacos.port>
+                <service.nacos.username>nacos</service.nacos.username>
+                <service.nacos.password>nacos</service.nacos.password>
+                <service.nacos.namespace>b50dee18-942a-47fb-a13d-70c9b035b46a</service.nacos.namespace>
+                <service.seata.application>seata-server</service.seata.application>
+                <service.seata.tx-service-group>default_tx_group</service.seata.tx-service-group>
+                <service.group>SEATA_GROUP</service.group>
+                <service.metadata.group>discovery-guide-group</service.metadata.group>
+                <service.metadata.env>dev</service.metadata.env>
+                <service.metadata.version>${project.version}</service.metadata.version>
+                <service.metadata.region>qa</service.metadata.region>
+                <service.metadata.zone>zone</service.metadata.zone>
+                <service.log.root>/logs</service.log.root>
+                <service.admin.username>admin</service.admin.username>
+                <service.admin.password>admin</service.admin.password>
+
+                <service.mysql.user>root</service.mysql.user>
+                <service.mysql.password>hz15858</service.mysql.password>
+
+                <service.rabbit.user>hz</service.rabbit.user>
+                <service.rabbit.password>hz15858</service.rabbit.password>
+                <service.rabbit.port>5672</service.rabbit.port>
+                <service.rabbit.address>8.142.46.67</service.rabbit.address>
+
+                <service.redis.address>8.142.46.67</service.redis.address>
+                <service.redis.database>0</service.redis.database>
+                <service.redis.port>6379</service.redis.port>
+                <service.redis.password>hz15858</service.redis.password>
+            </properties>
+        </profile>
+        <profile>
+            <id>uat</id>
+            <properties>
+                <profile.active>uat</profile.active>
+                <service.nacos.host>127.0.0.1</service.nacos.host>
+                <service.nacos.port>8848</service.nacos.port>
+                <service.nacos.username>uat</service.nacos.username>
+                <service.nacos.password>123456</service.nacos.password>
+                <service.nacos.namespace>d6a6a5ee-533a-47a4-82e8-dd0a1cfc0bab</service.nacos.namespace>
+                <service.group>MALL_GROUP</service.group>
+                <service.metadata.group>discovery-guide-group</service.metadata.group>
+                <service.metadata.env>dev</service.metadata.env>
+                <service.metadata.version>${project.version}</service.metadata.version>
+                <service.metadata.region>qa</service.metadata.region>
+                <service.metadata.zone>zone</service.metadata.zone>
+                <service.log.root>/logs</service.log.root>
+                <service.admin.username>admin</service.admin.username>
+                <service.admin.password>admin</service.admin.password>
+            </properties>
+        </profile>
+        <profile>
+            <id>pro</id>
+            <properties>
+                <profile.active>pro</profile.active>
+                <service.nacos.host>127.0.0.1</service.nacos.host>
+                <service.nacos.port>8848</service.nacos.port>
+                <service.nacos.username>pro</service.nacos.username>
+                <service.nacos.password>123456</service.nacos.password>
+                <service.nacos.namespace>6526a5ee-533a-47a4-82e8-dd0a1cfc0bab</service.nacos.namespace>
+                <service.group>MALL_GROUP</service.group>
+                <service.metadata.group>discovery-guide-group</service.metadata.group>
+                <service.metadata.env>dev</service.metadata.env>
+                <service.metadata.version>${project.version}</service.metadata.version>
+                <service.metadata.region>qa</service.metadata.region>
+                <service.metadata.zone>zone</service.metadata.zone>
+                <service.log.root>/logs</service.log.root>
+                <service.admin.username>admin</service.admin.username>
+                <service.admin.password>admin</service.admin.password>
+            </properties>
+        </profile>
+
+    </profiles>
+
+
+</project>

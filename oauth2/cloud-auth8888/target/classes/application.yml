@@ -1,0 +1,112 @@
+nacos:
+  # Nacos的地址
+  server-addr: 121.4.54.189
+  server-port: 8848
+  name: nacos
+  password: nacos
+  # Nacos的命名空间
+  #namespace: 37bbdab4-de3f-4c07-927a-7b0fdb66348e
+  namespace: 37bbdab4-de3f-4c07-927a-7b0fdb66348e
+  # Nacos的配置分组
+  group: SEATA_GROUP
+  # Seata Server的配置
+  seata:
+    application: seata-server
+    tx-service-group: default_tx_group
+
+mysql:
+  user: root
+  pwd: hz15858
+
+rbt:
+  user: hz
+  psd: hz15858
+  port: 5672
+  addr: 8.142.46.67
+
+rds:
+  port: 6379
+  host: 8.142.46.67
+  password: hz15858
+  database: 0
+
+server:
+  port: 8888
+
+spring:
+  #profiles:
+  #  active: dev
+  application:
+    name: auth
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacos.server-addr}:${nacos.server-port}
+        namespace: ${nacos.namespace}
+        group: ${nacos.group}
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  main:
+    allow-bean-definition-overriding: true
+
+  resources.static-locations: classpath:/templates/,classpath:/static/
+  datasource:
+    url: jdbc:mysql://8.142.46.67:3306/springcloud?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT
+    driver-class-name: org.gjt.mm.mysql.Driver
+    username: ${mysql.user}
+    password: ${mysql.pwd}
+    type: com.alibaba.druid.pool.DruidDataSource
+  #redis:
+  #  database: 0
+  #  port: 6379
+  #  host: localhost
+  #  password:
+
+#  redis:
+#    database: ${rds.database}
+#    port: ${rds.port}
+#    host: ${rds.host}
+#    password: ${rds.password}
+  redis:
+    #spring boot初始化redisTemplate需要用到nodes这个字段，初始化RedisSentineManager需要用到host这个字段
+    sentinel:
+      master: mymaster
+      nodes: 124.223.191.89:26379,8.142.46.67:26379,114.55.119.114:26379
+      host: 124.223.191.89:26379,8.142.46.67:26379,114.55.119.114:26379
+      password: hz15858
+
+    #cluster:
+    #  nodes: 124.223.191.89:6379,8.142.46.67:6379,114.55.119.114:6379
+    #  max-redirects: 3
+    #    cluster:
+    #      nodes:
+    #        -
+    # Redis服务器连接端口
+    #port: 6379
+    # Redis服务器地址
+    #host: 8.142.46.67
+    # Redis数据库索引（默认为0）
+    database: 0
+    # Redis服务器连接密码
+    password: hz15858
+    # 连接超时时间（毫秒）
+    timeout: 1000
+    # 连接池最大连接数（使用负值表示没有限制）
+    #lettuce:
+    jedis:
+
+      pool:
+        # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-active: 20
+        # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: -1
+        # 连接池中的最大空闲连接
+        max-idle: 10
+        # 连接池中的最小空闲连接
+        min-idle: 1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

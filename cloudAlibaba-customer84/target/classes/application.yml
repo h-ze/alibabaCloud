@@ -1,0 +1,97 @@
+nacos:
+  # Nacos的地址
+  server-addr: 121.4.54.189
+  server-port: 8848
+  name: nacos
+  password: nacos
+  # Nacos的命名空间
+  #namespace: 37bbdab4-de3f-4c07-927a-7b0fdb66348e
+  namespace: 2cb0f873-09a4-4194-bdd4-631a98f812ae
+  # Nacos的配置分组
+  group: SEATA_GROUP
+  # Seata Server的配置
+  seata:
+    application: seata-server
+    tx-service-group: default_tx_group
+
+mysql:
+  user: root
+  pwd: hz15858
+
+rbt:
+  user: hz
+  psd: hz15858
+  port: 5672
+  addr: 8.142.46.67
+
+rds:
+  port: 6379
+  host: 8.142.46.67
+  password: hz15858
+  database: 0
+
+server:
+  port: 84
+#  servlet:
+#    context-path: provider-payment
+
+spring:
+  #profiles.active: "@profileActive@"
+  application:
+    name: cloudAlibaba-sentinel-order
+  cloud:
+    nacos:
+      discovery:
+        #server-addr: localhost:8848
+        server-addr: ${nacos.server-addr}:${nacos.server-port}
+        namespace: ${nacos.namespace}
+        group: ${nacos.group}
+
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        #端口号默认为8719
+        port: 8719
+#  rabbitmq:
+#    addresses: 127.0.0.1:5672
+#    username: guest
+#    password: guest
+#    virtual-host: /
+#    publisher-confirms: true
+#    publisher-returns: true
+#    template:
+#      mandatory: true
+
+
+  resources.static-locations: classpath:/templates/,classpath:/static/
+  datasource:
+    url: jdbc:mysql://8.142.46.67:3306/springcloud?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT&useSSL=false
+    #    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${mysql.user}
+    password: ${mysql.pwd}
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+
+  servlet:
+    multipart.max-file-size: 500MB
+    multipart.max-request-size: 500MB
+
+#  redis:
+#    port: 6379
+#    host: localhost
+#    database: 0
+
+
+mybatis :
+  mapper-locations: classpath:/com/payment/mapper/*.xml
+  type-aliases-package: com.hz.demo.entity
+
+logging:
+  level:
+    root: info
+    com.hz.dao: debug
+
+#激活sentinel对feign的支持
+feign:
+  sentinel:
+    enabled: true

@@ -1,0 +1,54 @@
+{
+  "groups": [
+    {
+      "name": "action.async.log",
+      "type": "com.qdone.support.async.log.db.properties.ActionLogProperties",
+      "sourceType": "com.qdone.support.async.log.db.properties.ActionLogProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "action.async.log.enable",
+      "type": "java.lang.Boolean",
+      "description": "是否开启日志",
+      "sourceType": "com.qdone.support.async.log.db.properties.ActionLogProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "action.async.log.profile",
+      "type": "java.lang.String",
+      "description": "项目运行对应环境名",
+      "sourceType": "com.qdone.support.async.log.db.properties.ActionLogProperties",
+      "defaultValue": ""
+    },
+    {
+      "name": "action.async.log.project",
+      "type": "java.lang.String",
+      "description": "项目名称，多项目配置",
+      "sourceType": "com.qdone.support.async.log.db.properties.ActionLogProperties",
+      "defaultValue": ""
+    },
+    {
+      "name": "action.async.log.token",
+      "type": "java.lang.String",
+      "description": "微服务用户令牌key",
+      "sourceType": "com.qdone.support.async.log.db.properties.ActionLogProperties",
+      "defaultValue": "X_AMZ_SECURITY_TOKEN"
+    },
+    {
+      "name": "action.async.log.trace",
+      "type": "java.lang.String",
+      "description": "微服务网关链路key",
+      "sourceType": "com.qdone.support.async.log.db.properties.ActionLogProperties",
+      "defaultValue": "GLOBAL_LOG_PRIFIX"
+    },
+    {
+      "name": "action.async.log.version",
+      "type": "java.lang.String",
+      "description": "项目打包对应版本号",
+      "sourceType": "com.qdone.support.async.log.db.properties.ActionLogProperties",
+      "defaultValue": ""
+    }
+  ],
+  "hints": []
+}

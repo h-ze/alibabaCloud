@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hz.dao.TaskDao">
+
+
+    <insert id="addTask" parameterType="com.common.entity.DocTask">
+        insert into doc_task values (null ,#{taskId},#{docName},#{docId},#{taskData})
+    </insert>
+
+    <update id="updateTask" parameterType="com.common.entity.DocTask">
+        update doc_task set taskdata =#{taskData} where taskid =#{taskId}
+    </update>
+
+    <select id="selectTask" parameterType="String" resultType="com.common.entity.DocTask">
+        select taskid,docname,docid,taskdata from doc_task where taskid= #{taskId}
+    </select>
+
+</mapper>

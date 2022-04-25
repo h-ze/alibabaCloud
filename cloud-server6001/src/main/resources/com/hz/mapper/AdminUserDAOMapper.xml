@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hz.dao.AdminUserDao">
+
+<!--    <resultMap id="BaseResultMap" type="com.common.entity.Document">-->
+<!--        <id column="id" property="id" jdbcType="BIGINT"/>-->
+<!--        <result column="userid" property="userId" jdbcType="VARCHAR"/>-->
+<!--        <result column="docid" property="docId" jdbcType="VARCHAR"/>-->
+<!--        <result column="cappid" property="cAppId" jdbcType="VARCHAR"/>-->
+<!--        <result column="cmisid" property="cmisId" jdbcType="VARCHAR"/>-->
+<!--        <result column="docname" property="docName" jdbcType="VARCHAR"/>-->
+<!--        <result column="createdate" property="createDate" jdbcType="DATE"/>-->
+<!--        <result column="encryptconfig" property="encryptConfig" jdbcType="VARCHAR"/>-->
+<!--    </resultMap>-->
+
+
+
+    <select id="getUserList" parameterType="String" resultType="com.common.entity.VisiableUser">
+        select name,age,bir,userId,status from user <where>
+        <if test=" status != '' and status !=null ">
+            status =#{status}
+        </if>
+
+        <if test=" name != '' and name !=null">
+            and name like concat('%',#{name},'%')
+        </if>
+        </where>
+    </select>
+
+    <update id="changeUserTypeByUserId" parameterType="String">
+        update user set status = #{status} where userId =#{userId}
+    </update>
+
+    <update id="changeUserTypeByName" parameterType="String">
+        update user set status = #{status} where name =#{name}
+    </update>
+
+
+</mapper>

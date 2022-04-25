@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--monitorInterval：Log4j2 自动检测修改配置文件和重新配置本身，设置间隔秒数-->
+<!--- 参考：http://logging.apache.org/log4j/2.x/manual/appenders.html -->
+<configuration monitorInterval="5">
+    <!--日志级别以及优先级排序: OFF > FATAL > ERROR > WARN > INFO > DEBUG > TRACE > ALL -->
+    <!--变量配置-->
+    <Properties>
+        <!-- 格式化输出：
+            %date表示日期，%thread表示线程名，
+            %-5level：级别从左显示5个字符宽度
+            %msg：日志消息，%n是换行符-->
+        <!-- %logger{36} 表示 Logger 名字最长36个字符 -->
+        <property name="LOG_PATTERN" value="[%traceId] [%X{GLOBAL_LOG_PRIFIX}] %date{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n" />
+
+        <!-- 定义日志存储的路径，不要配置相对路径 -->
+        <property name="FILE_PATH" value="/logs" />
+        <property name="FILE_NAME" value="boot-dev" />
+    </Properties>
+
+    <appenders>
+        <!-- Appenders 日志信息输出目的地 -->
+
+        <!-- ConsoleAppender -->
+        <!-- 每个ConsoleAppender都有一个target，表示它的输出目的地。 -->
+        <!-- 它可以是System.out，标准输出设备（缓冲显示屏） -->
+        <!-- 或者是System.err，标准错误设备（不缓冲显示屏） -->
+
+
+        <!-- 控制台日志-->
+        <console name="Console" target="SYSTEM_OUT">
+           <PatternLayout pattern="${LOG_PATTERN}"/>
+           <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+        </console>
+
+        <!--SMTP :邮件发送日志-->
+<!--        <SMTP name="EMail" subject="Boot-Master系统异常邮件提醒" from="m15171479289@163.com" smtpUsername="254415262@163.com"  to="1335157415@qq.com,95416596@qq.com"-->
+<!--              smtpPassword="147258369" smtpHost="smtp.163.com" smtpPort="25" smtpDebug="false"  smtpProtocol="smtp" bufferSize="1">-->
+<!--            <PatternLayout pattern="${LOG_PATTERN}"/>-->
+<!--            &lt;!&ndash; 日志只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）&ndash;&gt;-->
+<!--            <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>-->
+<!--        </SMTP>-->
+        <!-- 异步发通知邮件AsyncAppender属性-->
+        <Async name="AsyncMail">
+            <appender-ref ref="EMail"/>
+        </Async>
+
+        <!--文件会打印出所有信息，每日滚动-->
+        <RollingRandomAccessFile  name="DailyFilelog" fileName="${FILE_PATH}/${FILE_NAME}.log" append="true" filePattern="${FILE_PATH}/${FILE_NAME}-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            <Policies>
+                <!--interval属性用来指定多久滚动一次，默认是1 hour-->
+                <TimeBasedTriggeringPolicy modulate="true" interval="1"/>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+            </Policies>
+            <!-- DefaultRolloverStrategy同一文件夹下15个文件开始覆盖-->
+            <DefaultRolloverStrategy max="15"/>
+        </RollingRandomAccessFile >
+
+
+        <!-- JMS日志信息 -->
+       <!-- <JMS name="JMSLog" destinationBindingName="JMSLogQueue" userName="admin" password="admin" providerURL="tcp://114.67.207.106:61616"
+             factoryName ="org.springframework.jms.config.DefaultJmsListenerContainerFactory" factoryBindingName="queueListenerContainerFactory" >
+            <JsonLayout properties="true"/>
+        </JMS>-->
+
+        <!-- Http日志信息 -->
+        <Http name="HttpLog" url="http://localhost/httpLog">
+            <JsonLayout properties="true"/>
+            <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+            <Property name="EVENT_DATE" value="true" />
+            <Property name="LEVEL" value="%level" />
+            <Property name="LOGGER" value="%logger" />
+            <Property name="MESSAGE" value="%message" />
+            <Property name="THROWABLE" value="%ex{full}" />
+        </Http>
+
+        <Async name="AsyncHttp">
+            <appender-ref ref="HttpLog"/>
+        </Async>
+
+        <Appender type="RollingFile" name="ExecutionMonitoringAppender"
+                  fileName="logs/parseq-monitor.log"
+                  append="true"
+                  filePattern="logs/parseq-monitor.log.%d{yyyy-MM-dd}.gz">
+            <Layout type="PatternLayout" pattern="%d{yyyy/MM/dd HH:mm:ss.SSS} %p %m%n" />
+            <Policies>
+                <Policy type="TimeBasedTriggeringPolicy"/>
+            </Policies>
+        </Appender>
+
+
+        <!--<GRPCLogClientAppender name="grpc-log" class="org.apache.skywalking.apm.toolkit.log.log4j.v2.x.log.GRPCLogClientAppender"/>-->
+
+    </appenders>
+
+    <loggers>
+        <!-- 配置日志的根节点 -->
+        <!-- 定义logger，只有定义了logger并引入了appender，appender才会生效 -->
+        <root level="debug">
+            <appender-ref ref="Console"/>
+            <appender-ref ref="DailyFilelog"/>
+            <!--<appender-ref ref="grpc-log"/>-->
+            <!--<appender-ref ref="AsyncMail"/>
+            <appender-ref ref="AsyncHttp"/>-->
+            <!--<appender-ref ref="JMSLog"/>-->
+            <appender-ref ref="ExecutionMonitoringAppender"/>
+
+        </root>
+
+
+        <logger type="AsyncLogger" name="com.linkedin.parseq.internal.ExecutionMonitor" additivity="false" level="warn">
+            <AppenderRef ref="ExecutionMonitoringAppender"/>
+        </logger>
+        <!-- 调高日志级别 -->
+        <logger name="org.springframework" level="error" />
+        <logger name="io.netty" level="error" />
+        <logger name="net.bull.javamelody" level="error" />
+        <logger name="org.redisson" level="error" />
+        <logger name="com.alibaba.druid" level="error" />
+        <logger name="io.lettuce" level="error" />
+        <logger name="springfox.documentation" level="error" />
+        <logger name="org.apache.activemq" level="error" />
+        <logger name="org.mybatis.spring.SqlSessionUtils" level="error" />
+        <logger name="org.mybatis.spring.SqlSessionFactoryBean" level="error" />
+        <logger name="org.mybatis.spring.SqlSessionFactoryBean" level="error" />
+        <logger name="org.mybatis.spring.mapper.ClassPathMapperScanner" level="error" />
+        <logger name="com.qdone.framework.util.cache.MybatisRedisCache" level="error" />
+        <logger name="org.mybatis.spring.transaction.SpringManagedTransaction" level="error" />
+        <logger name="jdbc.sqlonly" level="ERROR"/>
+        <logger name="jdbc.sqltiming" level="INFO"/>
+        <logger name="jdbc.resultsettable" level="ERROR"/>
+        <logger name="jdbc.resultset" level="ERROR"/>
+        <logger name="jdbc.connection" level="ERROR"/>
+        <logger name="jdbc.audit" level="ERROR"/>
+        <logger name="io.seata" level="ERROR"/>
+        <logger name="com.alibaba.nacos" level="ERROR"/>
+
+    </loggers>
+
+</configuration>

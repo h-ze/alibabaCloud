@@ -1,0 +1,89 @@
+nacos:
+  # Nacos的地址
+  server-addr: 8.142.46.67
+  server-port: 8848
+  # Nacos的命名空间
+  #namespace: 37bbdab4-de3f-4c07-927a-7b0fdb66348e
+  namespace: 37bbdab4-de3f-4c07-927a-7b0fdb66348e
+  # Nacos的配置分组
+  group: SEATA_GROUP
+  # Seata Server的配置
+  seata:
+    application: seata-server
+    tx-service-group: default_tx_group
+
+mysql:
+  user: root
+  pwd: hz15858
+
+rbt:
+  user: hz
+  psd: hz15858
+  port: 5672
+  addr: 8.142.46.67
+
+server:
+  port: 9996
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: cloudAlibaba-receive
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacos.server-addr}:${nacos.server-port}
+        namespace: ${nacos.namespace}
+
+    stream:
+      binders: # 在此处配置要绑定的rabbitmq的服务信息；
+        defaultRabbit: # 表示定义的名称，用于于binding整合
+          type: rabbit # 消息组件类型
+          environment: # 设置rabbitmq的相关的环境配置
+            spring:
+              rabbitmq:
+                addresses: ${rbt.addr}
+                port: ${rbt.port}
+                username: ${rbt.user}
+                password: ${rbt.psd}
+      bindings: # 服务的整合处理
+        input: # 这个名字是一个通道的名称
+          destination: studyExchange # 表示要使用的Exchange名称定义
+          content-type: application/json # 设置消息类型，本次为对象json，如果是文本则设置“text/plain”
+          defaultbinder: defaultRabbit # 设置要绑定的消息服务的具体设置
+          group: consumer1 #设置是否同组 不同组会造成重复消费
+
+  resources.static-locations: classpath:/templates/,classpath:/static/
+  datasource:
+    url: jdbc:mysql://8.142.46.67:3306/seata_order?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT&useSSL=false
+    #    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${mysql.user}
+    password: ${mysql.pwd}
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+
+  servlet:
+    multipart.max-file-size: 500MB
+    multipart.max-request-size: 500MB
+
+#  redis:
+#    port: 6379
+#    host: localhost
+#    database: 0
+
+mybatis :
+  mapperLocations: classpath:/com/order/mapper/*.xml
+  type-aliases-package: com.common.entity
+
+logging:
+  level:
+    root: info
+    com.hz.dao: debug
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

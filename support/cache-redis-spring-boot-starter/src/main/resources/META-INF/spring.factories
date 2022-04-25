@@ -1,0 +1,4 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.qdone.support.cache.redis.autoconfig.SpringContextHolder,\
+com.qdone.support.cache.redis.autoconfig.CacheRedisAutoConfig

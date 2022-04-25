@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hz.dao.EnterpriseDao">
+
+    <insert id="addEnterpriseInfo" parameterType="com.common.entity.EnterpriseInfo">
+        insert into enterprise_info values (null,#{enterpriseId},#{enterpriseName},#{oddEvenFactor},#{documentTotal},#{alreadyUploadDocument},#{createTime})
+    </insert>
+
+    <select id="getEnterpriseInfo" parameterType="String" resultType="com.common.entity.EnterpriseInfo">
+        select enterprise_id,enterprise_name,oddeven_factor,document_total,alreadyupload_document
+        from enterprise_info where enterprise_id =#{enterpriseId}
+    </select>
+
+
+    <resultMap id="BaseResultMap" type="com.common.entity.EnterpriseInfo">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="enterprise_id" property="enterpriseId" jdbcType="VARCHAR"/>
+        <result column="enterprise_name" property="enterpriseName" jdbcType="VARCHAR"/>
+        <result column="oddeven_factor" property="oddEvenFactor" jdbcType="VARCHAR"/>
+        <result column="document_total" property="documentTotal" jdbcType="VARCHAR"/>
+        <result column="alreadyupload_document" property="alreadyUploadDocument" jdbcType="VARCHAR"/>
+    </resultMap>
+    <select id="getEnterpriseInfoByUserId" parameterType="String" resultMap="BaseResultMap">
+        select ei.enterprise_id,ei.enterprise_name,oddeven_factor,document_total,alreadyupload_document
+        from enterprise_info ei left join user_info ui on ei.enterprise_id = ui.enterprise_id where ui.userId=#{userId}
+    </select>
+
+    <update id="updateEnterpriseInfo" parameterType="com.common.entity.EnterpriseInfo">
+        update enterprise_info set oddeven_factor =#{oddEvenFactor} where enterprise_id =#{enterpriseId}
+    </update>
+
+    <delete id="deleteEnterpriseInfo" parameterType="String">
+        delete from  enterprise_info where enterprise_id =#{enterpriseId}
+    </delete>
+
+
+</mapper>

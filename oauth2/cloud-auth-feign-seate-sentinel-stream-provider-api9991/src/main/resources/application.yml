@@ -1,0 +1,55 @@
+nacos:
+  # Nacos的地址
+  server-addr: @service.nacos.host@
+  server-port: @service.nacos.port@
+  # Nacos的命名空间
+  #namespace: 37bbdab4-de3f-4c07-927a-7b0fdb66348e
+  namespace: @service.nacos.namespace@
+  # Nacos的配置分组
+  group: @service.group@
+  # Seata Server的配置
+  seata:
+    application: @service.seata.application@
+    tx-service-group: @service.seata.tx-service-group@
+
+
+server:
+  port: 9991
+
+spring:
+  application:
+    name: stream-rabbitmq-provider
+  cloud:
+
+    nacos:
+      discovery:
+        server-addr: ${nacos.server-addr}:${nacos.server-port}
+        namespace: ${nacos.namespace}
+
+    stream:
+      binders: # 在此处配置要绑定的rabbitmq的服务信息；
+        defaultRabbit: # 表示定义的名称，用于于binding整合
+          type: rabbit # 消息组件类型
+          environment: # 设置rabbitmq的相关的环境配置
+            spring:
+              rabbitmq:
+                addresses: 8.142.46.67
+                port: 5672
+                username: hz
+                password: hz15858
+      bindings: # 服务的整合处理
+        output: # 这个名字是一个通道的名称
+          destination: studyExchange # 表示要使用的Exchange名称定义
+          content-type: application/json # 设置消息类型，本次为json，文本则设置“text/plain”
+          default-binder: defaultRabbit # 设置要绑定的消息服务的具体设置
+
+logging:
+  level:
+    root: info
+    com.hz.dao: debug
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
