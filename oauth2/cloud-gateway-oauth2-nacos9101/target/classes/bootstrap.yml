@@ -94,7 +94,7 @@ spring:
         username: ${spring.nacos-username}
         password: ${spring.nacos-password}
         namespace: ${spring.nacos-namespace}
-        group: ${spring.nacos-group}
+        #group: ${spring.nacos-group}
         metadata:
           env: ${spring.nacos-metadata-env}
           group: ${spring.nacos-metadata-group}

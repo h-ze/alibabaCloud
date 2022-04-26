@@ -25,6 +25,9 @@
 
         <module>oauth2</module>
         <module>support</module>
+        <module>cloudAlibaba-provider-payment9006</module>
+        <module>cloudAlibaba-provider-payment9007</module>
+        <module>cloudAlibaba-openFeign-service9008</module>
 
         <!--<module>cloud-order80</module>
         <module>cloud-eureka6890</module>

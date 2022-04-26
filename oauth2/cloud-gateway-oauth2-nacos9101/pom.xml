@@ -19,6 +19,7 @@
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
 
+        <!--客户端负载均衡loadbalancer-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
@@ -73,11 +74,7 @@
             <artifactId>jolokia-core</artifactId>
         </dependency>
 
-        <!--客户端负载均衡loadbalancer-->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
-        </dependency>
+
 
         <!--nepxion -->
         <!--<dependency>

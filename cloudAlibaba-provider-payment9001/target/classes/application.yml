@@ -50,7 +50,7 @@ spring:
   resources.static-locations: classpath:/templates/,classpath:/static/
   datasource:
     url: jdbc:mysql://8.142.46.67:3306/springcloud?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT&useSSL=false
-#    driver-class-name: com.mysql.cj.jdbc.Driver
+    #    driver-class-name: com.mysql.cj.jdbc.Driver
     username: ${mysql.user}
     password: ${mysql.pwd}
     type: com.alibaba.druid.pool.DruidDataSource
@@ -60,10 +60,10 @@ spring:
     multipart.max-file-size: 500MB
     multipart.max-request-size: 500MB
 
-#  redis:
-#    port: 6379
-#    host: localhost
-#    database: 0
+  #  redis:
+  #    port: 6379
+  #    host: localhost
+  #    database: 0
   redis:
     #spring boot初始化redisTemplate需要用到nodes这个字段，初始化RedisSentineManager需要用到host这个字段
     sentinel:

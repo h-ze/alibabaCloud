@@ -15,6 +15,8 @@
     <file url="file://$PROJECT_DIR$/cloudAlibaba-customer84" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudAlibaba-customer84/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudAlibaba-customer84/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloudAlibaba-openFeign-service9008/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloudAlibaba-openFeign-service9008/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudAlibaba-order80" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudAlibaba-order80/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudAlibaba-order80/src/main/resources" charset="UTF-8" />
@@ -24,6 +26,10 @@
     <file url="file://$PROJECT_DIR$/cloudAlibaba-provider-payment9003" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudAlibaba-provider-payment9003/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudAlibaba-provider-payment9003/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloudAlibaba-provider-payment9006/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloudAlibaba-provider-payment9006/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloudAlibaba-provider-payment9007/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloudAlibaba-provider-payment9007/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudAlibaba-sentinel-provider9004" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudAlibaba-sentinel-provider9004/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloudAlibaba-sentinel-provider9004/src/main/resources" charset="UTF-8" />

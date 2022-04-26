@@ -44,7 +44,7 @@ spring:
       discovery:
         server-addr: ${nacos.server-addr}:${nacos.server-port}
         namespace: ${nacos.namespace}
-        group: ${nacos.group}
+        #group: ${nacos.group}
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
   main:

@@ -13,15 +13,39 @@
 
     <dependencies>
 
+
+
+        <dependency>
+            <groupId>com.hz.springcloud</groupId>
+            <artifactId>cloud-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.hz.springcloud</groupId>
-            <artifactId>cloud-common</artifactId>
-            <version>${project.version}</version>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+        <!--客户端负载均衡loadbalancer-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+
+        <!-- Feign Client for loadBalancing -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-loadbalancer</artifactId>
         </dependency>
 
         <dependency>
