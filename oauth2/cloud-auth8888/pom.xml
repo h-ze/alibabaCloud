@@ -58,10 +58,10 @@
         </dependency>
 
         <!-- Feign Client for loadBalancing -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-loadbalancer</artifactId>
-        </dependency>
+        </dependency>-->
 
         <!--sentinel限流器-->
         <dependency>

@@ -1,0 +1,98 @@
+nacos:
+  # Nacos的地址
+  server-addr: 8.142.46.67:8848
+  # Nacos的命名空间
+  namespace: 37bbdab4-de3f-4c07-927a-7b0fdb66348e
+  # Nacos的配置分组
+  group: SEATA_GROUP
+  # Seata Server的配置
+  seata:
+    application: seata-server
+    tx-service-group: default_tx_group
+server:
+  port: 2002
+#  servlet:
+#    context-path: provider-payment
+
+spring:
+  #profiles.active: "@profileActive@"
+  application:
+    name: cloudAlibaba-seata-storage-hz.service
+
+  cloud:
+#    alibaba:
+#      seata:
+#        tx-hz.service-group: fsp_tx_group
+    nacos:
+      discovery:
+        server-addr: 8.142.46.67:8848
+        namespace: ${nacos.namespace}
+        #server-addr: localhost:8848
+
+  resources.static-locations: classpath:/templates/,classpath:/static/
+  datasource:
+    url: jdbc:mysql://8.142.46.67:3306/seata_storage?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT&useSSL=false
+    #    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: hz15858
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
+
+  servlet:
+    multipart.max-file-size: 500MB
+    multipart.max-request-size: 500MB
+
+
+
+
+#  redis:
+#    port: 6379
+#    host: localhost
+#    database: 0
+
+
+
+mybatis :
+  mapperLocations: classpath:/com/storage/mapper/*.xml
+  type-aliases-package: com.common.entity
+
+
+seata:
+  enabled: true
+  application-id: ${spring.application.name}
+  tx-service-group: ${nacos.seata.tx-service-group}
+  enable-auto-data-source-proxy: false
+  registry:
+    type: nacos
+    nacos:
+      application: ${nacos.seata.application}
+      server-addr: ${nacos.server-addr}
+      namespace: ${nacos.namespace}
+      group: ${nacos.group}
+      username: nacos
+      password: nacos
+  config:
+    type: nacos
+    nacos:
+      namespace: ${nacos.namespace}
+      username: nacos
+      password: nacos
+      server-addr: 8.142.46.67:8848
+      group: SEATA_GROUP
+    service:
+      vgroup-mapping:
+        default_tx_group: default
+      disable-global-transaction: false
+
+
+
+logging:
+  level:
+    root: info
+    com.hz.dao: debug
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

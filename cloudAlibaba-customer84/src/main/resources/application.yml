@@ -45,11 +45,11 @@ spring:
         #server-addr: localhost:8848
         server-addr: ${nacos.server-addr}:${nacos.server-port}
         namespace: ${nacos.namespace}
-        group: ${nacos.group}
+        #group: ${nacos.group}
 
     sentinel:
       transport:
-        dashboard: localhost:8080
+        dashboard: 121.4.54.189:8080
         #端口号默认为8719
         port: 8719
 #  rabbitmq:
@@ -75,6 +75,15 @@ spring:
   servlet:
     multipart.max-file-size: 500MB
     multipart.max-request-size: 500MB
+
+
+  redis:
+    #spring boot初始化redisTemplate需要用到nodes这个字段，初始化RedisSentineManager需要用到host这个字段
+    sentinel:
+      master: mymaster
+      nodes: 124.223.191.89:26379,8.142.46.67:26379,114.55.119.114:26379
+      host: 124.223.191.89:26379,8.142.46.67:26379,114.55.119.114:26379
+      password: hz15858
 
 #  redis:
 #    port: 6379

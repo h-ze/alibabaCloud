@@ -20,7 +20,7 @@ public class PaymentController {
     private String serverPort;
 
     @GetMapping("/getPayment")
-    public Payment getPayment(String id){
+    public Payment getPayment(@RequestParam("id") String id){
         Payment paymentById = payService.getPaymentById(id,serverPort);
         return paymentById;
     }

@@ -45,7 +45,7 @@ spring:
       discovery:
         server-addr: ${nacos.server-addr}:${nacos.server-port}
         namespace: ${nacos.namespace}
-        group: ${nacos.group}
+        #group: ${nacos.group}
 
   resources.static-locations: classpath:/templates/,classpath:/static/
   datasource:

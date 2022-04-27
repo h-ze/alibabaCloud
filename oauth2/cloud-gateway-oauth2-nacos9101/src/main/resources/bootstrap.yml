@@ -102,6 +102,7 @@ spring:
           region: ${spring.nacos-metadata-region}
           zone: ${spring.nacos-metadata-zone}
         enabled: true
+        #group: DEFAULT_GROUP
       config:
         server-addr: ${spring.nacos-host}:${spring.nacos-port}
         username: ${spring.nacos-username}
@@ -109,6 +110,7 @@ spring:
         namespace: ${spring.nacos-namespace}
         group: ${spring.nacos-group}
         file-extension: yaml #nacos读取yaml和properties格式数据
+        #group: DEFAULT_GROUP
   jmx:
     enabled: true
   boot:
