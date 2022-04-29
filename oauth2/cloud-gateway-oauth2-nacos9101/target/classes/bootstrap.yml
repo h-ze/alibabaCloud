@@ -57,7 +57,7 @@ management:
 # actuator系统信息
 info:
   name: '@project.name@'
-  description: '网关服务，负责请求转发和鉴权功能，整合Spring Security+Oauth2'
+  description: '@project.description@'
   version: '0.0.1-SNAPSHOT'
 #  spring-boot-version: '@spring-boot.version@'
 #  spring-cloud-version: '@spring-cloud.version@'
