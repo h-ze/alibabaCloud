@@ -47,7 +47,7 @@ public class ResourceServerConfig {
         http.addFilterBefore(whiteJwtFilter, SecurityWebFiltersOrder.AUTHENTICATION);*/
         //白名单不需要移除token的地址
         List<String> whiteList= whiteAddressListConfig.getToken();
-        String[] whiteUrlArr=new String[]{};
+        String[] whiteUrlArr;
         if(CollectionUtils.isNotEmpty(whiteList)){
             whiteUrlArr=new String[whiteAddressListConfig.getToken().size()];
             whiteList.toArray(whiteUrlArr);

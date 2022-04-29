@@ -34,6 +34,10 @@
         <module>cloudAlibaba-seata-account-service2003</module>
         <module>cloudAlibaba-seata-order-service2001</module>
         <module>cloudAlibaba-seata-storage-service2002</module>
+        <module>cloudAlibaba-openFeign1-service9009</module>
+        <module>cloudAlibaba-openFeign1-service9010</module>
+        <module>cloudAlibaba-openFeign1-service9011</module>
+        <module>cloud-auth-feign-seata-service-consumer-api9995</module>
         <!--<module>cloud-order80</module>
         <module>cloud-eureka6890</module>
         <module>cloud-provider-payment8001</module>
@@ -113,6 +117,7 @@
     <!--
         SpringBoot SpringCloud SpringCloudAlibaba 版本必须对应 不然会出现各种各样的问题
         https://github.com/alibaba/spring-cloud-alibaba/wiki/%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E
+        https://start.spring.io/actuator/info
     -->
     <dependencyManagement><!--定义规范，但不导入-->
         <dependencies>

@@ -20,6 +20,8 @@ import java.util.Map;
 
 
 /**
+ *
+ * SpringSecurity的相关配置
  * 自定义返回结果：没有权限访问时
  */
 @Component

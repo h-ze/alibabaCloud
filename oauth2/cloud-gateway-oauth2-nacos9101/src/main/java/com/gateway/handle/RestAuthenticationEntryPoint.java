@@ -19,6 +19,7 @@ import java.util.Date;
 import java.util.Map;
 
 /**
+ * SpringSecurity的相关配置
  * 自定义返回结果：没有登录或token过期时
  */
 @Component

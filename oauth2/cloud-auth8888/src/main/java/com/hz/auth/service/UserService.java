@@ -33,6 +33,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
+ * SpringSecurity的相关配置
  * 用户管理业务类
  * 实现Spring Security的UserDetailsService接口，用于加载用户信息
  */
@@ -80,6 +81,7 @@ public class UserService implements UserDetailsService {
         redisTemplate.opsForValue().set(Constant.PERMISSION_ROLES_ALL_KEY, JSON.toJSONString(roleDtos, SerializerFeature.WriteMapNullValue));*/
 
         //绑定数据库相关
+        //资源与角色匹配关系缓存到Redis中，方便网关服务进行鉴权的时候获取
         List<RoleDto> roleList= jdbcTemplate.query("select DISTINCT id,role_id code,name from role where status=1 and name like '%商城%'", new BeanPropertyRowMapper<>(RoleDto.class));
         log.info("roleList:{}",roleList);
         if(CollectionUtils.isNotEmpty(roleList)){
