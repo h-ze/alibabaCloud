@@ -13,7 +13,6 @@
         <module name="cloudAlibaba-customer84" />
         <module name="xxl-job-spring-boot-starter" />
         <module name="cloudAlibaba-provider-payment9001" />
-        <module name="cloud-auth-feign-seata-service-consumer-api9994" />
         <module name="cloud-auth-feign-seata-sentinel-service-api9999" />
         <module name="cloud-auth-feign-seata-sentinel-service-api9998" />
         <module name="cloud-auth-feign-seata-sentinel-service-api9997" />
@@ -27,6 +26,7 @@
         <module name="cloud-auth-feign-seate-sentinel-stream-provider-api9991" />
         <module name="cloud-common-core" />
         <module name="cloud-server6001" />
+        <module name="cloud-common-remote" />
         <module name="cloudAlibaba-sentinel-provider9005" />
         <module name="cloudAlibaba-sentinel-provider9004" />
         <module name="log-async-db-spring-boot-starter" />
@@ -36,7 +36,7 @@
         <module name="cloudAlibaba-openFeign-service9008" />
         <module name="task-layout-spring-boot-starter" />
         <module name="cloud-common" />
-        <module name="cloud-common-remote" />
+        <module name="cloud-auth-feign-seata-service-consumer-api9994" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
