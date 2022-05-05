@@ -63,6 +63,12 @@
         </dependency>
 
         <dependency>
+            <groupId>com.hz.springcloud</groupId>
+            <artifactId>cloud-common-remote</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>

@@ -1,4 +1,4 @@
-package com.hz.remote.feign;
+package com.openFeign.config;
 
 import com.hz.common.constant.Constant;
 import feign.RequestInterceptor;

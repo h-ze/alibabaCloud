@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 
 @RestController
@@ -33,8 +34,13 @@ public class PaymentController {
     }
 
     @GetMapping("/getPaymentById/{id}")
-    public String getPaymentById(@PathVariable String id){
-        return "获取支付信息，id为："+id;
+    public String getPaymentById(HttpServletRequest request,@PathVariable String id){
+        Payment payment = orderService.getPayment(id);
+        String token = request.getHeader("token");
+        log.info("token值为:{}",token);
+        //Payment paymentById = payService.getPaymentById(id,serverPort);
+        return payment.toString();
+        //return "获取支付信息，id为："+id;
     }
 
     @GetMapping("/payment/nacos/{id}")

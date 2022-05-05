@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @Slf4j
-@RequestMapping("/openfeignpayment")
+@RequestMapping("/payment1")
 public class PaymentController {
 
     @Autowired
@@ -26,8 +26,16 @@ public class PaymentController {
     @Value("${server.port}")
     private String serverPort;
 
+    @GetMapping("/getPayment1")
+    public Payment getPayment(@RequestParam("id") String id){
+        Payment payment = orderService.getPayment(id);
+        //Payment paymentById = payService.getPaymentById(id,serverPort);
+        payment.setId(serverPort);
+        return payment;
+    }
+
     @GetMapping("/getOpenPayment")
-    public ResponseResult getPayment(@RequestParam("id") String id){
+    public ResponseResult getOpenPayment(@RequestParam("id") String id){
         Payment payment = orderService.getPayment(id);
         log.info("返回值: "+payment);
         log.info("id:{}",id);

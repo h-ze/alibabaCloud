@@ -45,16 +45,14 @@ spring:
 #  profiles:
 #    active: @profile.active@
   application:
+    #name: cloudAlibaba-provider-payment
     name: cloudAlibaba-openFeign
 
   cloud:
     nacos:
       discovery:
-        server-addr: ${spring.nacos-host}:${spring.nacos-port}
-        username: ${spring.nacos-username}
-        password: ${spring.nacos-password}
-        namespace: ${spring.nacos-namespace}
-        #group: ${nacos.group}
+        server-addr: ${nacos.server-addr}:${nacos.server-port}
+        namespace: ${nacos.namespace}
 
   resources.static-locations: classpath:/templates/,classpath:/static/
   datasource:

@@ -9,7 +9,6 @@ import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 
 /**
- * @author 傅为地
  * SpringContextHolder工具类
  * 方便在容器中获取bean对象
  */

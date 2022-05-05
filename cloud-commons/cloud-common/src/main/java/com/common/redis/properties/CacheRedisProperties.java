@@ -5,7 +5,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import java.util.List;
 
 /**
- * @author 傅为地
  * 自定义缓存配置项
  */
 @Builder

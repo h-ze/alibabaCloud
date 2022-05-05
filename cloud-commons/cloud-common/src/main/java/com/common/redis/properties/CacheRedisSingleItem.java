@@ -6,7 +6,6 @@ import java.io.Serializable;
 
 /**
  * 单项缓存配置信息
- * @author 傅为地
  */
 @Builder
 @Data

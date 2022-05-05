@@ -51,6 +51,8 @@ public class AuthorizationManager implements ReactiveAuthorizationManager<Author
     @Override
     public Mono<AuthorizationDecision> check(Mono<Authentication> mono, AuthorizationContext authorizationContext) {
 
+
+        log.info("鉴权================开始");
         ServerHttpRequest request = authorizationContext.getExchange().getRequest();
 
         //测试放行所有请求

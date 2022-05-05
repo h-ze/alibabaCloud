@@ -20,7 +20,6 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * 使用Redis来做Mybatis的二级缓存
  * 实现Mybatis的Cache接口
- * @author  傅为地
  */
 @Slf4j
 public class MybatisRedisCache implements Cache {
