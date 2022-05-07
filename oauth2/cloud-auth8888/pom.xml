@@ -13,28 +13,17 @@
 
     <dependencies>
 
-
-        <dependency>
-            <groupId>com.hz.springcloud</groupId>
-            <artifactId>cloud-common</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.hz.springcloud</groupId>
-            <artifactId>cloud-common-core</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
         <!--注册中心客户端-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
-        <!--<dependency>
+
+        <!-- SpringCloud Alibaba Nacos Config -->
+        <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-        </dependency>-->
+        </dependency>
 
         <!--web 模块-->
         <dependency>
@@ -134,11 +123,12 @@
         </dependency>-->
 
         <!-- spring boot admin-->
-        <!--        <dependency>
-                    <groupId>com.nepxion</groupId>
-                    <artifactId>discovery-plugin-admin-center-starter</artifactId>
-                    <version>${nepxion.version}</version>
-                </dependency>-->
+       <!-- <dependency>
+            <groupId>com.nepxion</groupId>
+            <artifactId>discovery-plugin-admin-center-starter</artifactId>
+            <version>${nepxion.version}</version>
+        </dependency>-->
+
         <!--<dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-hz.client</artifactId>
@@ -193,6 +183,20 @@
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
+
+        <dependency>
+            <groupId>com.hz.springcloud</groupId>
+            <artifactId>cloud-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hz.springcloud</groupId>
+            <artifactId>cloud-common-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+
     </dependencies>
 
 </project>

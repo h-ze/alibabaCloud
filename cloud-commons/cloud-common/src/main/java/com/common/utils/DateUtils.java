@@ -14,8 +14,11 @@ import org.joda.time.LocalDate;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import static org.apache.commons.lang.time.DateUtils.parseDate;
 
 /**
  * 日期处理
@@ -28,6 +31,11 @@ public class DateUtils {
 	/** 时间格式(yyyy-MM-dd HH:mm:ss) */
 	public final static String DATE_TIME_PATTERN = "yyyy-MM-dd HH:mm:ss";
 
+
+    private static String[] parsePatterns = {
+            "yyyy-MM-dd", "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd HH:mm", "yyyy-MM",
+            "yyyy/MM/dd", "yyyy/MM/dd HH:mm:ss", "yyyy/MM/dd HH:mm", "yyyy/MM",
+            "yyyy.MM.dd", "yyyy.MM.dd HH:mm:ss", "yyyy.MM.dd HH:mm", "yyyy.MM"};
     /**
      * 日期格式化 日期格式为：yyyy-MM-dd
      * @param date  日期
@@ -162,5 +170,24 @@ public class DateUtils {
     public static Date addDateYears(Date date, int years) {
         DateTime dateTime = new DateTime(date);
         return dateTime.plusYears(years).toDate();
+    }
+
+    /**
+     * 日期型字符串转化为日期 格式
+     */
+    public static Date convertParseDate(Object str)
+    {
+        if (str == null)
+        {
+            return null;
+        }
+        try
+        {
+            return parseDate(str.toString(), parsePatterns);
+        }
+        catch (ParseException e)
+        {
+            return null;
+        }
     }
 }

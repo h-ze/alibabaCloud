@@ -2,6 +2,8 @@ package com.payment.controller;
 
 import com.common.entity.Payment;
 import com.common.entity.ResponseResult;
+import com.hz.common.log.annotation.Log;
+import com.hz.common.log.enums.BusinessType;
 import com.payment.service.PayService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,8 @@ public class PaymentController {
     @Value("${server.port}")
     private String serverPort;
 
+
+    @Log(title = "代码生成", businessType = BusinessType.OTHER)
     @GetMapping("/getPayment")
     public Payment getPayment(@RequestParam("id") String id){
         //String paymentById = orderService.getOpenFeign(id);

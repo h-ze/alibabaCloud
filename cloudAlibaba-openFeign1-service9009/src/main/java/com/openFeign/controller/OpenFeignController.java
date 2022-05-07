@@ -24,6 +24,12 @@ public class OpenFeignController {
 
     @GetMapping("/getOpenFeign1")
     public Payment getOpenFeign1(HttpServletRequest request, @RequestParam("id") String id){
+
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         String token = request.getHeader(Constant.X_AMZ_SECURITY_TOKEN);
         log.info("token为: {}",token);
         String openFeign1 = openFeign1Service.getOpenFeign1(id);

@@ -29,8 +29,6 @@
         <module>cloudAlibaba-provider-payment9007</module>
         <module>cloudAlibaba-openFeign-service9008</module>
 
-
-        <module>cloud-auth-feign-seata-service-consumer-api9994</module>
         <module>cloudAlibaba-seata-account-service2003</module>
         <module>cloudAlibaba-seata-order-service2001</module>
         <module>cloudAlibaba-seata-storage-service2002</module>
@@ -38,6 +36,8 @@
         <module>cloudAlibaba-openFeign1-service9010</module>
         <module>cloudAlibaba-openFeign1-service9011</module>
         <module>cloud-auth-feign-seata-service-consumer-api9995</module>
+        <module>cloudAlibaba-api</module>
+        <module>cloudAlibaba-api/cloudAlibaba-api-system</module>
         <!--<module>cloud-order80</module>
         <module>cloud-eureka6890</module>
         <module>cloud-provider-payment8001</module>
@@ -78,12 +78,15 @@
 
     <!--统一管理jar包版本-->
     <properties>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <junit.version>4.12</junit.version>
         <lombok.version>1.18.10</lombok.version>
         <log4j.version>1.2.17</log4j.version>
+        <mssql.version>4.0</mssql.version>
+        <oracle.version>11.2.0.3</oracle.version>
         <mysql.version>5.1.47</mysql.version>
         <druid.version>1.1.16</druid.version>
         <mybatis.spring.boot.version>1.3.0</mybatis.spring.boot.version>
@@ -92,6 +95,7 @@
         <http.version>4.5.6</http.version>
         <fastjson.version>1.2.51</fastjson.version>
         <swagger.version>2.7.0</swagger.version>
+        <commons-fileupload>1.4</commons-fileupload>
 
         <mybatis-plus.version>3.3.2</mybatis-plus.version>
         <skywalking.version>8.7.0</skywalking.version>
@@ -109,6 +113,25 @@
         <maven.versions.plugin.version>2.8.1</maven.versions.plugin.version>
         <maven.sonar.version>3.6.0.1398</maven.sonar.version>
         <maven.jacoco.version>0.8.3</maven.jacoco.version>
+
+        <transmittable-thread-local.version>2.12.2</transmittable-thread-local.version>
+        <pagehelper.boot.version>1.4.1</pagehelper.boot.version>
+
+        <transmittable.version>2.12.1</transmittable.version>
+
+        <gson.version>2.8.5</gson.version>
+        <commons.lang.version>2.6</commons.lang.version>
+        <jedis.version>2.9.0</jedis.version>
+        <commons.io.version>2.5</commons.io.version>
+        <joda.time.version>2.9.9</joda.time.version>
+        <hibernate.version>6.1.5.Final</hibernate.version>
+        <hutool.version>5.1.0</hutool.version>
+        <commons-codec.version>1.14</commons-codec.version>
+        <jjwt.version>0.9.1</jjwt.version>
+        <poi.version>4.1.2</poi.version>
+        <mybatisplus.version>3.1.2</mybatisplus.version>
+        <swagger.module.version>1.5.22</swagger.module.version>
+
     </properties>
 
     <!--子模块继承之后，提供作用：锁定版本+子module不用写groupId和version-->
@@ -121,37 +144,120 @@
     -->
     <dependencyManagement><!--定义规范，但不导入-->
         <dependencies>
+
+            <!-- oracle驱动 -->
+            <dependency>
+                <groupId>com.oracle</groupId>
+                <artifactId>ojdbc6</artifactId>
+                <version>${oracle.version}</version>
+            </dependency>
+            <!-- mssql驱动 -->
+            <dependency>
+                <groupId>com.microsoft.sqlserver</groupId>
+                <artifactId>sqljdbc4</artifactId>
+                <version>${mssql.version}</version>
+            </dependency>
+
+            <!-- mybatis-plus -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatisplus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${commons.lang.version}</version>
+            </dependency>
+
+            <!-- excel工具 -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+
+            <!-- JWT -->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt.version}</version>
+            </dependency>
+
+            <!-- 加入skywalking链路log打印traceId追踪编号 -->
+            <dependency>
+                <groupId>org.apache.skywalking</groupId>
+                <artifactId>apm-toolkit-trace</artifactId>
+                <version>${skywalking.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.skywalking</groupId>
+                <artifactId>apm-toolkit-opentracing</artifactId>
+                <version>${skywalking.version}</version>
+            </dependency>
+            <!-- skywalking-log4j2-->
+            <dependency>
+                <groupId>org.apache.skywalking</groupId>
+                <artifactId>apm-toolkit-log4j-2.x</artifactId>
+                <version>${skywalking.version}</version>
+            </dependency>
+            <!-- skywalking-logback-->
+            <dependency>
+                <groupId>org.apache.skywalking</groupId>
+                <artifactId>apm-toolkit-logback-1.x</artifactId>
+                <version>${skywalking.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${commons-codec.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>${joda.time.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${gson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons.io.version}</version>
+            </dependency>
+
+            <!-- 统计maven依赖等信息 -->
             <dependency>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>3.0.0</version>
             </dependency>
-            <!--spring boot 2.2.2-->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.2.5.RELEASE</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <!--spring cloud Hoxton.SR1-->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR3</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <!--spring cloud 阿里巴巴-->
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>2.2.1.RELEASE</version>
-                <!--如果需要使用seata1.2版本以上的，这里的alibabab-dependencies版本需要改变！！！巨坑啊，搞了一晚上。。。-->
-                <!-- <version>2.1.0.RELEASE</version>-->
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
+
             <!--mysql-->
             <dependency>
                 <groupId>mysql</groupId>
@@ -159,24 +265,28 @@
                 <version>${mysql.version}</version>
                 <scope>runtime</scope>
             </dependency>
+
             <!-- druid-->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid.version}</version>
             </dependency>
+
             <!--mybatis-->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis.spring.boot.version}</version>
             </dependency>
+
             <!--junit-->
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>${junit.version}</version>
             </dependency>
+
             <!--log4j-->
             <dependency>
                 <groupId>log4j</groupId>
@@ -191,6 +301,7 @@
                 <version>${commons.version}</version>
             </dependency>
 
+            <!-- openfeign -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-openfeign</artifactId>
@@ -209,6 +320,7 @@
                 <version>${http.version}</version>
             </dependency>
 
+            <!-- fastjson -->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
@@ -225,6 +337,60 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger.module.version}</version>
+            </dependency>
+
+            <!-- 文件上传组件 -->
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${commons-fileupload}</version>
+            </dependency>
+
+            <!-- pagehelper 分页-->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <!--<version>1.2.5</version>-->
+                <version>${pagehelper.boot.version}</version>
+            </dependency>
+
+            <!-- 用于线程池等线程复用 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>transmittable-thread-local</artifactId>
+                <version>${transmittable.version}</version>
+            </dependency>
+
+            <!--spring boot 2.2.5-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.2.5.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--spring cloud Hoxton.SR3-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Hoxton.SR3</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--spring cloud 阿里巴巴-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2.2.1.RELEASE</version>
+                <!--如果需要使用seata1.2版本以上的，这里的alibabab-dependencies版本需要改变！！！巨坑啊，搞了一晚上。。。-->
+                <!-- <version>2.1.0.RELEASE</version>-->
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
 
         </dependencies>

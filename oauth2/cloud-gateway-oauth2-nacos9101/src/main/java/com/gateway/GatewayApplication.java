@@ -22,7 +22,7 @@ public class GatewayApplication {
             //当动态配置刷新时，会更新到 Enviroment中，因此此处每隔一秒从Enviroment中获取配置
             String userName = applicationContext.getEnvironment().getProperty("user.name");
             String userAge = applicationContext.getEnvironment().getProperty("user.age");
-            System.out.println("user name : " + userName + "; age: " + userAge);
+            //System.out.println("user name : " + userName + "; age: " + userAge);
 
             TimeUnit.SECONDS.sleep(1);
         }
