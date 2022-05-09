@@ -2,8 +2,10 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-auth-feign-seata-service-consumer-api9995/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-auth-feign-seata-service-consumer-api9995/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-api/cloud-api-system/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-api/cloud-api-system/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-auth-8888/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-auth-8888/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-core" charset="UTF-8" />
@@ -16,75 +18,18 @@
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-remote/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/datasource/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-gateway-9999/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-gateway-9999/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-openFeign-service9008/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-openFeign-service9008/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-openFeign1-service9009/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-openFeign1-service9009/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-provider-payment9001" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-provider-payment9001/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-provider-payment9001/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-server6001" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-server6001/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-server6001/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-api/cloudAlibaba-api-system/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-api/cloudAlibaba-api-system/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-customer84" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-customer84/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-customer84/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-openFeign-service9008/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-openFeign-service9008/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-openFeign1-service9009/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-openFeign1-service9009/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-openFeign1-service9010/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-openFeign1-service9010/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-openFeign1-service9011/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-openFeign1-service9011/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-order80" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-order80/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-order80/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-provider-payment9001" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-provider-payment9001/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-provider-payment9001/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-provider-payment9003" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-provider-payment9003/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-provider-payment9003/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-provider-payment9006/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-provider-payment9006/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-provider-payment9007/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-provider-payment9007/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-seata-account-service2003/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-seata-account-service2003/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-seata-order-service2001/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-seata-order-service2001/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-seata-storage-service2002/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-seata-storage-service2002/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-sentinel-provider9004" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-sentinel-provider9004/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-sentinel-provider9004/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-sentinel-provider9005" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-sentinel-provider9005/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloudAlibaba-sentinel-provider9005/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth-feign-seata-sentinel-service-api9997" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth-feign-seata-sentinel-service-api9997/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth-feign-seata-sentinel-service-api9997/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth-feign-seata-sentinel-service-api9998" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth-feign-seata-sentinel-service-api9998/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth-feign-seata-sentinel-service-api9998/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth-feign-seata-sentinel-service-api9999" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth-feign-seata-sentinel-service-api9999/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth-feign-seata-sentinel-service-api9999/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth-feign-seata-sentinel-stream-service-api9995" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth-feign-seata-sentinel-stream-service-api9995/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth-feign-seata-sentinel-stream-service-api9995/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth-feign-seata-sentinel-stream-service-api9996" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth-feign-seata-sentinel-stream-service-api9996/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth-feign-seata-sentinel-stream-service-api9996/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth-feign-seata-service-consumer-api9994" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth-feign-seata-service-consumer-api9994/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth-feign-seata-service-consumer-api9994/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth-feign-seate-sentinel-stream-provider-api9991" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth-feign-seate-sentinel-stream-provider-api9991/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth-feign-seate-sentinel-stream-provider-api9991/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth8888" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth8888/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-auth8888/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-gateway-oauth2-nacos9101" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-gateway-oauth2-nacos9101/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/oauth2/cloud-gateway-oauth2-nacos9101/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support/cache-redis-spring-boot-starter" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support/cache-redis-spring-boot-starter/src/main/java" charset="UTF-8" />

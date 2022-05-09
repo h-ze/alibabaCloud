@@ -1,0 +1,201 @@
+
+#mysql pom文件内配置
+mysql:
+  user: @service.mysql.user@
+  pwd: @service.mysql.password@
+
+#rabbitmq pom文件内配置
+rbt:
+  user: @service.rabbit.user@
+  psd: @service.rabbit.password@
+  port: @service.rabbit.port@
+  addr: @service.rabbit.address@
+
+#redis pom文件内配置
+rds:
+  port: @service.redis.port@
+  host: @service.redis.address@
+  password: @service.redis.password@
+  database: @service.redis.database@
+
+
+#nacos pom文件内配置
+nacos:
+  server-addr: @service.nacos.host@
+  server-port: @service.nacos.port@
+  name: @service.nacos.username@
+  password: @service.nacos.password@
+  namespace: @service.nacos.namespace@
+  group: @service.group@
+  metadata:
+    group: @service.metadata.group@
+    env: @service.metadata.env@
+    version: @service.metadata.version@
+    region: @service.metadata.region@
+    zone: @service.metadata.zone@
+
+log-root: @service.log.root@
+admin:
+  username: @service.admin.username@
+  password: @service.admin.password@
+
+# Seata Server的配置
+seata:
+  application: @service.seata.application@
+  tx-service-group: @service.seata.tx-service-group@
+
+server:
+  port: 9999
+# 使用阿里 sentinel监控
+#feign:
+#  sentinel: #开启sentinel熔断
+#    enabled: true
+#  hystrix:  #关闭hystrix熔断
+#    enabled: false
+#  httpclient:
+#    enabled: false
+#  okhttp:
+#    enabled: true #开启okhttp
+#  compression: #开启压缩
+#    request:
+#      enabled: true
+#      mime-types: text/xml,application/xml,application/json
+#      min-request-size: 2048
+#    response:
+#      enabled: true
+ribbon:
+  nacos:
+    enabled: true
+  ConnectTimeout: 60000
+  ReadTimeout: 60000
+
+spring:
+
+  profiles:
+    active: @profile.active@
+  application:
+    name: gateway
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    discovery:
+      reactive:
+        enabled: false
+    nacos:
+      discovery:
+        server-addr: ${nacos.server-addr}:${nacos.server-port}
+        username: ${nacos.name}
+        password: ${nacos.password}
+        namespace: ${nacos.namespace}
+
+        metadata:
+          env: ${nacos.metadata.env}
+          group: ${nacos.metadata.group}
+          version: ${nacos.metadata.version}
+          region: ${nacos.metadata.region}
+          zone: ${nacos.metadata.zone}
+        enabled: true
+      config:
+        server-addr: ${nacos.server-addr}:${nacos.server-port}
+        username: ${nacos.name}
+        password: ${nacos.password}
+        namespace: ${nacos.namespace}
+        group: ${nacos.group}
+        file-extension: yaml #nacos读取yaml和properties格式数据
+        #共享配置
+        shared-configs:
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+        #group: DEFAULT_GROUP
+  jmx:
+    enabled: true
+  boot:
+    admin:
+      client:
+        instance:
+          prefer-ip: true
+        url: http://localhost:9998
+        username: ${admin.username}
+        password: ${admin.password}
+#  redis:
+#    #spring boot初始化redisTemplate需要用到nodes这个字段，初始化RedisSentineManager需要用到host这个字段
+#    sentinel:
+#      master: mymaster
+#      nodes: 124.223.191.89:26379,8.142.46.67:26379,114.55.119.114:26379
+#      host: 124.223.191.89:26379,8.142.46.67:26379,114.55.119.114:26379
+#      password: hz15858
+#
+#    #cluster:
+#    #  nodes: 124.223.191.89:6379,8.142.46.67:6379,114.55.119.114:6379
+#    #  max-redirects: 3
+#    #    cluster:
+#    #      nodes:
+#    #        -
+#    # Redis服务器连接端口
+#    #port: 6379
+#    # Redis服务器地址
+#    #host: 8.142.46.67
+#    # Redis数据库索引（默认为0）
+#    database: 0
+#    # Redis服务器连接密码
+#    password: hz15858
+#    # 连接超时时间（毫秒）
+#    timeout: 1000
+#    # 连接池最大连接数（使用负值表示没有限制）
+#    #lettuce:
+#    jedis:
+#
+#      pool:
+#        # 连接池最大阻塞等待时间（使用负值表示没有限制）
+#        max-active: 20
+#        # 连接池最大阻塞等待时间（使用负值表示没有限制）
+#        max-wait: -1
+#        # 连接池中的最大空闲连接
+#        max-idle: 10
+#        # 连接池中的最小空闲连接
+#        min-idle: 1
+logging:
+  file:
+    name: ${log-root}/${spring.application.name}.log
+# nepxion配置
+#nacos:
+#  server-addr: ${spring.nacos-host}:${spring.nacos-port}
+#  username: ${spring.nacos-username}
+#  password: ${spring.nacos-password}
+#  plugin:
+#    namespace: ${spring.nacos-namespace}
+# nepxion开启自定义配置
+nepxion:
+  custom:
+    strategy:
+      enable: true
+
+
+
+#actuator健康检查配置
+management:
+  health:
+    sentinel:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+    logfile:
+      external-file: ${log-root}/${spring.application.name}.log
+    gateway:
+      enabled: true
+# actuator系统信息
+info:
+  name: '@project.name@'
+  description: '@project.description@'
+  version: '@project.version@'
+#  spring-boot-version: '@spring-boot.version@'
+#  spring-cloud-version: '@spring-cloud.version@'
+#  spring-cloud-alibaba-version: '@spring-cloud-alibaba.version@'
+###########启用环境##################
+
+
+

@@ -14,66 +14,15 @@
     <!-- packaging pom 总工程-->
 
     <modules>
+        <module>support</module>
         <module>cloud-commons</module>
         <module>cloud-server6001</module>
-        <module>cloudAlibaba-customer84</module>
-        <module>cloudAlibaba-order80</module>
-        <module>cloudAlibaba-provider-payment9001</module>
-        <module>cloudAlibaba-provider-payment9003</module>
-        <module>cloudAlibaba-sentinel-provider9004</module>
-        <module>cloudAlibaba-sentinel-provider9005</module>
-
-        <module>oauth2</module>
-        <module>support</module>
-        <module>cloudAlibaba-provider-payment9006</module>
-        <module>cloudAlibaba-provider-payment9007</module>
-        <module>cloudAlibaba-openFeign-service9008</module>
-
-        <module>cloudAlibaba-seata-account-service2003</module>
-        <module>cloudAlibaba-seata-order-service2001</module>
-        <module>cloudAlibaba-seata-storage-service2002</module>
-        <module>cloudAlibaba-openFeign1-service9009</module>
-        <module>cloudAlibaba-openFeign1-service9010</module>
-        <module>cloudAlibaba-openFeign1-service9011</module>
-        <module>cloud-auth-feign-seata-service-consumer-api9995</module>
-        <module>cloudAlibaba-api</module>
-        <module>cloudAlibaba-api/cloudAlibaba-api-system</module>
-        <!--<module>cloud-order80</module>
-        <module>cloud-eureka6890</module>
-        <module>cloud-provider-payment8001</module>
-        <module>cloud-eurekaconsumer8087</module>
-        <module>cloud-openFeignProvider8101</module>
-        <module>cloud-openFeignConsumer8102</module>
-        <module>cloud-hystrix8103</module>
-        <module>cloud-consumer-feign-order80</module>
-        <module>cloud-hystrix-dashboard9001</module>
-        <module>cloud-gateway9100</module>
-        <module>cloud-config-center3344</module>
-        <module>cloud-config-client3355</module>
-        <module>cloud-config-client3366</module>
-        <module>cloud-stream-rabbitmq-provider8801</module>
-        <module>cloud-stream-rabbitmq-consumer8802</module>
-        <module>cloud-stream-rabbitmq-consumer8803</module>
-
-
-        <module>cloudAlibaba-provider-payment9001</module>
-        <module>cloudAlibaba-provider-payment9003</module>
-        <module>cloudAlibaba-order80</module>
-        <module>cloudAlibaba-server6000</module>
-        <module>cloudAlibaba-config-nacos-client3377</module>
-        <module>cloudAlibaba-sentinel-service8401</module>
-        <module>cloudAlibaba-sentinel-provider9004</module>
-        <module>cloudAlibaba-sentinel-provider9005</module>
-        <module>cloudAlibaba-customer84</module>
-        <module>cloudAlibaba-seata-order-service2001</module>
-        <module>cloudAlibaba-seata-storage-service2002</module>
-        <module>cloudAlibaba-seata-account-service2003</module>
-        <module>cloud-gatewayOauth2-9999</module>
-
-        <module>cloud-grpc</module>
-        <module>cloud-GRPC</module>
-        <module>cloud-GRPCSERVER</module>
-        <module>cloud-GRPCCLIENT</module>-->
+        <module>cloud-api</module>
+        <module>cloud-provider-payment9001</module>
+        <module>cloud-openFeign-service9008</module>
+        <module>cloud-openFeign1-service9009</module>
+        <module>cloud-auth-8888</module>
+        <module>cloud-gateway-9999</module>
     </modules>
 
     <!--统一管理jar包版本-->
