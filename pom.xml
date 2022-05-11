@@ -23,6 +23,7 @@
         <module>cloud-openFeign1-service9009</module>
         <module>cloud-auth-8888</module>
         <module>cloud-gateway-9999</module>
+        <module>cloud-module</module>
     </modules>
 
     <!--统一管理jar包版本-->

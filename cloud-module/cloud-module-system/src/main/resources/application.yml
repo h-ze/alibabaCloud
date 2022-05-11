@@ -32,7 +32,7 @@ rds:
 
 
 server:
-  port: 9001
+  port: 7000
 
 feign:
   sentinel: #开启sentinel熔断
@@ -79,7 +79,7 @@ spring:
   profiles:
     active: @profile.active@
   application:
-    name: cloudAlibaba-provider-payment
+    name: cloudAlibaba-system
   cloud:
     nacos:
       discovery:

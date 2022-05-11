@@ -16,10 +16,14 @@
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-log/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-remote" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-remote/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-security/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-security/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/datasource/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-gateway-9999/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-gateway-9999/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-module/cloud-module-system/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-module/cloud-module-system/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-openFeign-service9008/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-openFeign-service9008/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-openFeign1-service9009/src/main/java" charset="UTF-8" />

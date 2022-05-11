@@ -19,6 +19,7 @@
         <module>cloud-common-core1</module>
         <module>cloud-common-remote</module>
         <module>cloud-common-log</module>
+        <module>cloud-common-security</module>
         <module>datasource</module>
     </modules>
 

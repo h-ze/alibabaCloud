@@ -56,9 +56,9 @@ public class AuthorizationManager implements ReactiveAuthorizationManager<Author
         ServerHttpRequest request = authorizationContext.getExchange().getRequest();
 
         //测试放行所有请求
-//        if (true) {
-//            return Mono.just(new AuthorizationDecision(true));
-//        }
+        if (true) {
+            return Mono.just(new AuthorizationDecision(true));
+        }
 
         String path =  request.getURI().getPath();
         log.info("path: {}",path);
