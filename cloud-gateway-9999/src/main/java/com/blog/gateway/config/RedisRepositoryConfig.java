@@ -1,6 +1,6 @@
 package com.blog.gateway.config;
 
-import com.hz.common.constant.Constant;
+import com.hz.common.gateway.core.constant.Constant;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

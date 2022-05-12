@@ -1,8 +1,8 @@
 package com.hz.payment.controller;
 
 import com.common.entity.Payment;
-import com.hz.common.log.annotation.Log;
-import com.hz.common.log.enums.BusinessType;
+import com.hz.common.core.log.annotation.Log;
+import com.hz.common.core.log.enums.BusinessType;
 import com.hz.payment.feign.OrderService;
 import com.hz.payment.service.PayService;
 import lombok.extern.slf4j.Slf4j;

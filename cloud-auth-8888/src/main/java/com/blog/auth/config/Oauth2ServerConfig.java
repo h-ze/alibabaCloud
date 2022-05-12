@@ -1,7 +1,7 @@
 package com.blog.auth.config;
 
 import com.blog.auth.service.UserService;
-import com.hz.common.constant.Constant;
+import com.hz.common.gateway.core.constant.Constant;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

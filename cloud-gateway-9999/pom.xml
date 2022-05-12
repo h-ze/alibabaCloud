@@ -14,20 +14,14 @@
     <dependencies>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
+            <groupId>com.hz.springcloud</groupId>
+            <artifactId>cloud-common-gateway-core</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
-        <!--客户端负载均衡loadbalancer-->
-        <!--<dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
-        </dependency>-->
-
         <dependency>
-            <groupId>com.hz.springcloud</groupId>
-            <artifactId>cloud-common-core</artifactId>
-            <version>${project.version}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
 
         <!-- 配合skywalking -->

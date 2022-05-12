@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.UUID;
-import com.hz.common.constant.Constant;
+import com.hz.common.gateway.core.constant.Constant;
 
 @RestController
 @RequestMapping("/openFeign")

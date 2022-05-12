@@ -31,13 +31,13 @@ public class PaymentApplication {
         SpringApplication.run(PaymentApplication.class,args);
     }
 
-    @Bean
-    public CommandLineRunner run(ApplicationContext appContext) {
-        return args -> {
-
-            String[] beans = appContext.getBeanDefinitionNames();
-            Arrays.stream(beans).sorted().forEach(System.out::println);
-
-        };
-    }
+//    @Bean
+//    public CommandLineRunner run(ApplicationContext appContext) {
+//        return args -> {
+//
+//            String[] beans = appContext.getBeanDefinitionNames();
+//            Arrays.stream(beans).sorted().forEach(System.out::println);
+//
+//        };
+//    }
 }

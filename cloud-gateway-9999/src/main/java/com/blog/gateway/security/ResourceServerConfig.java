@@ -2,7 +2,7 @@ package com.blog.gateway.security;
 
 import com.blog.gateway.handle.RestAuthenticationEntryPoint;
 import com.blog.gateway.handle.RestfulAccessDeniedHandler;
-import com.hz.common.constant.Constant;
+import com.hz.common.gateway.core.constant.Constant;
 import lombok.AllArgsConstructor;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;

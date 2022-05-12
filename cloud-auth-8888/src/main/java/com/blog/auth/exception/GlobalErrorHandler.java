@@ -2,8 +2,8 @@ package com.blog.auth.exception;
 
 import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.alibaba.csp.sentinel.slots.block.SentinelRpcException;
-import com.hz.common.entity.Result;
-import com.hz.common.error.GlobalException;
+import com.hz.common.gateway.core.entity.Result;
+import com.hz.common.gateway.core.error.GlobalException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.skywalking.apm.toolkit.trace.Trace;
 import org.springframework.http.HttpStatus;

@@ -1,6 +1,6 @@
 package com.openFeign.config;
 
-import com.hz.common.constant.Constant;
+import com.hz.common.gateway.core.constant.Constant;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import lombok.extern.slf4j.Slf4j;

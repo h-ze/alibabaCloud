@@ -2,8 +2,8 @@ package com.hz.payment.controller;
 
 import com.common.entity.ResponseResult;
 import com.common.web.controller.BaseController;
-import com.hz.common.log.annotation.Log;
-import com.hz.common.log.enums.BusinessType;
+import com.hz.common.core.log.annotation.Log;
+import com.hz.common.core.log.enums.BusinessType;
 import com.hz.security.annotation.RequiresPermissions;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

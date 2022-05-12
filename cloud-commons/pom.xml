@@ -15,11 +15,13 @@
 
     <modules>
         <module>cloud-common</module>
+        <module>cloud-common-gateway-core</module>
+
         <module>cloud-common-core</module>
-        <module>cloud-common-core1</module>
         <module>cloud-common-remote</module>
         <module>cloud-common-log</module>
         <module>cloud-common-security</module>
+        <module>cloud-common-normal</module>
         <module>datasource</module>
     </modules>
 

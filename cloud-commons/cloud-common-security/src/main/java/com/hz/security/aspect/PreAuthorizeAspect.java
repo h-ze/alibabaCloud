@@ -33,7 +33,7 @@ public class PreAuthorizeAspect
     /*public static final String POINTCUT_SIGN = " @annotation(com.ruoyi.common.security.annotation.RequiresLogin) || "
             + "@annotation(com.ruoyi.common.security.annotation.RequiresPermissions) || "
             + "@annotation(com.ruoyi.common.security.annotation.RequiresRoles)";*/
-    public static final String POINTCUT_SIGN ="@annotation(com.security.annotation.RequiresPermissions)";
+    public static final String POINTCUT_SIGN ="@annotation(com.hz.security.annotation.RequiresPermissions)";
 
     /**
      * 声明AOP签名

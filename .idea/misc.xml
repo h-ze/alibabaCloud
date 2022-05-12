@@ -9,6 +9,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/Test/pom.xml" />
         <option value="$PROJECT_DIR$/cloudAlibaba-provider-payment9002/pom.xml" />
         <option value="$PROJECT_DIR$/oauth2/pom.xml" />
       </set>

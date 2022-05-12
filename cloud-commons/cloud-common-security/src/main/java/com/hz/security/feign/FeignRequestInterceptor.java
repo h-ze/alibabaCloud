@@ -1,6 +1,6 @@
 package com.hz.security.feign;
 
-import com.hz.common.constant.Constant;
+import com.hz.common.gateway.core.constant.Constant;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import lombok.extern.slf4j.Slf4j;
@@ -10,7 +10,6 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Map;
 
 /**
  * feign 请求拦截器

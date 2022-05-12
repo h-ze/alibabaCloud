@@ -1,6 +1,6 @@
 package com.blog.auth.config;
 
-import com.hz.common.auth.SecurityUser;
+import com.hz.common.gateway.core.auth.SecurityUser;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;

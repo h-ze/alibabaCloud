@@ -15,7 +15,7 @@
     <dependencies>
         <dependency>
             <groupId>com.hz.springcloud</groupId>
-            <artifactId>cloud-common-core1</artifactId>
+            <artifactId>cloud-common-gateway-core</artifactId>
             <version>${project.version}</version>
         </dependency>
 
@@ -37,4 +37,36 @@
         </dependency>
 
     </dependencies>
+
+
+    <build>
+        <finalName>${project.artifactId}-${project.version}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>META-INF/*</include>
+                </includes>
+            </resource>
+        </resources>
+        <!--<plugins>
+            &lt;!&ndash;生成源码jar包&ndash;&gt;
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${maven-source-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>-->
+    </build>
+
+
+
 </project>

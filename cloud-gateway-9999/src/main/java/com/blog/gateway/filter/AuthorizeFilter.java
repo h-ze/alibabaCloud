@@ -1,7 +1,7 @@
 package com.blog.gateway.filter;
 
 import com.blog.gateway.security.WhiteAddressListConfig;
-import com.hz.common.constant.Constant;
+import com.hz.common.gateway.core.constant.Constant;
 import com.nimbusds.jose.JWSObject;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
