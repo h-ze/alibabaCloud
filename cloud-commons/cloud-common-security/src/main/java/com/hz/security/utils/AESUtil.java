@@ -1,4 +1,4 @@
-package com.blog.auth.util;
+package com.hz.security.utils;
 
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
@@ -11,7 +11,7 @@ import javax.crypto.spec.SecretKeySpec;
 import java.security.SecureRandom;
 
 /**
- * @author 付为地
+ *
  *   AES工具类
  */
 public class AESUtil {

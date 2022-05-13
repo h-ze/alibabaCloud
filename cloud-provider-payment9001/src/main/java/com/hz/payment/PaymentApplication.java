@@ -1,7 +1,7 @@
 package com.hz.payment;
 
 import com.hz.security.annotation.EnableCustomConfig;
-import com.hz.security.annotation.EnableRyFeignClients;
+import com.hz.security.annotation.EnableHzFeignClients;
 import com.hz.security.config.WebConfig;
 import com.hz.security.exception.GlobalErrorHandler;
 import org.springframework.boot.CommandLineRunner;
@@ -20,10 +20,10 @@ import java.util.Arrays;
 
 
 @EnableDiscoveryClient
-@EnableFeignClients
-@EnableCustomConfig
-//@EnableRyFeignClients
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class}/*,scanBasePackages ={ "com.security","com.payment"}*/)
+//@EnableFeignClients
+//@EnableCustomConfig
+@EnableHzFeignClients
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class},scanBasePackages ={ "com.hz"})
 //@Import(value = {WebConfig.class, GlobalErrorHandler.class})
 //调用cloudAlibaba-openFeign1-service服务
 public class PaymentApplication {
@@ -31,13 +31,13 @@ public class PaymentApplication {
         SpringApplication.run(PaymentApplication.class,args);
     }
 
-//    @Bean
-//    public CommandLineRunner run(ApplicationContext appContext) {
-//        return args -> {
-//
-//            String[] beans = appContext.getBeanDefinitionNames();
-//            Arrays.stream(beans).sorted().forEach(System.out::println);
-//
-//        };
-//    }
+    @Bean
+    public CommandLineRunner run(ApplicationContext appContext) {
+        return args -> {
+
+            String[] beans = appContext.getBeanDefinitionNames();
+            Arrays.stream(beans).sorted().forEach(System.out::println);
+
+        };
+    }
 }

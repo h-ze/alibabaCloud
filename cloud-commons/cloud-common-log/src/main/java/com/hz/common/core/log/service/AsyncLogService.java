@@ -21,7 +21,7 @@ public class AsyncLogService {
     {
 
         log.info("保存系统日志:{}",logs);
-        //remoteLogService.saveLog(logs);
+        remoteLogService.saveLog(logs);
     }
 
 }

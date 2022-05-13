@@ -1,7 +1,7 @@
 package com.hz.payment.factory;
 
 import com.hz.payment.fallback.OrderFallback;
-import com.hz.payment.mq.JMSProducer;
+import com.hz.system.api.mq.JMSProducer;
 import feign.hystrix.FallbackFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

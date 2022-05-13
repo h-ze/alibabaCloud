@@ -12,7 +12,7 @@ import javax.jms.Destination;
 /**
  * 生产者 
  */
-@Component
+//@Component
 public class JMSProducer {
 	
 	@Autowired

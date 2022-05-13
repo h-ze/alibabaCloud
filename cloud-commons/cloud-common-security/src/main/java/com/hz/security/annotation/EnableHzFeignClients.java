@@ -14,7 +14,8 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @EnableFeignClients
-public @interface EnableRyFeignClients
+
+public @interface EnableHzFeignClients
 {
     String[] value() default {};
 

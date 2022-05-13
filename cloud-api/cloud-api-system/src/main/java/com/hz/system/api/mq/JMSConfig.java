@@ -14,7 +14,7 @@ import javax.jms.ConnectionFactory;
  * 配置jms 同时支持queue和topic消息
  * 参考资料:https://spring.io/guides/gs/messaging-jms/
  */
-@Configuration
+//@Configuration
 public class JMSConfig {
 	
 	/**

@@ -3,7 +3,7 @@ package com.hz.payment.fallback;
 import com.common.entity.Payment;
 import com.google.common.collect.Maps;
 import com.hz.payment.feign.OrderService;
-import com.hz.payment.mq.JMSProducer;
+import com.hz.system.api.mq.JMSProducer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

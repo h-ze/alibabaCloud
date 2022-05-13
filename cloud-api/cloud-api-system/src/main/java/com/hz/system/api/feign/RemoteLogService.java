@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 /**
  * cloudAlibaba-api-system
  */
-@Component
+//@Component
 @FeignClient(contextId = "remoteLogService", value = "cloudAlibaba-system",fallbackFactory = RemoteLogFallbackFactory.class)
 public interface RemoteLogService {
 

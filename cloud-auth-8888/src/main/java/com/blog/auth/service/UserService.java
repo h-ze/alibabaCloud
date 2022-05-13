@@ -2,11 +2,11 @@ package com.blog.auth.service;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.blog.auth.util.AESUtil;
 import com.hz.common.gateway.core.auth.RoleDto;
 import com.hz.common.gateway.core.auth.SecurityUser;
 import com.hz.common.gateway.core.auth.UserDto;
 import com.hz.common.gateway.core.constant.Constant;
+import com.hz.security.utils.AESUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -124,6 +124,7 @@ public class UserService implements UserDetailsService {
 
         //userDto.setPassword(new BCryptPasswordEncoder().encode(AESUtil.decrypt(userDto.getPassword(),null)));
         //userDto.setPassword(userDto.getPassword());
+
         userDto.setPassword(passwordEncoder.encode(AESUtil.decrypt(userDto.getPassword(),null)));
         userDto.setRoles(userRoles);
         SecurityUser securityUser = new SecurityUser(userDto);

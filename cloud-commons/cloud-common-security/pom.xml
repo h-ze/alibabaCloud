@@ -21,6 +21,12 @@
 
         <dependency>
             <groupId>com.hz.springcloud</groupId>
+            <artifactId>cloud-common-log</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hz.springcloud</groupId>
             <artifactId>cloud-common-core</artifactId>
             <version>${project.version}</version>
         </dependency>

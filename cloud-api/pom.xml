@@ -13,5 +13,6 @@
 
     <modules>
         <module>cloud-api-system</module>
+        <module>cloud-api-auth</module>
     </modules>
 </project>

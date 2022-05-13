@@ -196,6 +196,12 @@
             <version>${project.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.hz.springcloud</groupId>
+            <artifactId>cloud-common-security</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
 
     </dependencies>
 

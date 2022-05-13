@@ -12,6 +12,7 @@
     <artifactId>cloud-module</artifactId>
     <modules>
         <module>cloud-module-system</module>
+        <module>cloud-module-auth</module>
     </modules>
 
 </project>
