@@ -6,7 +6,7 @@ nacos:
   password: nacos
   # Nacos的命名空间
   #namespace: 37bbdab4-de3f-4c07-927a-7b0fdb66348e
-  namespace: 2cb0f873-09a4-4194-bdd4-631a98f812ae
+  namespace: 37bbdab4-de3f-4c07-927a-7b0fdb66348e
   # Nacos的配置分组
   group: SEATA_GROUP
   # Seata Server的配置

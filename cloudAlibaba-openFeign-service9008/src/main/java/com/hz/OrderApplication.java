@@ -10,6 +10,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class, DruidDataSourceAutoConfigure.class})
 @EnableDiscoveryClient
 @EnableFeignClients
+//调用cloudAlibaba-provider-payment服务
 public class OrderApplication {
     public static void main(String[] args) {
         SpringApplication.run(OrderApplication.class,args);

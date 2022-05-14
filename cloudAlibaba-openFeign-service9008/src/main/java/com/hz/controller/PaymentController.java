@@ -26,8 +26,8 @@ public class PaymentController {
     @Value("${server.port}")
     private String serverPort;
 
-    @GetMapping("/getPayment")
-    public ResponseResult getPayment(String id){
+    @GetMapping("/getOpenPayment")
+    public ResponseResult getPayment(@RequestParam("id") String id){
         Payment payment = orderService.getPayment(id);
         log.info("返回值: "+payment);
         log.info("id:{}",id);
@@ -40,8 +40,8 @@ public class PaymentController {
     }
 
     @GetMapping("/getOpenFeign")
-    public String getOpenFeign(String id){
-        return "获取openFeign的id: "+id;
+    public String getOpenFeign(){
+        return "获取openFeign的id: "+"1";
     }
 
     @GetMapping("/getPaymentById/{id}")

@@ -8,7 +8,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
-//调用9004和9005两个服务
 public class CustomerApplication {
     public static void main(String[] args) {
         SpringApplication.run(CustomerApplication.class,args);

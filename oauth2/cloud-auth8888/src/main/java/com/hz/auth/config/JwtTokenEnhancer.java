@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * SpringSecurity的相关配置
  * JWT内容增强器
  */
 @Component

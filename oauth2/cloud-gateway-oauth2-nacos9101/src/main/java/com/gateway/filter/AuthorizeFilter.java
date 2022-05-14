@@ -24,6 +24,8 @@ import reactor.core.publisher.Mono;
 import java.util.UUID;
 
 /**
+ *
+ * gateway的相关配置
  * 在Spring Cloud Gateway中，主要有两种类型的过滤器：GlobalFilter 和 GatewayFilter
  * GlobalFilter ： 全局过滤器，对所有的路由均起作用
  * GatewayFilter ： 只对指定的路由起作用
@@ -32,7 +34,7 @@ import java.util.UUID;
  *  https://skyapm.github.io/document-cn-translation-of-skywalking/zh/8.0.0/
  *
  *
- *  当鉴权通过后将JWT令牌中的用户信息解析出来，然后存入请求的Header中，这样后续服务就不需要解析JWT令牌了，可以直接从请求的Header中获取到用户信息
+ *  需要实现一个全局过滤器AuthGlobalFilter，当鉴权通过后将JWT令牌中的用户信息解析出来，然后存入请求的Header中，这样后续服务就不需要解析JWT令牌了，可以直接从请求的Header中获取到用户信息
  *
  */
 @Component
@@ -94,4 +96,8 @@ public class AuthorizeFilter implements GlobalFilter, Ordered {
         mutate.header(name, value.toString());
     }
 
+    private void removeHeader(ServerHttpRequest.Builder mutate, String name)
+    {
+        mutate.headers(httpHeaders -> httpHeaders.remove(name)).build();
+    }
 }

@@ -50,8 +50,10 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: ${nacos.server-addr}:${nacos.server-port}
-        namespace: ${nacos.namespace}
+        server-addr: ${spring.nacos-host}:${spring.nacos-port}
+        username: ${spring.nacos-username}
+        password: ${spring.nacos-password}
+        namespace: ${spring.nacos-namespace}
         #group: ${nacos.group}
 
   resources.static-locations: classpath:/templates/,classpath:/static/

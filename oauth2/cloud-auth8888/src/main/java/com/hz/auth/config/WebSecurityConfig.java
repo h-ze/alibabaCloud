@@ -15,6 +15,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
  * SpringSecurity配置 允许获取公钥接口的访问
+ *
+ * WebSecurityConfigurerAdapter就是用来创建过滤器链
  */
 @Configuration
 @EnableWebSecurity
@@ -23,12 +25,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserService userService;
 
-    //允许获取公钥接口的访问
+
+    /**
+     * 配置所有请求的安全验证
+     * 允许获取公钥接口的访问
+     * @param http
+     * @throws Exception
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .requestMatchers(EndpointRequest.toAnyEndpoint()).permitAll()
-                .antMatchers("/rsa/publicKey","/user/current","/power/refresh","/oauth/logout","/oauth/hasRights").permitAll()
+
+                //允许匿名访问
+                .antMatchers("/rsa/publicKey","/user/current","/power/refresh","/oauth/logout","/oauth/hasRights")
+                //允许放行 不需要被认证
+                .permitAll()
+                //需要鉴权 除了上方的请求之外所有的请求都需要被认证
                 .anyRequest().authenticated();
 
         /*http.requestMatchers().anyRequest()
@@ -44,12 +57,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userService).passwordEncoder(passwordEncoder());
     }
 
+
+    /**
+     * 注入Bean AuthenticationManager 用来做验证
+     * @return
+     * @throws Exception
+     */
     @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
 
+
+    /**
+     * 注入Bean PasswordEncoder
+     * @return
+     */
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

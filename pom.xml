@@ -29,6 +29,14 @@
         <module>cloudAlibaba-provider-payment9007</module>
         <module>cloudAlibaba-openFeign-service9008</module>
 
+
+        <module>cloudAlibaba-seata-account-service2003</module>
+        <module>cloudAlibaba-seata-order-service2001</module>
+        <module>cloudAlibaba-seata-storage-service2002</module>
+        <module>cloudAlibaba-openFeign1-service9009</module>
+        <module>cloudAlibaba-openFeign1-service9010</module>
+        <module>cloudAlibaba-openFeign1-service9011</module>
+        <module>cloud-auth-feign-seata-service-consumer-api9995</module>
         <!--<module>cloud-order80</module>
         <module>cloud-eureka6890</module>
         <module>cloud-provider-payment8001</module>
@@ -104,6 +112,12 @@
 
     <!--子模块继承之后，提供作用：锁定版本+子module不用写groupId和version-->
     <!-- dependencyManagement只是声明依赖，并不引入实现，因此子项目需要显示的声明需要用的依赖-->
+
+    <!--
+        SpringBoot SpringCloud SpringCloudAlibaba 版本必须对应 不然会出现各种各样的问题
+        https://github.com/alibaba/spring-cloud-alibaba/wiki/%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E
+        https://start.spring.io/actuator/info
+    -->
     <dependencyManagement><!--定义规范，但不导入-->
         <dependencies>
             <dependency>
@@ -115,7 +129,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.2.2.RELEASE</version>
+                <version>2.2.5.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -123,7 +137,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR1</version>
+                <version>Hoxton.SR3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -413,6 +427,8 @@
                 <profile.active>dev</profile.active>
                 <service.nacos.host>121.4.54.189</service.nacos.host>
                 <service.nacos.port>8848</service.nacos.port>
+                <!--<service.nacos.host>8.142.46.67</service.nacos.host>
+                <service.nacos.port>3333</service.nacos.port>-->
                 <service.nacos.username>nacos</service.nacos.username>
                 <service.nacos.password>nacos</service.nacos.password>
                 <service.nacos.namespace>37bbdab4-de3f-4c07-927a-7b0fdb66348e</service.nacos.namespace>

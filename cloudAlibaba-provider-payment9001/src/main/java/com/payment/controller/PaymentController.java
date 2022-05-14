@@ -1,6 +1,7 @@
 package com.payment.controller;
 
 import com.common.entity.Payment;
+import com.payment.feign.OrderService;
 import com.payment.service.PayService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,13 +19,17 @@ public class PaymentController {
     @Autowired
     private PayService payService;
 
+    @Autowired
+    private OrderService orderService;
+
     @Value("${server.port}")
     private String serverPort;
 
     @GetMapping("/getPayment")
-    public Payment getPayment(String id){
-        Payment paymentById = payService.getPaymentById(id,serverPort);
-        return paymentById;
+    public Payment getPayment(@RequestParam("id") String id){
+        Payment payment = orderService.getPayment(id);
+        //Payment paymentById = payService.getPaymentById(id,serverPort);
+        return payment;
     }
 
     @GetMapping("/getPaymentById/{id}")

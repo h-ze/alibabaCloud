@@ -30,6 +30,8 @@ import reactor.core.publisher.Mono;
 import java.util.*;
 
 /**
+ *
+ * SpringSecurity的相关配置
  * 鉴权管理器，用于判断是否有资源的访问权限
  * 在WebFluxSecurity中自定义鉴权操作需要实现ReactiveAuthorizationManager接口
  */
