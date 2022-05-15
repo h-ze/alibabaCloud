@@ -1,8 +1,6 @@
 package com.common.entity;
 
 
-import com.common.utils.UrlUtils;
-
 /**
  * @author Admin
  * @create 2019-04-15 10:51
@@ -41,7 +39,8 @@ public class Server {
 
     public String getServer(int outOptions) {
 
-        return UrlUtils.changeURL(server, outOptions);
+        //return UrlUtils.changeURL(server, outOptions);
+        return "";
     }
 
     public String getProxy() {

@@ -26,6 +26,13 @@ public interface DocService {
      */
     PageResult getDocsPage(PageRequest pageRequest,String userId);
 
+    /**
+     * 新方法分页查询 根据继承basecontroller方法获取
+     * @param userId
+     * @return
+     */
+    List<Document> getDocByPage(String userId);
+
     String convertDoc();
 
     String convertTaskDoc();

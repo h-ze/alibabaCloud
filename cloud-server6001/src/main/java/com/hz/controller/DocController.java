@@ -3,6 +3,8 @@ package com.hz.controller;
 
 import com.common.entity.*;
 import com.common.exception.RRException;
+import com.common.web.controller.BaseController;
+import com.github.pagehelper.PageInfo;
 import com.hz.annotation.SysLog;
 import com.hz.entity.DocumentMongo;
 import com.hz.service.AsyncService;
@@ -26,11 +28,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+import static com.common.utils.PageUtils.getPageResult;
+
 @RestController
 @Api(tags = "文件列表接口")
 @RequestMapping("DocList")
 @Slf4j
-public class DocController {
+public class DocController extends BaseController {
 
     private static final Logger logger = LoggerFactory.getLogger(DocController.class);
 
@@ -87,6 +91,34 @@ public class DocController {
         pageRequest.setPageSize(per_page);
 
         PageResult docsPage = docService.getDocsPage(pageRequest,userId);
+        return ResponseResult.successResult(100000,docsPage);
+    }
+
+
+    /**
+     * 获取文档列表
+     * @return ConvertResult对象
+     */
+    @SysLog
+    @ApiOperation(value ="获取文档列表",notes="获取文档列表")
+    @GetMapping("/documents")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "page",value = "页数",paramType = "query",dataType = "int",required = true),
+            @ApiImplicitParam(name = "per_page",value = "每页数量",paramType = "query",dataType = "int",required = true)
+    })
+    public ResponseResult getNewDocList(@RequestParam("per_page")Integer per_page,
+                                     @RequestParam("page")Integer page){
+        String principal = (String) SecurityUtils.getSubject().getPrincipal();
+        Claims claims = jwtUtil.parseJWT(principal);
+        String userId = (String)claims.get("userId");
+        PageRequest pageRequest = new PageRequest();
+        pageRequest.setPageNum(page);
+        pageRequest.setPageSize(per_page);
+
+        List<Document> docByPage = docService.getDocByPage(userId);
+        PageInfo<?> pageInfo = startPage(pageRequest, docByPage);
+        //PageResult docsPage = docService.getDocsPage(pageRequest,userId);
+        PageResult docsPage = getPageResult(pageInfo);
         return ResponseResult.successResult(100000,docsPage);
     }
 

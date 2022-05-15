@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.hz.system.api.factory.RemoteLogFallbackFactory,\
+  com.hz.system.api.factory.UserFallbackFactory,\
+  com.hz.system.api.mq.JMSConfig,\
+  com.hz.system.api.mq.JMSProducer

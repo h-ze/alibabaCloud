@@ -1,6 +1,6 @@
 package com.hz.remote.feign;
 
-import com.hz.common.constant.Constant;
+import com.hz.common.gateway.core.constant.Constant;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +25,7 @@ public class FeignHeaderConfig implements RequestInterceptor {
     public void apply(RequestTemplate requestTemplate) {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
-        log.info("request: {}",request);
+        log.info("request==========: {}",request);
         //添加服务授权token
         requestTemplate.header(Constant.X_AMZ_SECURITY_TOKEN, request.getHeader(Constant.X_AMZ_SECURITY_TOKEN));
         //添加全局日志前缀

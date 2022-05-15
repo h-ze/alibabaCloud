@@ -99,6 +99,12 @@ public class DocServiceImpl implements DocService {
     }
 
     @Override
+    public List<Document> getDocByPage(String userId) {
+        List<Document> docsPage = docDao.getDocsPage(userId);
+        return docsPage;
+    }
+
+    @Override
     public String convertDoc() {
         String id = UUID.randomUUID().toString().replace("-", "");
         DocTask docTask = new DocTask();

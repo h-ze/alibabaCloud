@@ -11,17 +11,18 @@
 
     <artifactId>cloud-commons</artifactId>
     <packaging>pom</packaging>
-    <properties>
-        <transmittable.version>2.12.1</transmittable.version>
-        <hibernate.version>6.1.5.Final</hibernate.version>
-        <swagger.module.version>1.5.22</swagger.module.version>
-    </properties>
 
 
     <modules>
         <module>cloud-common</module>
+        <module>cloud-common-gateway-core</module>
+
         <module>cloud-common-core</module>
         <module>cloud-common-remote</module>
+        <module>cloud-common-log</module>
+        <module>cloud-common-security</module>
+        <module>cloud-common-normal</module>
+        <module>datasource</module>
     </modules>
 
     <dependencies>

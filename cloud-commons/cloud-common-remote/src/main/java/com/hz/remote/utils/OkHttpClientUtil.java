@@ -1,6 +1,6 @@
 package com.hz.remote.utils;
 
-import com.hz.common.constant.Constant;
+import com.hz.common.gateway.core.constant.Constant;
 import com.hz.remote.okhttp.OkHttpConstant;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
