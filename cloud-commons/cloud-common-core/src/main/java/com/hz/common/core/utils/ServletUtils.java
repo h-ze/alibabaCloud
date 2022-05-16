@@ -1,9 +1,9 @@
 package com.hz.common.core.utils;
 
 import com.alibaba.fastjson.JSONObject;
-import com.hz.common.core.constant.Constants;
 import com.hz.common.core.domain.R;
 import com.hz.common.core.text.Convert;
+import com.hz.constant.CommonCoreConstant;
 import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -217,7 +217,7 @@ public class ServletUtils
     {
         try
         {
-            return URLEncoder.encode(str, Constants.UTF8);
+            return URLEncoder.encode(str, CommonCoreConstant.UTF8);
         }
         catch (UnsupportedEncodingException e)
         {
@@ -235,7 +235,7 @@ public class ServletUtils
     {
         try
         {
-            return URLDecoder.decode(str, Constants.UTF8);
+            return URLDecoder.decode(str, CommonCoreConstant.UTF8);
         }
         catch (UnsupportedEncodingException e)
         {

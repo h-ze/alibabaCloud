@@ -1,6 +1,6 @@
 package com.hz.remote.utils;
 
-import com.hz.common.gateway.core.constant.Constant;
+import com.hz.constant.GatewayCoreConstant;
 import com.hz.remote.okhttp.OkHttpConstant;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -21,8 +21,6 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * okhttpclient请求工具
- *
- * @author 付为地
  */
 @Slf4j
 @Component
@@ -46,7 +44,7 @@ public class OkHttpClientUtil {
      */
     public static Response executeGet(String url, Map<String, String> headers) throws Exception {
         long t1 = System.nanoTime();//请求发起的时间
-        String requestId = MDC.get(Constant.GLOBAL_LOG_PRIFIX);
+        String requestId = MDC.get(GatewayCoreConstant.GLOBAL_LOG_PRIFIX);
         if (StringUtils.isEmpty(requestId)) {
             requestId = UUID.randomUUID().toString();
         }
@@ -54,7 +52,7 @@ public class OkHttpClientUtil {
         log.debug("requestId:{}; OkHttpClientUtil.executeGet 发送请求; url:{};headers:{}", requestId, url, headers);
         //构建请求
         Request.Builder requestBuilder = new Request.Builder().url(url);
-        requestBuilder.addHeader(Constant.GLOBAL_LOG_PRIFIX, requestId);
+        requestBuilder.addHeader(GatewayCoreConstant.GLOBAL_LOG_PRIFIX, requestId);
         //构造请求头
         if (!CollectionUtils.isEmpty(headers)) {
             for (Map.Entry<String, String> mapEntry : headers.entrySet()) {

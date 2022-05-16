@@ -1,6 +1,6 @@
 package com.openFeign.config;
 
-import com.hz.common.gateway.core.constant.Constant;
+import com.hz.constant.GatewayCoreConstant;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import lombok.extern.slf4j.Slf4j;
@@ -27,15 +27,15 @@ public class FeignHeaderConfig implements RequestInterceptor {
         HttpServletRequest request = attributes.getRequest();
         log.info("request==========: {}",request);
         //添加服务授权token
-        requestTemplate.header(Constant.X_AMZ_SECURITY_TOKEN, request.getHeader(Constant.X_AMZ_SECURITY_TOKEN));
+        requestTemplate.header(GatewayCoreConstant.X_AMZ_SECURITY_TOKEN, request.getHeader(GatewayCoreConstant.X_AMZ_SECURITY_TOKEN));
         //添加全局日志前缀
-        requestTemplate.header(Constant.GLOBAL_LOG_PRIFIX, request.getHeader(Constant.GLOBAL_LOG_PRIFIX));
+        requestTemplate.header(GatewayCoreConstant.GLOBAL_LOG_PRIFIX, request.getHeader(GatewayCoreConstant.GLOBAL_LOG_PRIFIX));
         //添加全局版本号
-        requestTemplate.header(Constant.SERVICE_VERSION, request.getHeader(Constant.SERVICE_VERSION));
+        requestTemplate.header(GatewayCoreConstant.SERVICE_VERSION, request.getHeader(GatewayCoreConstant.SERVICE_VERSION));
         //添加全局客户端编号
-        requestTemplate.header(Constant.USER_TOKEN_CLIENT_ID, request.getHeader(Constant.USER_TOKEN_CLIENT_ID));
+        requestTemplate.header(GatewayCoreConstant.USER_TOKEN_CLIENT_ID, request.getHeader(GatewayCoreConstant.USER_TOKEN_CLIENT_ID));
         //traceId放入log4j2的MDC
-        MDC.put(Constant.GLOBAL_LOG_PRIFIX, request.getHeader(Constant.GLOBAL_LOG_PRIFIX));
+        MDC.put(GatewayCoreConstant.GLOBAL_LOG_PRIFIX, request.getHeader(GatewayCoreConstant.GLOBAL_LOG_PRIFIX));
     }
 
 }

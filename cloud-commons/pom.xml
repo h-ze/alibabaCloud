@@ -22,6 +22,7 @@
         <module>cloud-common-log</module>
         <module>cloud-common-security</module>
         <module>cloud-common-normal</module>
+        <module>cloud-common-constant</module>
         <module>datasource</module>
     </modules>
 

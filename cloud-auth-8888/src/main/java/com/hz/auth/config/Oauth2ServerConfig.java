@@ -1,7 +1,7 @@
 package com.hz.auth.config;
 
 import com.hz.auth.service.UserService;
-import com.hz.common.gateway.core.constant.Constant;
+import com.hz.constant.GatewayCoreConstant;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -203,7 +203,8 @@ public class Oauth2ServerConfig extends AuthorizationServerConfigurerAdapter {
     public TokenStore tokenStore() {
         RedisTokenStore tokenStore = new RedisTokenStore(redisConnectionFactory);
         //redis key 前缀
-        tokenStore.setPrefix(Constant.AUTH_RESOURCE_ID);
+
+        tokenStore.setPrefix(GatewayCoreConstant.AUTH_RESOURCE_ID);
         return tokenStore;
     }
 

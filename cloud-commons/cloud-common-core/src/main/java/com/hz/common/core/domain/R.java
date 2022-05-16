@@ -1,7 +1,8 @@
 package com.hz.common.core.domain;
 
 
-import com.hz.common.core.constant.Constants;
+
+import com.hz.constant.CommonCoreConstant;
 
 import java.io.Serializable;
 
@@ -15,10 +16,10 @@ public class R<T> implements Serializable
     private static final long serialVersionUID = 1L;
 
     /** 成功 */
-    public static final int SUCCESS = Constants.SUCCESS;
+    public static final int SUCCESS = CommonCoreConstant.SUCCESS;
 
     /** 失败 */
-    public static final int FAIL = Constants.FAIL;
+    public static final int FAIL = CommonCoreConstant.FAIL;
 
     private int code;
 

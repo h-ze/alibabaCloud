@@ -27,6 +27,18 @@
 
         <dependency>
             <groupId>com.hz.springcloud</groupId>
+            <artifactId>cloud-common-swagger</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hz.springcloud</groupId>
+            <artifactId>cloud-common-constant</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hz.springcloud</groupId>
             <artifactId>cloud-common-normal</artifactId>
             <version>${project.version}</version>
         </dependency>

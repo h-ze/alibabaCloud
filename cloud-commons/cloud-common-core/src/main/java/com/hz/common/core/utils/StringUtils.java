@@ -1,7 +1,7 @@
 package com.hz.common.core.utils;
 
-import com.hz.common.core.constant.Constants;
 import com.hz.common.core.text.StrFormatter;
+import com.hz.constant.CommonCoreConstant;
 import org.springframework.util.AntPathMatcher;
 
 import java.util.Collection;
@@ -292,7 +292,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils
      */
     public static boolean ishttp(String link)
     {
-        return StringUtils.startsWithAny(link, Constants.HTTP, Constants.HTTPS);
+        return StringUtils.startsWithAny(link, CommonCoreConstant.HTTP, CommonCoreConstant.HTTPS);
     }
 
     /**

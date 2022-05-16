@@ -5,7 +5,7 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.hz.common.gateway.core.auth.RoleDto;
 import com.hz.common.gateway.core.auth.SecurityUser;
 import com.hz.common.gateway.core.auth.UserDto;
-import com.hz.common.gateway.core.constant.Constant;
+import com.hz.constant.GatewayCoreConstant;
 import com.hz.security.utils.AESUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
@@ -86,7 +86,7 @@ public class UserService implements UserDetailsService {
                 role.setUrls(strings);
             }
         }
-        redisTemplate.opsForValue().set(Constant.PERMISSION_ROLES_ALL_KEY, JSON.toJSONString(roleList, SerializerFeature.WriteMapNullValue));
+        redisTemplate.opsForValue().set(GatewayCoreConstant.PERMISSION_ROLES_ALL_KEY, JSON.toJSONString(roleList, SerializerFeature.WriteMapNullValue));
     }
 
     /**
@@ -114,7 +114,7 @@ public class UserService implements UserDetailsService {
         UserDto userDto = jdbcTemplate.queryForObject("select distinct  user_id 'u serId',username,oauth_password 'password',status from user where status=1 and username='"+username+"'",new BeanPropertyRowMapper<UserDto>(UserDto.class));
         List<RoleDto> userRoles = jdbcTemplate.query("select distinct id,role_id code,name from role where status=1 and name like '%商城%'and role_id in(select ur.role_id from user_role ur,user u where  u.user_id=ur.user_id and u.status=1 and u.username='"+username+"')",new BeanPropertyRowMapper<RoleDto>(RoleDto.class));
         if (ObjectUtils.isEmpty(userDto)) {
-            throw new UsernameNotFoundException(Constant.USERNAME_PASSWORD_ERROR);
+            throw new UsernameNotFoundException(GatewayCoreConstant.USERNAME_PASSWORD_ERROR);
         }
         if(CollectionUtils.isNotEmpty(userRoles)){
             for (RoleDto role:userRoles) {
@@ -129,13 +129,13 @@ public class UserService implements UserDetailsService {
         userDto.setRoles(userRoles);
         SecurityUser securityUser = new SecurityUser(userDto);
         if (!securityUser.isEnabled()) {
-            throw new DisabledException(Constant.ACCOUNT_DISABLED);
+            throw new DisabledException(GatewayCoreConstant.ACCOUNT_DISABLED);
         } else if (!securityUser.isAccountNonLocked()) {
-            throw new LockedException(Constant.ACCOUNT_LOCKED);
+            throw new LockedException(GatewayCoreConstant.ACCOUNT_LOCKED);
         } else if (!securityUser.isAccountNonExpired()) {
-            throw new AccountExpiredException(Constant.ACCOUNT_EXPIRED);
+            throw new AccountExpiredException(GatewayCoreConstant.ACCOUNT_EXPIRED);
         } else if (!securityUser.isCredentialsNonExpired()) {
-            throw new CredentialsExpiredException(Constant.CREDENTIALS_EXPIRED);
+            throw new CredentialsExpiredException(GatewayCoreConstant.CREDENTIALS_EXPIRED);
         }
 
         //未绑定数据库

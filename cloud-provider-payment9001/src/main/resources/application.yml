@@ -101,3 +101,8 @@ logging:
     root: info
     com.hz.dao: debug
 
+swagger:
+  title: payment接口文档
+  license: Powered By ruoyi
+  licenseUrl: https://ruoyi.vip
+

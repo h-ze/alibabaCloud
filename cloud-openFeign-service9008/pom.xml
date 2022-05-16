@@ -14,6 +14,12 @@
     <dependencies>
 
         <dependency>
+            <groupId>com.hz.springcloud</groupId>
+            <artifactId>cloud-common-swagger</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>

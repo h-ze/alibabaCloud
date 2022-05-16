@@ -13,6 +13,12 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>com.hz.springcloud</groupId>
+            <artifactId>cloud-common-constant</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
         <!-- SpringCloud Openfeign -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

@@ -1,6 +1,5 @@
 package com.hz.common.gateway.core.entity;
 
-import io.swagger.annotations.ApiModel;
 import lombok.*;
 
 import javax.validation.constraints.Max;
@@ -18,7 +17,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
-@ApiModel(value = "Solr对象", description = "数据库实体")
+//@ApiModel(value = "Solr对象", description = "数据库实体")
 public class Solr implements Serializable {
 	private static final long serialVersionUID = 1L;
 	// Fields

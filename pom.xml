@@ -24,6 +24,8 @@
         <module>cloud-auth-8888</module>
         <module>cloud-gateway-9999</module>
         <module>cloud-module</module>
+        <module>cloud-commons/cloud-common-swagger</module>
+        <module>cloud-commons/cloud-common-constant</module>
     </modules>
 
     <!--统一管理jar包版本-->
@@ -44,7 +46,7 @@
         <openfeign.version>2.1.2.RELEASE</openfeign.version>
         <http.version>4.5.6</http.version>
         <fastjson.version>1.2.51</fastjson.version>
-        <swagger.version>2.7.0</swagger.version>
+        <swagger.version>3.0.0</swagger.version>
         <commons-fileupload>1.4</commons-fileupload>
 
         <mybatis-plus.version>3.3.2</mybatis-plus.version>
@@ -81,6 +83,7 @@
         <poi.version>4.1.2</poi.version>
         <mybatisplus.version>3.1.2</mybatisplus.version>
         <swagger.module.version>1.5.22</swagger.module.version>
+<!--        <swagger.fox.version>3.0.0</swagger.fox.version>-->
 
     </properties>
 

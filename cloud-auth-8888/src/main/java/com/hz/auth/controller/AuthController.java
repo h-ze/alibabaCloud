@@ -4,9 +4,9 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.hz.auth.service.UserService;
 import com.hz.common.gateway.core.auth.RoleDto;
-import com.hz.common.gateway.core.constant.Constant;
 import com.hz.common.gateway.core.entity.Result;
 import com.hz.common.gateway.core.error.GlobalException;
+import com.hz.constant.GatewayCoreConstant;
 import com.nimbusds.jose.JWSObject;
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
@@ -101,7 +101,7 @@ public class AuthController {
     @SneakyThrows
     @GetMapping("/user/current")
     public Result  getUser(HttpServletRequest request) {
-        String token=request.getHeader(Constant.X_AMZ_SECURITY_TOKEN);
+        String token=request.getHeader(GatewayCoreConstant.X_AMZ_SECURITY_TOKEN);
         if(StringUtils.isEmpty(token)){
             return Result.error("请求令牌为空");
         }
@@ -130,7 +130,7 @@ public class AuthController {
     @SneakyThrows
     @GetMapping("/power/refresh")
     public Result powerRefresh(HttpServletRequest request) {
-        String token=request.getHeader(Constant.X_AMZ_SECURITY_TOKEN);
+        String token=request.getHeader(GatewayCoreConstant.X_AMZ_SECURITY_TOKEN);
         if(StringUtils.isEmpty(token)){
             return Result.error("令牌不能为空");
         }
@@ -151,8 +151,8 @@ public class AuthController {
     @SneakyThrows
     @GetMapping(value = "/oauth/logout")
     public Result logout(HttpServletRequest request){
-        String token=request.getHeader(Constant.X_AMZ_SECURITY_TOKEN);
-        String clientId=request.getHeader(Constant.USER_TOKEN_CLIENT_ID);
+        String token=request.getHeader(GatewayCoreConstant.X_AMZ_SECURITY_TOKEN);
+        String clientId=request.getHeader(GatewayCoreConstant.USER_TOKEN_CLIENT_ID);
         if(StringUtils.isEmpty(token)){
             return Result.error("请求令牌为空");
         }
@@ -177,10 +177,10 @@ public class AuthController {
      */
     @GetMapping("/oauth/hasRights")
     public Result  hasRights(HttpServletRequest request) {
-        String token=request.getHeader(Constant.X_AMZ_SECURITY_TOKEN);
-        String clientId=request.getHeader(Constant.USER_TOKEN_CLIENT_ID);
+        String token=request.getHeader(GatewayCoreConstant.X_AMZ_SECURITY_TOKEN);
+        String clientId=request.getHeader(GatewayCoreConstant.USER_TOKEN_CLIENT_ID);
         //请求的资源地址
-        String tokenUrl=request.getParameter(Constant.USER_TOKEN_PERMISSION);
+        String tokenUrl=request.getParameter(GatewayCoreConstant.USER_TOKEN_PERMISSION);
         if(StringUtils.isEmpty(token)){
             return Result.error("请求令牌为空");
         }

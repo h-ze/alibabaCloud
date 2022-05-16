@@ -158,3 +158,9 @@ management:
     web:
       exposure:
         include: '*'
+
+
+swagger:
+  title: openFeign1接口文档
+  license: Powered By ruoyi
+  licenseUrl: https://ruoyi.vip

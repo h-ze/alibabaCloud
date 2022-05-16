@@ -1,6 +1,6 @@
 package com.hz.remote.okhttp;
 
-import com.hz.remote.constants.ConfigConstant;
+import com.hz.constant.CommonRemoteConstant;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,39 +11,38 @@ import org.springframework.context.annotation.Configuration;
 /**
  * OKhttp配置相关
  * @ClassName OkHttpProperties
- * @Author 付为地
  **/
 @Configuration
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ConfigurationProperties(prefix = ConfigConstant.OKHTTPP_PREFIX)
+@ConfigurationProperties(prefix = CommonRemoteConstant.OKHTTPP_PREFIX)
 public class OkHttpProperties {
 
     @ApiModelProperty("okhttp的读超时时间,默认s")
-    private  Long readTimeout=ConfigConstant.READTIMEOUTDEFAULTVALUE;
+    private  Long readTimeout=CommonRemoteConstant.READTIMEOUTDEFAULTVALUE;
 
     @ApiModelProperty("okhttp的连接超时时间,默认s")
-    private  Long connectTimeout=ConfigConstant.CONNECTTIMEOUTDEFAULTVALUE;
+    private  Long connectTimeout=CommonRemoteConstant.CONNECTTIMEOUTDEFAULTVALUE;
 
     @ApiModelProperty("okhttp的写超时时间,默认s")
-    private  Long writeTimeout=ConfigConstant.WRITETIMEOUTDEFAULTVALUE;
+    private  Long writeTimeout=CommonRemoteConstant.WRITETIMEOUTDEFAULTVALUE;
 
 
     @ApiModelProperty("maxIdleConnections,默认s")
-    private  int maxIdleConnections=ConfigConstant.MAXIDLECONNECTIONS;
+    private  int maxIdleConnections=CommonRemoteConstant.MAXIDLECONNECTIONS;
 
     @ApiModelProperty("keepAliveDuration,默认MIN")
-    private  Long keepAliveDuration=ConfigConstant.KEEPALIVEDURATION;
+    private  Long keepAliveDuration=CommonRemoteConstant.KEEPALIVEDURATION;
 
     @ApiModelProperty("maxRequests最大并发请求数,默认MIN")
-    private  int maxRequests=ConfigConstant.MAXREQUESTS;
+    private  int maxRequests=CommonRemoteConstant.MAXREQUESTS;
 
     @ApiModelProperty("maxRequestsPerHost每个主机最大请求数,默认MIN")
-    private  int maxRequestsPerHost=ConfigConstant.MAXREQUESTSPERHOST;
+    private  int maxRequestsPerHost=CommonRemoteConstant.MAXREQUESTSPERHOST;
 
     @ApiModelProperty("失败最大重试次数")
-    private  int maxRetryCnt=ConfigConstant.MAXRETRYCNT;
+    private  int maxRetryCnt=CommonRemoteConstant.MAXRETRYCNT;
 
 
 
