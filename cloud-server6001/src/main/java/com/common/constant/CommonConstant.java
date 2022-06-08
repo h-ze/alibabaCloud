@@ -1,4 +1,4 @@
-package com.hz.constant;
+package com.common.constant;
 
 public class CommonConstant {
     public static final String  TOKEN = "token";//全局请求token

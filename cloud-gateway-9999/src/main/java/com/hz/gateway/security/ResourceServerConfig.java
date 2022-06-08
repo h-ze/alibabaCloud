@@ -1,6 +1,6 @@
 package com.hz.gateway.security;
 
-import com.hz.constant.GatewayCoreConstant;
+import com.common.constant.GatewayCoreConstant;
 import com.hz.gateway.handle.RestAuthenticationEntryPoint;
 import com.hz.gateway.handle.RestfulAccessDeniedHandler;
 import lombok.AllArgsConstructor;

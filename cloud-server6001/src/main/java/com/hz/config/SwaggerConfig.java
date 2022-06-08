@@ -57,7 +57,7 @@ public class SwaggerConfig {
                 // 忽略该参数在swagger上的显示
                 .ignoredParameterTypes()
                 // 配置swagger接口安全校验规则
-                .securitySchemes(securitySchemes())
+                //.securitySchemes(securitySchemes())
                 // 配置swagger接口安全校验上下文中的信息（包含安全权限与安全校验生效的接口路径）
                 .securityContexts(securityContexts())
                 //response响应
@@ -71,6 +71,12 @@ public class SwaggerConfig {
                 // swagger生效
                 .enable(true);
     }
+
+    /*private List<ApiKey> securitySchemes() {
+        return new ArrayList<ApiKey>(){{
+            add(new ApiKey("token", "token", "header"));
+        }};
+    }*/
 
     private List<ApiKey> securitySchemes() {
         return new ArrayList<ApiKey>(){{

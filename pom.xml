@@ -24,8 +24,6 @@
         <module>cloud-auth-8888</module>
         <module>cloud-gateway-9999</module>
         <module>cloud-module</module>
-        <module>cloud-commons/cloud-common-swagger</module>
-        <module>cloud-commons/cloud-common-constant</module>
     </modules>
 
     <!--统一管理jar包版本-->
@@ -58,7 +56,6 @@
         <spring.boot.admin.version>2.3.1</spring.boot.admin.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
-        <!--<maven-javadoc-plugin.version>3.0.1</maven-javadoc-plugin.version>-->
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
         <maven.jar.version>3.2.0</maven.jar.version>
         <maven.surefire.version>2.22.2</maven.surefire.version>

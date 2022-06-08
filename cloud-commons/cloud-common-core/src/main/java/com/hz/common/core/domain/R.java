@@ -2,7 +2,7 @@ package com.hz.common.core.domain;
 
 
 
-import com.hz.constant.CommonCoreConstant;
+import com.common.constant.CommonCoreConstant;
 
 import java.io.Serializable;
 

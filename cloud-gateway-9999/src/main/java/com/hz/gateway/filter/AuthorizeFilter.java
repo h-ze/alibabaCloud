@@ -1,6 +1,6 @@
 package com.hz.gateway.filter;
 
-import com.hz.constant.GatewayCoreConstant;
+import com.common.constant.GatewayCoreConstant;
 import com.hz.gateway.security.WhiteAddressListConfig;
 
 import com.nimbusds.jose.JWSObject;

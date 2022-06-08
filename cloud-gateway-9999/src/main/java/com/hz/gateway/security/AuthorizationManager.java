@@ -2,7 +2,7 @@ package com.hz.gateway.security;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
-import com.hz.constant.GatewayCoreConstant;
+import com.common.constant.GatewayCoreConstant;
 import com.hz.gateway.exception.GatewayException;
 import com.hz.common.gateway.core.auth.RoleDto;
 import lombok.extern.slf4j.Slf4j;

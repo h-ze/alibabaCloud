@@ -6,7 +6,7 @@ import com.hz.auth.service.UserService;
 import com.hz.common.gateway.core.auth.RoleDto;
 import com.hz.common.gateway.core.entity.Result;
 import com.hz.common.gateway.core.error.GlobalException;
-import com.hz.constant.GatewayCoreConstant;
+import com.common.constant.GatewayCoreConstant;
 import com.nimbusds.jose.JWSObject;
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;

@@ -3,7 +3,7 @@ package com.hz.common.core.utils;
 import com.alibaba.fastjson.JSONObject;
 import com.hz.common.core.domain.R;
 import com.hz.common.core.text.Convert;
-import com.hz.constant.CommonCoreConstant;
+import com.common.constant.CommonCoreConstant;
 import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

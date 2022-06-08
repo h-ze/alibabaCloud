@@ -1,4 +1,4 @@
-package com.hz.constant;
+package com.common.constant;
 
 /**
  * 通用常量信息

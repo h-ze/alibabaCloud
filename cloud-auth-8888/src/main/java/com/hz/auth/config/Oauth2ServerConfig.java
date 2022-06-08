@@ -1,7 +1,7 @@
 package com.hz.auth.config;
 
 import com.hz.auth.service.UserService;
-import com.hz.constant.GatewayCoreConstant;
+import com.common.constant.GatewayCoreConstant;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

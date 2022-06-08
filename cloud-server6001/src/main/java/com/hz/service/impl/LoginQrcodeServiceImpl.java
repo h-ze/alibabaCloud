@@ -24,7 +24,7 @@ import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.UUID;
 
-import static com.hz.constant.Constant.APP_TOKEN;
+import static com.common.constant.Constant.APP_TOKEN;
 
 /**
  * 二维码登录操作

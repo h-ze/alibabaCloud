@@ -2,7 +2,7 @@ package com.openFeign.controller;
 
 
 import com.common.entity.Payment;
-import com.hz.constant.GatewayCoreConstant;
+import com.common.constant.GatewayCoreConstant;
 import com.openFeign.service.OpenFeign1Service;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

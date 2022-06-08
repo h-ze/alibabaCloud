@@ -1,4 +1,4 @@
-package com.hz.constant;
+package com.common.constant;
 
 public class Constant {
     public static final String  BLACKTOKEN = "black-token-";//全局请求token
