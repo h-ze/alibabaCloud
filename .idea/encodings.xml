@@ -12,10 +12,8 @@
     <file url="file://$PROJECT_DIR$/cloud-commons" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-constant/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-constant/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-core" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-core/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-core/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-gateway-core" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-gateway-core/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-log" charset="UTF-8" />
