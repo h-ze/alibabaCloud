@@ -11,7 +11,7 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import static com.hz.constant.Constant.*;
+import static com.common.constant.Constant.*;
 
 @Service("redisService")
 @Slf4j

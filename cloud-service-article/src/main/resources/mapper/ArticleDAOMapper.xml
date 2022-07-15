@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hz.article.dao.ArticleDao">
+
+
+    <insert id="addArticle" parameterType="com.hz.article.entity.Article" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO article VALUES (#{id},#{title},#{author},#{createBir},#{updateBir},#{description})
+    </insert>
+
+    <update id="updateArticle" parameterType="com.hz.article.entity.Article">
+        update article set updateBir = #{updateBir},description =#{description} where id =#{id}
+    </update>
+
+    <select id="selectArticle" parameterType="Long" resultType="com.hz.article.entity.Article">
+        select id,title,author,createBir,updateBir,description from article where id =#{id}
+
+    </select>
+
+    <select id="selectArticleByAuthor" parameterType="String" resultType="com.hz.article.entity.Article">
+        select id,title,author,createBir,updateBir,description from article where author =#{author}
+
+    </select>
+
+    <select id="selectArticleByTitle" parameterType="String" resultType="com.hz.article.entity.Article">
+        select id,title,author,createBir,updateBir,description from article where title =#{title}
+
+    </select>
+
+    <select id="getArticlesBYAuthor" parameterType="String" resultType="com.hz.article.entity.Article">
+        select id,title,author,createBir,updateBir,description from article where id =#{id}
+
+    </select>
+
+
+
+    <delete id="deleteArticle" parameterType="Long">
+        DELETE FROM article where id =#{id}
+    </delete>
+
+    <delete id="deleteArticleByName" parameterType="String">
+        DELETE FROM article where title =#{title}
+    </delete>
+
+    <delete id="deleteArticleByAuthor" parameterType="String">
+        DELETE FROM article where author =#{author}
+    </delete>
+
+</mapper>

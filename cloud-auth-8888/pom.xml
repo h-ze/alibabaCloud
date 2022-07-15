@@ -203,7 +203,59 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-context</artifactId>
+        </dependency>
+
     </dependencies>
 
+
+    <build>
+        <!--<resources>
+        <resource>
+            <directory>src/main/java</directory>&lt;!&ndash;java文件的路径&ndash;&gt;
+            <includes>
+                <include>**/*.*</include>
+            </includes>
+            &lt;!&ndash; <filtering>false</filtering>&ndash;&gt;
+        </resource>
+        <resource>
+            <directory>src/main/resources</directory>&lt;!&ndash;资源文件的路径&ndash;&gt;
+            <includes>
+                <include>**/*.*</include>
+            </includes>
+            &lt;!&ndash; <filtering>false</filtering>&ndash;&gt;
+        </resource>
+    </resources>-->
+
+
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <!-- 增加jvm参数-->
+                   <!-- <outputDirectory>D:\deploy\jars</outputDirectory>-->
+<!--                    <classifier>exec</classifier>-->
+
+
+                    <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
+                    <!-- 指定入口类-->
+                    <mainClass>com.hz.auth.AuthApplication</mainClass>
+                </configuration>
+                <version>2.2.5.RELEASE</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中-->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+
+    </build>
 
 </project>

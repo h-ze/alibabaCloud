@@ -1,6 +1,6 @@
 package com.hz.remote.okhttp;
 
-import com.hz.constant.CommonRemoteConstant;
+import com.common.constant.CommonRemoteConstant;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;

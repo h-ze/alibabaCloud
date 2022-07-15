@@ -63,6 +63,7 @@ server:
 #      min-request-size: 2048
 #    response:
 #      enabled: true
+
 ribbon:
   nacos:
     enabled: true

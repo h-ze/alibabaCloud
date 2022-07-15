@@ -1,6 +1,6 @@
 package com.hz.gateway.filter;
 
-import com.hz.constant.GatewayCoreConstant;
+import com.common.constant.GatewayCoreConstant;
 import com.hz.gateway.security.WhiteAddressListConfig;
 
 import com.nimbusds.jose.JWSObject;
@@ -55,6 +55,7 @@ public class AuthorizeFilter implements GlobalFilter, Ordered {
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         //生成全局链路日志追踪traceId放入hearder
         String globalLogPrifix= TraceContext.traceId();
+        log.info("global:{}",globalLogPrifix);
         if(StringUtils.isEmpty(globalLogPrifix)||globalLogPrifix.equals("Ignored_Trace")){
             globalLogPrifix=UUID.randomUUID().toString().replaceAll("-","").toUpperCase();
         }

@@ -2,7 +2,7 @@ package com.openFeign.controller;
 
 
 import com.common.entity.Payment;
-import com.hz.constant.GatewayCoreConstant;
+import com.common.constant.GatewayCoreConstant;
 import com.openFeign.service.OpenFeign1Service;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,11 +25,11 @@ public class OpenFeignController {
     @GetMapping("/getOpenFeign1")
     public Payment getOpenFeign1(HttpServletRequest request, @RequestParam("id") String id){
 
-        try {
+        /*try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
         String token = request.getHeader(GatewayCoreConstant.X_AMZ_SECURITY_TOKEN);
         log.info("token为: {}",token);
         String openFeign1 = openFeign1Service.getOpenFeign1(id);

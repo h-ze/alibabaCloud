@@ -6,9 +6,7 @@ import com.google.common.base.Objects;
 import com.hz.service.RedisService;
 import com.hz.service.UserInfoService;
 import com.hz.service.UserService;
-import com.hz.task.TaskListenListenner1;
 import com.hz.task.TaskManager;
-import com.hz.task.TaskParam;
 import com.hz.utils.*;
 import io.jsonwebtoken.Claims;
 import io.swagger.annotations.*;
@@ -31,8 +29,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import static com.common.constant.Constant.TOKEN;
-import static com.common.constant.Constant.USERROLES;
+import static com.common.constant.CommonConstant.TOKEN;
+import static com.common.constant.CommonConstant.USERROLES;
 
 @Controller
 @Api(tags = "用户管理接口")

@@ -1,0 +1,86 @@
+nacos:
+  # Nacos的地址
+  server-addr: @service.nacos.host@
+  server-port: @service.nacos.port@
+  name: @service.nacos.username@
+  password: @service.nacos.password@
+  # Nacos的命名空间
+  #namespace: 37bbdab4-de3f-4c07-927a-7b0fdb66348e
+  namespace: @service.nacos.namespace@
+  # Nacos的配置分组
+  group: @service.group@
+  # Seata Server的配置
+  seata:
+    application: @service.seata.application@
+    tx-service-group: @service.seata.tx-service-group@
+
+mysql:
+  user: @service.mysql.user@
+  pwd: @service.mysql.password@
+
+rbt:
+  user: @service.rabbit.user@
+  psd: @service.rabbit.password@
+  port: @service.rabbit.port@
+  addr: @service.rabbit.address@
+
+rds:
+  port: @service.redis.port@
+  host: @service.redis.address@
+  password: @service.redis.password@
+  database: @service.redis.database@
+
+
+server:
+  port: 3001
+
+feign:
+  sentinel: #开启sentinel熔断
+    enabled: true
+
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true #开启okhttp
+  compression: #开启压缩
+    request:
+      enabled: true
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 2048
+    response:
+      enabled: true
+
+
+spring:
+  profiles:
+    active: @profile.active@
+  application:
+    name: service-book
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacos.server-addr}:${nacos.server-port}
+        namespace: ${nacos.namespace}
+        #ip: 114.55.119.114
+
+  resources.static-locations: classpath:/templates/,classpath:/static/
+
+  servlet:
+    multipart.max-file-size: 500MB
+    multipart.max-request-size: 500MB
+
+mybatis :
+  mapper-locations: classpath:/com/payment/mapper/*.xml
+  type-aliases-package: com.hz.demo.entity
+
+logging:
+  level:
+    root: info
+    com.hz.dao: debug
+
+swagger:
+  title: book接口文档
+  license: Powered By hz
+  licenseUrl: https://www.baidu.com
+
+

@@ -1,5 +1,6 @@
 package com.hz.gateway.config;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.config.GatewayProperties;
 import org.springframework.cloud.gateway.route.RouteLocator;
@@ -17,6 +18,7 @@ import java.util.List;
  * 聚合系统接口
  */
 @Component
+@Slf4j
 public class SwaggerProvider implements SwaggerResourcesProvider, WebFluxConfigurer
 {
     /**
@@ -44,6 +46,7 @@ public class SwaggerProvider implements SwaggerResourcesProvider, WebFluxConfigu
         List<String> routes = new ArrayList<>();
         // 获取网关中配置的route
         routeLocator.getRoutes().subscribe(route -> routes.add(route.getId()));
+        log.info("routeLocator:{}",routeLocator);
         gatewayProperties.getRoutes().stream()
                 .filter(routeDefinition -> routes
                         .contains(routeDefinition.getId()))

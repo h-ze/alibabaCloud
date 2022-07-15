@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-api/cloud-api-system" charset="UTF-8" />
@@ -19,7 +19,6 @@
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-log" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-log/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-log/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-normal" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-remote" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-remote/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-security" charset="UTF-8" />
@@ -52,6 +51,12 @@
     <file url="file://$PROJECT_DIR$/cloud-server6001" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-server6001/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-server6001/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-service-article/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-service-article/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-service-book/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-service-book/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-service-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-service-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support/cache-redis-spring-boot-starter" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support/cache-redis-spring-boot-starter/src/main/java" charset="UTF-8" />
@@ -74,5 +79,6 @@
     <file url="file://$PROJECT_DIR$/support/xxl-job-spring-boot-starter" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support/xxl-job-spring-boot-starter/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/support/xxl-job-spring-boot-starter/src/main/resources" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

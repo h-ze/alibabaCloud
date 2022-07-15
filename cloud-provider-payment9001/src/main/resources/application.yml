@@ -85,6 +85,7 @@ spring:
       discovery:
         server-addr: ${nacos.server-addr}:${nacos.server-port}
         namespace: ${nacos.namespace}
+        #ip: 114.55.119.114
 
   resources.static-locations: classpath:/templates/,classpath:/static/
 

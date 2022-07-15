@@ -1,7 +1,7 @@
 package com.hz.common.core.utils;
 
 import com.hz.common.core.text.StrFormatter;
-import com.hz.constant.CommonCoreConstant;
+import com.common.constant.CommonCoreConstant;
 import org.springframework.util.AntPathMatcher;
 
 import java.util.Collection;

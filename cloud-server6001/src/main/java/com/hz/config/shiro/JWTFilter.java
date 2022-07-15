@@ -10,8 +10,6 @@ import org.apache.shiro.web.filter.authc.BasicHttpAuthenticationFilter;
 import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -22,8 +20,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Date;
 
-import static com.hz.constant.Constant.BLACKTOKEN;
-import static com.hz.constant.Constant.ISEXPIRE;
+import static com.common.constant.Constant.BLACKTOKEN;
+import static com.common.constant.Constant.ISEXPIRE;
 
 public class JWTFilter extends BasicHttpAuthenticationFilter {
 

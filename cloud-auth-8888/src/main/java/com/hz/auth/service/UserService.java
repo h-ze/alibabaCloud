@@ -5,7 +5,7 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.hz.common.gateway.core.auth.RoleDto;
 import com.hz.common.gateway.core.auth.SecurityUser;
 import com.hz.common.gateway.core.auth.UserDto;
-import com.hz.constant.GatewayCoreConstant;
+import com.common.constant.GatewayCoreConstant;
 import com.hz.security.utils.AESUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;

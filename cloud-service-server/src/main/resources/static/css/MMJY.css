@@ -1,0 +1,60 @@
+body{
+    background: #f2f6f5;
+}
+/*登录页*/
+.login-form{
+    width: 480px;
+    height: 440px;
+    margin: 100px auto;
+    box-shadow: none;
+    background: #f2f8fa;
+    border: 2px solid #fff;
+}
+
+.login-form .tab {
+    height: 76px;
+    background: #e7f8fa;
+    position: relative;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.login-form .tab a {
+    float: left;
+    width: 50%;
+    text-align: center;
+    line-height: 76px;
+    font-size: 18px;
+    color: #88a1ab;
+}
+
+.login-form .tab a.on {
+    color: #0fabcc;
+}
+.login-form .tab-line{
+    position: absolute;
+    bottom: 0;
+    left: 55px;
+}
+.login-form .tab {
+    margin-bottom: 30px
+}
+.login-form .tab-content{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.login-form .tab-content .erweima {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #e5ecef;
+    border-radius: 4px
+}
+
+.login-form .tab-content .t-blue {
+    font-size: 16px;
+    color: #17a1c4
+}
+
+.login-form .t-error {
+    color: #ff8e4a
+}
