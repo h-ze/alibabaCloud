@@ -56,12 +56,22 @@ spring:
     active: @profile.active@
   application:
     name: service-book
-  cloud:
-    nacos:
-      discovery:
-        server-addr: ${nacos.server-addr}:${nacos.server-port}
-        namespace: ${nacos.namespace}
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: ${nacos.server-addr}:${nacos.server-port}
+#        namespace: ${nacos.namespace}
         #ip: 114.55.119.114
+
+
+  ## spring boot admin
+  boot:
+    admin:
+      client:
+        api-path:
+        url: http://127.0.0.1:8000
+        instance:
+          prefer-ip: true # 使用ip注册进来
 
   resources.static-locations: classpath:/templates/,classpath:/static/
 
@@ -77,10 +87,26 @@ logging:
   level:
     root: info
     com.hz.dao: debug
+  file:
+    name: logs/${spring.application.name}/info.log
+
 
 swagger:
   title: book接口文档
   license: Powered By hz
   licenseUrl: https://www.baidu.com
+
+
+#  endpoints config
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    enabled-by-default: true
+    web:
+      base-path: /actuator
+      exposure:
+        include: '*'
 
 

@@ -87,7 +87,29 @@ spring:
         namespace: ${nacos.namespace}
         #ip: 114.55.119.114
 
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        #端口号默认为8719
+        port: 8719
+
+      datasource:
+        ds1:
+          nacos:
+            server-addr: ${nacos.server-addr}:${nacos.server-port}
+            dataId: cloud-sentinel.service
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
+
   resources.static-locations: classpath:/templates/,classpath:/static/
+
+  datasource:
+    url: jdbc:mysql://8.142.46.67:3306/springcloud?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT
+    driver-class-name: org.gjt.mm.mysql.Driver
+    username: ${mysql.user}
+    password: ${mysql.pwd}
+    type: com.alibaba.druid.pool.DruidDataSource
 
   servlet:
     multipart.max-file-size: 500MB
@@ -106,4 +128,11 @@ swagger:
   title: payment接口文档
   license: Powered By ruoyi
   licenseUrl: https://ruoyi.vip
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 

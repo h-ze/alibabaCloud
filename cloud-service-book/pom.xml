@@ -18,6 +18,16 @@
 
     <dependencies>
 
+        <!--
+            在使用Admin时，如果没有注册中心，需要各个客户端填写Admin服务端地址，
+            而Admin是支持Nacos、Eureka、ZooKeeper等组件，可以直接从注册中心拉取服务实例
+        -->
+<!--        <dependency>-->
+<!--            <groupId>de.codecentric</groupId>-->
+<!--            <artifactId>spring-boot-admin-starter-client</artifactId>-->
+<!--            <version>${spring-boot-admin.version}</version>-->
+<!--        </dependency>-->
+
         <dependency>
             <groupId>com.hz.springcloud</groupId>
             <artifactId>cloud-common-log</artifactId>
@@ -61,6 +71,11 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
 
         <dependency>
@@ -146,7 +161,7 @@
                     <!-- 增加jvm参数-->
                     <!--                    <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>-->
                     <!-- 指定入口类-->
-                    <mainClass>com.hz.payment.PaymentApplication</mainClass>
+                    <mainClass>PaymentApplication</mainClass>
                 </configuration>
                 <version>2.2.5.RELEASE</version>
                 <executions>

@@ -6,7 +6,6 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-openFeign1-service9009/pom.xml" />
-        <option value="$PROJECT_DIR$/cloud-server6001/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -14,6 +13,7 @@
         <option value="$PROJECT_DIR$/Test/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-api/cloud-api-auth/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-commons/cloud-common-normal/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-service-othersever/pom.xml" />
         <option value="$PROJECT_DIR$/cloudAlibaba-provider-payment9002/pom.xml" />
         <option value="$PROJECT_DIR$/oauth2/pom.xml" />
       </set>

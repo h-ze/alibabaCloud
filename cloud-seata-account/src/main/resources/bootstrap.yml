@@ -1,0 +1,57 @@
+nacos:
+  # Nacos的地址
+  server-addr: @service.nacos.host@
+  server-port: @service.nacos.port@
+  name: @service.nacos.username@
+  password: @service.nacos.password@
+  # Nacos的命名空间
+  #namespace: 37bbdab4-de3f-4c07-927a-7b0fdb66348e
+  namespace: @service.nacos.namespace@
+  # Nacos的配置分组
+  group: @service.group@
+  # Seata Server的配置
+  seata:
+    application: @service.seata.application@
+    tx-service-group: @service.seata.tx-service-group@
+
+mysql:
+  user: @service.mysql.user@
+  pwd: @service.mysql.password@
+
+rbt:
+  user: @service.rabbit.user@
+  psd: @service.rabbit.password@
+  port: @service.rabbit.port@
+  addr: @service.rabbit.address@
+
+rds:
+  port: @service.redis.port@
+  host: @service.redis.address@
+  password: @service.redis.password@
+  database: @service.redis.database@
+
+
+spring:
+  #profiles.active: "@profileActive@"
+  profiles:
+    active: @profile.active@
+  application:
+    name: seata-account
+  cloud:
+    nacos:
+
+      discovery:
+        server-addr: ${nacos.server-addr}:${nacos.server-port}
+        namespace: ${nacos.namespace}
+
+      config:
+        server-addr: ${nacos.server-addr}:${nacos.server-port}
+        namespace: ${nacos.namespace}
+        username: ${nacos.name}
+        password: ${nacos.password}
+        #group: ${spring.nacos-group}
+        file-extension: yaml
+
+        #共享配置 所有项目共享的配置类
+#        shared-configs:
+#          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}

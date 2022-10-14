@@ -16,7 +16,6 @@
     <modules>
         <module>support</module>
         <module>cloud-commons</module>
-        <module>cloud-server6001</module>
         <module>cloud-api</module>
         <module>cloud-provider-payment9001</module>
         <module>cloud-openFeign-service9008</module>
@@ -27,6 +26,11 @@
         <module>cloud-service-article</module>
         <module>cloud-service-book</module>
         <module>cloud-service-server</module>
+        <module>cloud-monitor</module>
+        <module>cloud-seata-storage</module>
+        <module>cloud-seata-order</module>
+        <module>cloud-seata-account</module>
+        <module>cloud-seata-consume</module>
     </modules>
 
     <!--统一管理jar包版本-->
@@ -83,6 +87,7 @@
         <poi.version>4.1.2</poi.version>
         <mybatisplus.version>3.1.2</mybatisplus.version>
         <swagger.module.version>1.5.22</swagger.module.version>
+        <spring-boot-admin.version>2.2.4</spring-boot-admin.version>
 <!--        <swagger.fox.version>3.0.0</swagger.fox.version>-->
 
     </properties>
@@ -97,6 +102,20 @@
     -->
     <dependencyManagement><!--定义规范，但不导入-->
         <dependencies>
+
+            <!--  SpringBoot 监控客户端 -->
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
+
+            <!--  SpringBoot 监控客户端 -->
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
 
             <!-- oracle驱动 -->
             <dependency>

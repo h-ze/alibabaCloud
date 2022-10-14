@@ -4,7 +4,8 @@
  * https://www.renren.io
  *
  * 版权所有，侵权必究！
- */
+ *//*
+
 
 package com.common.utils;
 
@@ -16,11 +17,13 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import java.util.concurrent.TimeUnit;
 
+*/
 /**
  * Redis工具类
  *
  * @author Mark sunlightcs@gmail.com
- */
+ *//*
+
 @Component
 public class RedisUtils {
     @Autowired
@@ -35,9 +38,13 @@ public class RedisUtils {
     private SetOperations<String, Object> setOperations;
     @Resource(name="redisTemplate")
     private ZSetOperations<String, Object> zSetOperations;
-    /**  默认过期时长，单位：秒 */
+    */
+/**  默认过期时长，单位：秒 *//*
+
     public final static long DEFAULT_EXPIRE = 60 * 60 * 24;
-    /**  不设置过期时长 */
+    */
+/**  不设置过期时长 *//*
+
     public final static long NOT_EXPIRE = -1;
 
     public void set(String key, Object value, long expire){
@@ -79,9 +86,11 @@ public class RedisUtils {
         redisTemplate.delete(key);
     }
 
-    /**
+    */
+/**
      * Object转成JSON数据
-     */
+     *//*
+
     private String toJson(Object object){
         if(object instanceof Integer || object instanceof Long || object instanceof Float ||
                 object instanceof Double || object instanceof Boolean || object instanceof String){
@@ -90,10 +99,13 @@ public class RedisUtils {
         return JSON.toJSONString(object);
     }
 
-    /**
+    */
+/**
      * JSON数据，转成Object
-     */
+     *//*
+
     private <T> T fromJson(String json, Class<T> clazz){
         return JSON.parseObject(json, clazz);
     }
 }
+*/

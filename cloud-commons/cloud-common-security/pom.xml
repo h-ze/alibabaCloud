@@ -19,12 +19,6 @@
             <version>${project.version}</version>
         </dependency>
 
-        <!--<dependency>
-            <groupId>com.hz.springcloud</groupId>
-            <artifactId>cloud-common-constant</artifactId>
-            <version>${project.version}</version>
-        </dependency>-->
-
         <dependency>
             <groupId>com.hz.springcloud</groupId>
             <artifactId>cloud-common-log</artifactId>

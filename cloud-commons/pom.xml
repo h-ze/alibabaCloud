@@ -22,10 +22,12 @@
         <module>cloud-common-log</module>
         <module>cloud-common-security</module>
         <module>cloud-common-constant</module>
+        <module>cloud-common-redis</module>
         <module>datasource</module>
+        <module>cloud-common-web</module>
     </modules>
 
-    <dependencies>
+    <!--<dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -42,5 +44,5 @@
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
         </dependency>
-    </dependencies>
+    </dependencies>-->
 </project>

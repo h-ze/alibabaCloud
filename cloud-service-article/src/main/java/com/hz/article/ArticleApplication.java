@@ -11,7 +11,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
 @EnableHzFeignClients
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class}/*,scanBasePackages ={ "com.hz"}*/)
+@SpringBootApplication(/*,scanBasePackages ={ "com.hz"}*/)
 @EnableCustomSwagger2
 public class ArticleApplication {
 

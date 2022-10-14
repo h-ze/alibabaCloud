@@ -1,0 +1,50 @@
+nacos:
+  # Nacos的地址
+  server-addr: @service.nacos.host@
+  server-port: @service.nacos.port@
+  name: @service.nacos.username@
+  password: @service.nacos.password@
+  # Nacos的命名空间
+  #namespace: 37bbdab4-de3f-4c07-927a-7b0fdb66348e
+  namespace: @service.nacos.namespace@
+  # Nacos的配置分组
+  group: @service.group@
+  # Seata Server的配置
+  seata:
+    application: @service.seata.application@
+    tx-service-group: @service.seata.tx-service-group@
+
+
+
+server:
+  port: 9100
+
+spring:
+  profiles:
+    active: @profile.active@
+  application:
+    name: service-monitor
+
+
+  security:
+    user:
+      name: hz
+      password: 123456
+  boot:
+    admin:
+      ui:
+        title: 服务状态监控
+      client:
+        url: http://localhost:9100
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${nacos.server-addr}:${nacos.server-port}
+        namespace: ${nacos.namespace}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

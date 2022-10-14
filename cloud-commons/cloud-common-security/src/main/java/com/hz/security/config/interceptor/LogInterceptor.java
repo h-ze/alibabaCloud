@@ -1,8 +1,6 @@
 package com.hz.security.config.interceptor;
 
 import com.hz.common.core.log.annotation.Log;
-import com.hz.security.annotation.RequiresPermissions;
-import com.hz.security.exception.PermissionException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;

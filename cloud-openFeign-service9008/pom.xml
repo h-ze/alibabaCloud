@@ -101,7 +101,7 @@
                     <!-- 增加jvm参数-->
                     <!--                    <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>-->
                     <!-- 指定入口类-->
-                    <mainClass>com.hz.OrderApplication</mainClass>
+                    <mainClass>com.hz.server.OrderApplication</mainClass>
                 </configuration>
                 <version>2.2.5.RELEASE</version>
                 <executions>

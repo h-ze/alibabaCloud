@@ -10,7 +10,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableDiscoveryClient
 @EnableFeignClients
 @EnableCustomSwagger2
-//提供服务给cloudAlibaba-provider-payment
+//提供服务给cloud-provider-payment
 public class OpenFeignApplication {
     public static void main(String[] args) {
         SpringApplication.run(OpenFeignApplication.class,args);

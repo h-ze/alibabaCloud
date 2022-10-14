@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hz.server.dao.EmailDao">
+
+    <insert id="addEmailMessage" parameterType="com.common.entity.Email">
+        INSERT INTO email VALUES (#{emailId},#{email},#{status})
+    </insert>
+
+    <insert id="addUserRoles" parameterType="com.common.entity.UserRoles">
+        INSERT INTO t_user_role VALUES (#{id},#{userId},#{roleId})
+    </insert>
+
+    <select id="getEmailList" parameterType="Integer" resultType="com.common.entity.Email">
+        SELECT email,emailId FROM email WHERE status =#{status}
+    </select>
+
+    <select id="getEmail" parameterType="String" resultType="com.common.entity.Email">
+        SELECT email,emailId,status FROM email WHERE email =#{email}
+    </select>
+
+    <select id="getUser" parameterType="com.common.entity.User" resultType="com.common.entity.User">
+        SELECT id,name,age,bir,password,salt,userId FROM user WHERE name = #{username}
+    </select>
+
+    <select id="getUserById" parameterType="String" resultType="com.common.entity.User">
+        SELECT id,name,age,bir,password,salt,userId FROM user WHERE userId = #{userId}
+    </select>
+
+    <resultMap id="userMap" type="com.common.entity.User">
+        <id column="uid" property="id"></id>
+        <result column="name" property="name"></result>
+
+        <collection property="roles" javaType="list" ofType="com.common.entity.Role">
+            <id column="id" property="id"></id>
+            <result column="rname" property="name"></result>
+        </collection>
+    </resultMap>
+    <select id="findRolesByUsername" parameterType="String" resultMap="userMap">
+        SELECT u.id uid,u.name,r.id,r.name rname FROM user u LEFT JOIN t_user_role ur ON u.userId =ur.userid
+        LEFT JOIN t_role r
+        ON ur.roleid =r.id
+        WHERE u.name= #{username}
+    </select>
+
+    <delete id="deleteUserByOwner" parameterType="String">
+        DELETE FROM user WHERE userId =#{userId} AND password =#{password}
+    </delete>
+
+    <delete id="deleteUser" parameterType="String">
+        DELETE FROM user WHERE name =#{username}
+    </delete>
+
+    <update id="updateEmailStatus" parameterType="com.common.entity.Email">
+        UPDATE email SET status = #{status} WHERE emailId =#{emailId}
+    </update>
+</mapper>

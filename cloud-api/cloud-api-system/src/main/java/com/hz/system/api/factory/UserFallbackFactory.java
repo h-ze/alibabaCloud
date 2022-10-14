@@ -2,7 +2,6 @@ package com.hz.system.api.factory;
 
 import com.hz.system.api.fallback.UserFallback;
 import feign.hystrix.FallbackFactory;
-import org.springframework.stereotype.Component;
 
 /**
  * @author 11022

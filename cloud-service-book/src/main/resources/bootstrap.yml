@@ -39,6 +39,11 @@ spring:
     name: service-book
   cloud:
     nacos:
+
+      discovery:
+        server-addr: ${nacos.server-addr}:${nacos.server-port}
+        namespace: ${nacos.namespace}
+
       config:
         server-addr: ${nacos.server-addr}:${nacos.server-port}
         namespace: ${nacos.namespace}

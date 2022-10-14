@@ -9,7 +9,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
 @EnableHzFeignClients
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class}/*,scanBasePackages ={ "com.hz"}*/)
+@SpringBootApplication(/*exclude = {DataSourceAutoConfiguration.class}*//*,scanBasePackages ={ "com.hz"}*/)
 @EnableCustomSwagger2
 public class BookApplication {
     public static void main(String[] args) {

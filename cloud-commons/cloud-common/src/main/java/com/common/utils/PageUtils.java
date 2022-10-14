@@ -1,6 +1,6 @@
+/*
 package com.common.utils;
 
-import com.common.entity.Document;
 import com.common.entity.PageRequest;
 import com.common.entity.PageResult;
 import com.github.pagehelper.PageHelper;
@@ -10,11 +10,13 @@ import java.util.List;
 
 public class PageUtils {
 
-    /**
+    */
+/**
      * 将分页信息封装到统一的接口
      * @param pageInfo
      * @return
-     */
+     *//*
+
     public static PageResult getPageResult(PageInfo<?> pageInfo) {
         PageResult pageResult = new PageResult();
         pageResult.setPageNum(pageInfo.getPageNum());
@@ -35,11 +37,14 @@ public class PageUtils {
         return new PageInfo<>(list);
     }
 
-    /**
+    */
+/**
      * 清理分页的线程变量
-     */
+     *//*
+
     public static void clearPage()
     {
         PageHelper.clearPage();
     }
 }
+*/

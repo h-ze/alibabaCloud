@@ -1,17 +1,12 @@
 package com.hz.payment.controller;
 
 import com.common.entity.ResponseResult;
-import com.common.web.controller.BaseController;
 
 import com.hz.common.core.log.annotation.Log;
 import com.hz.common.core.log.enums.BusinessType;
 import com.hz.security.annotation.RequiresPermissions;
-import com.hz.system.api.feign.RemoteLogService;
-import com.hz.system.api.feign.UserFeignClient;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.hz.web.controller.BaseController;
 import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.Resource;
 
 
 @RestController

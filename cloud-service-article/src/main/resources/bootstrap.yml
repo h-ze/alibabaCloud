@@ -36,9 +36,14 @@ spring:
   profiles:
     active: @profile.active@
   application:
-    name: cloudAlibaba-provider-payment
+    name: service-article
   cloud:
     nacos:
+
+      discovery:
+        server-addr: ${nacos.server-addr}:${nacos.server-port}
+        namespace: ${nacos.namespace}
+
       config:
         server-addr: ${nacos.server-addr}:${nacos.server-port}
         namespace: ${nacos.namespace}
