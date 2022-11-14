@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 
-@Component
+//@Component
 public class OrderFallBackFactory implements FallbackFactory<OrderClientFallBack> {
     @Autowired
     private JMSProducer jmsProducer;

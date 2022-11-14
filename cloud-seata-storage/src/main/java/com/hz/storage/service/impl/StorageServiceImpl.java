@@ -3,6 +3,7 @@ package com.hz.storage.service.impl;
 import com.hz.storage.dao.StorageDao;
 import com.hz.storage.service.StorageService;
 import io.seata.core.context.RootContext;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -23,10 +24,12 @@ public class StorageServiceImpl implements StorageService {
      */
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW)
+    //@GlobalTransactional(rollbackFor = Exception.class)
     public void decrease(Long productId, Integer count) {
         log.info("xId:{}", RootContext.getXID());
         log.info("------->storage-service中扣减库存开始");
         storageDao.decrease(productId,count);
+        int i = 1/0;
         log.info("------->storage-service中扣减库存结束");
     }
 }

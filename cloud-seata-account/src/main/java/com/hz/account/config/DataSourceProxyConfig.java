@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
@@ -17,11 +18,22 @@ import javax.sql.DataSource;
 /**
  * 使用Seata对数据源进行代理
  */
-//@Configuration
+@Configuration
 public class DataSourceProxyConfig {
 
+    @Bean
+    @ConfigurationProperties(prefix = "spring.datasource")
+    public DruidDataSource druidDataSource() {
+        return new DruidDataSource();
+    }
 
-    @Value("${mybatis.mapperLocations}")
+    @Primary
+    @Bean
+    public DataSourceProxy dataSource(DruidDataSource druidDataSource) {
+        return new DataSourceProxy(druidDataSource);
+    }
+
+    /*@Value("${mybatis.mapperLocations}")
     private String mapperLocations;
 
     @Bean
@@ -42,6 +54,6 @@ public class DataSourceProxyConfig {
         sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(mapperLocations));
         sqlSessionFactoryBean.setTransactionFactory(new SpringManagedTransactionFactory());
         return sqlSessionFactoryBean.getObject();
-    }
+    }*/
 
 }

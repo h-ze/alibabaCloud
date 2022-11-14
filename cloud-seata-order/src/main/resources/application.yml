@@ -40,7 +40,7 @@ feign:
 
   httpclient:
     enabled: false
-    connection-timeout: 2000
+    connection-timeout: 5000
   okhttp:
     enabled: true #开启okhttp
   compression: #开启压缩
@@ -50,6 +50,7 @@ feign:
       min-request-size: 2048
     response:
       enabled: true
+
 
 
 spring:

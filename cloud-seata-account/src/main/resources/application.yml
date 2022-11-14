@@ -67,6 +67,8 @@ spring:
   ## spring boot admin
 
   datasource:
+    dynamic:
+      seata: true
     url: jdbc:mysql://8.142.46.67:3306/seata_account?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT&useSSL=false
     #    driver-class-name: com.mysql.cj.jdbc.Driver
     username: ${mysql.user}

@@ -3,6 +3,7 @@ package com.hz.account.service.impl;
 import com.hz.account.dao.AccountDao;
 import com.hz.account.service.AccountService;
 import io.seata.core.context.RootContext;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -25,6 +26,7 @@ public class AccountServiceImpl implements AccountService {
      */
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW)
+    //@GlobalTransactional(rollbackFor = Exception.class)
     public void decrease(Long userId, BigDecimal money) {
         log.info("xId:{}", RootContext.getXID());
         log.info("userId:{}",userId);
@@ -33,9 +35,9 @@ public class AccountServiceImpl implements AccountService {
         //模拟超时异常，全局事务回滚
         //暂停几秒钟线程
 
-        int i=1/0;
 
         accountDao.decrease(userId,money);
+        //int i=1/0;
 
 
         /*try {
