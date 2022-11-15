@@ -62,6 +62,12 @@
             <version>${project.version}</version>
         </dependency>
 
+<!--        <dependency>-->
+<!--            <groupId>com.hz.springcloud</groupId>-->
+<!--            <artifactId>cloud-datasource</artifactId>-->
+<!--            <version>${project.version}</version>-->
+<!--        </dependency>-->
+
 
         <!--<dependency>
             <groupId>com.hz.support</groupId>

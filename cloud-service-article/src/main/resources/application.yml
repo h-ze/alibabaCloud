@@ -69,12 +69,12 @@ spring:
     multipart.max-file-size: 500MB
     multipart.max-request-size: 500MB
 
-  datasource:
-    url: jdbc:mysql://8.142.46.67:3306/springcloud?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT
-    driver-class-name: org.gjt.mm.mysql.Driver
-    username: ${mysql.user}
-    password: ${mysql.pwd}
-    type: com.alibaba.druid.pool.DruidDataSource
+#  datasource:
+#    url: jdbc:mysql://8.142.46.67:3306/springcloud?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT
+#    driver-class-name: org.gjt.mm.mysql.Driver
+#    username: ${mysql.user}
+#    password: ${mysql.pwd}
+#    type: com.alibaba.druid.pool.DruidDataSource
 
 mybatis :
   mapper-locations: classpath:/com/hz/article/mapper/*.xml

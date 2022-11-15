@@ -24,7 +24,12 @@ public class StorageServiceImpl implements StorageService {
     /**
      * 扣减库存
      */
+
+
     @Override
+    /**
+     * 事务传播特性设置为 REQUIRES_NEW 开启新的事务 重要！！！！一定要使用REQUIRES_NEW
+     */
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     //@GlobalTransactional(rollbackFor = Exception.class)
     public void decrease(Long productId, Integer count) {

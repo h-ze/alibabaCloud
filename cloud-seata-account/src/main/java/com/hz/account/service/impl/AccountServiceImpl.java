@@ -27,6 +27,7 @@ public class AccountServiceImpl implements AccountService {
      * 扣减账户余额
      */
     @Override
+    //@DS("account")
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void decrease(Long userId, BigDecimal money) {
         try {
@@ -36,6 +37,7 @@ public class AccountServiceImpl implements AccountService {
             log.info("------->account-service中扣减账户余额开始");
             //模拟超时异常，全局事务回滚
             //暂停几秒钟线程
+
             accountDao.decrease(userId,money);
             //int i=1/0;
             /*try {
