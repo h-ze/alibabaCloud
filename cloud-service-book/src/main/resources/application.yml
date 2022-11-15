@@ -63,16 +63,6 @@ spring:
 #        namespace: ${nacos.namespace}
         #ip: 114.55.119.114
 
-
-  ## spring boot admin
-  boot:
-    admin:
-      client:
-        api-path:
-        url: http://127.0.0.1:8000
-        instance:
-          prefer-ip: true # 使用ip注册进来
-
   resources.static-locations: classpath:/templates/,classpath:/static/
 
   servlet:

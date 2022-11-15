@@ -31,6 +31,8 @@
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-web/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common-web/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/cloud-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-commons/cloud-datasource/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-commons/cloud-datasource/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/datasource" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-commons/datasource/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-gateway-9999" charset="UTF-8" />
@@ -45,15 +47,6 @@
     <file url="file://$PROJECT_DIR$/cloud-module/cloud-module-system/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-monitor/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-monitor/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-openFeign-service9008" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-openFeign-service9008/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-openFeign-service9008/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-openFeign1-service9009" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-openFeign1-service9009/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-openFeign1-service9009/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-provider-payment9001" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-provider-payment9001/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cloud-provider-payment9001/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-seata-account/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-seata-account/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-seata-consume/src/main/java" charset="UTF-8" />

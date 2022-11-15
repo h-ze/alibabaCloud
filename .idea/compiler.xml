@@ -12,6 +12,7 @@
         <module name="cloud-api-system" />
         <module name="cloud-auth-8888" />
         <module name="cache-redis-spring-boot-starter" />
+        <module name="cloud-datasource" />
         <module name="cloud-service-server" />
         <module name="cloud-seata-storage" />
         <module name="lock-zookeeper-spring-boot-starter" />

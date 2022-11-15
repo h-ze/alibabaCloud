@@ -85,6 +85,7 @@
         <mybatisplus.version>3.1.2</mybatisplus.version>
         <swagger.module.version>1.5.22</swagger.module.version>
         <spring-boot-admin.version>2.2.4</spring-boot-admin.version>
+        <dynamic-ds.version>3.5.0</dynamic-ds.version>
 <!--        <swagger.fox.version>3.0.0</swagger.fox.version>-->
 
     </properties>
@@ -360,6 +361,13 @@
                 <!-- <version>2.1.0.RELEASE</version>-->
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <!-- Dynamic DataSource -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+                <version>${dynamic-ds.version}</version>
             </dependency>
 
         </dependencies>

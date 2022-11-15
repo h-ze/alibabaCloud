@@ -25,6 +25,7 @@
         <module>cloud-common-redis</module>
         <module>datasource</module>
         <module>cloud-common-web</module>
+        <module>cloud-datasource</module>
     </modules>
 
     <!--<dependencies>
