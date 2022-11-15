@@ -17,9 +17,6 @@
         <module>support</module>
         <module>cloud-commons</module>
         <module>cloud-api</module>
-        <module>cloud-provider-payment9001</module>
-        <module>cloud-openFeign-service9008</module>
-        <module>cloud-openFeign1-service9009</module>
         <module>cloud-auth-8888</module>
         <module>cloud-gateway-9999</module>
         <module>cloud-module</module>

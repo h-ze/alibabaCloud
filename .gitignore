@@ -34,7 +34,6 @@ build/
 .vscode/
 target
 .log
-.idea
 .iml
 out
 classes
