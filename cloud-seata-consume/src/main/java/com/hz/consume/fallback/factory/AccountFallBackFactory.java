@@ -6,7 +6,7 @@ import feign.hystrix.FallbackFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class AccountFallBackFactory implements FallbackFactory<AccountClientFallBack> {
     @Autowired
     private JMSProducer jmsProducer;

@@ -6,7 +6,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(value = "seata-order"/*,fallbackFactory = OrderFallBackFactory.class*/,configuration = MultipartConfig.class)
+@FeignClient(value = "seata-order",fallbackFactory = OrderFallBackFactory.class,configuration = MultipartConfig.class)
 public interface OrderClient {
     @PostMapping("/order/createOrder")
     String createOrder();

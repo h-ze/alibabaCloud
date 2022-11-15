@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * springCloudAlibaba官方推荐用法
  * 配置fallback异常处理
  */
-//@Component
+@Component
 public class ProviderFallBackFactory implements FallbackFactory<ProviderClientFallBack> {
     @Autowired
     private JMSProducer jmsProducer;

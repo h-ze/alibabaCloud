@@ -8,7 +8,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="cloud-seata-order" />
-        <module name="cloud-provider-payment9001" />
         <module name="cloud-common-core" />
         <module name="cloud-api-system" />
         <module name="cloud-auth-8888" />
@@ -24,8 +23,6 @@
         <module name="log-async-db-spring-boot-starter" />
         <module name="cloud-gateway-9999" />
         <module name="rate-redisson-spring-boot-starter" />
-        <module name="cloud-openFeign1-service9009" />
-        <module name="cloud-openFeign-service9008" />
         <module name="cloud-service-book" />
         <module name="cloud-common-remote" />
         <module name="cloud-common-redis" />
@@ -54,6 +51,9 @@
       <module name="cloud-auth8888" target="1.8" />
       <module name="cloud-common-normal" target="1.8" />
       <module name="cloud-gateway-oauth2-nacos9101" target="1.8" />
+      <module name="cloud-openFeign-service9008" target="1.8" />
+      <module name="cloud-openFeign1-service9009" target="1.8" />
+      <module name="cloud-provider-payment9001" target="1.8" />
       <module name="cloud-server6001" target="1.8" />
       <module name="cloud-service-othersever" target="1.8" />
       <module name="cloudAlibaba-customer84" target="1.8" />
