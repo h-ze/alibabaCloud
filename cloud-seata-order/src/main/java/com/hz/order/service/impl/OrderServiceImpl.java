@@ -29,9 +29,10 @@ public class OrderServiceImpl implements OrderService {
         try {
             log.info("xId:{}", RootContext.getXID());
             // 创建订单
-            System.out.println("开始创建订单");
+
+            log.info("------->order-service中增加订单开始");
             orderDao.createOrder(order);
-            System.out.println("结束创建订单");
+            log.info("------->order-service中增加订单结束");
 
             //int i =1/0;
 

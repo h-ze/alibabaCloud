@@ -39,8 +39,9 @@ public class StorageServiceImpl implements StorageService {
             log.info("xId:{}", RootContext.getXID());
             log.info("------->storage-service中扣减库存开始");
             storageDao.decrease(productId,count);
-            int i = 1/0;
             log.info("------->storage-service中扣减库存结束");
+
+            int i = 1/0;
 
             //return "成功";
         } catch (Exception e) {
