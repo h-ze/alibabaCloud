@@ -39,6 +39,7 @@ public class AccountServiceImpl implements AccountService {
             //暂停几秒钟线程
 
             accountDao.decrease(userId,money);
+            log.info("------->account-service中扣减账户余额结束");
             //int i=1/0;
             /*try {
                 TimeUnit.SECONDS.sleep(20);
