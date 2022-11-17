@@ -606,6 +606,49 @@
             <!--                <activeByDefault>true</activeByDefault>-->
             <!--            </activation>-->
         </profile>
+
+        <profile>
+            <id>macdev</id>
+            <properties>
+                <profile.active>dev</profile.active>
+                <service.nacos.host>121.4.54.189</service.nacos.host>
+                <service.nacos.port>8848</service.nacos.port>
+                <!--<service.nacos.host>8.142.46.67</service.nacos.host>
+                <service.nacos.port>3333</service.nacos.port>-->
+                <service.nacos.username>nacos</service.nacos.username>
+                <service.nacos.password>nacos</service.nacos.password>
+                <service.nacos.namespace>b50dee18-942a-47fb-a13d-70c9b035b46a</service.nacos.namespace>
+                <service.seata.application>seata-server</service.seata.application>
+                <service.seata.tx-service-group>default_tx_group</service.seata.tx-service-group>
+                <service.group>SEATA_GROUP</service.group>
+                <service.metadata.group>discovery-guide-group</service.metadata.group>
+                <service.metadata.env>dev</service.metadata.env>
+                <service.metadata.version>${project.version}</service.metadata.version>
+                <service.metadata.region>qa</service.metadata.region>
+                <service.metadata.zone>zone</service.metadata.zone>
+                <service.log.root>/logs</service.log.root>
+                <service.admin.username>admin</service.admin.username>
+                <service.admin.password>admin</service.admin.password>
+
+                <service.mysql.user>root</service.mysql.user>
+                <service.mysql.password>hz15858</service.mysql.password>
+
+                <service.rabbit.user>hz</service.rabbit.user>
+                <service.rabbit.password>hz15858</service.rabbit.password>
+                <service.rabbit.port>5672</service.rabbit.port>
+                <service.rabbit.address>8.142.46.67</service.rabbit.address>
+
+                <service.redis.address>8.142.46.67</service.redis.address>
+                <service.redis.database>0</service.redis.database>
+                <service.redis.port>6379</service.redis.port>
+                <service.redis.password>hz15858</service.redis.password>
+            </properties>
+            <!--            <activation>-->
+            <!--                <jdk>[1.8,)</jdk>-->
+            <!--                <activeByDefault>true</activeByDefault>-->
+            <!--            </activation>-->
+        </profile>
+
         <profile>
             <id>fat</id>
             <properties>

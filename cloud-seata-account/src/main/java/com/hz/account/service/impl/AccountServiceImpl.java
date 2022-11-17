@@ -35,17 +35,18 @@ public class AccountServiceImpl implements AccountService {
             log.info("userId:{}",userId);
             log.info("money:{}",money);
             log.info("------->account-service中扣减账户余额开始");
+            //模拟超时异常，全局事务回滚
+            //暂停几秒钟线程
+
             accountDao.decrease(userId,money);
             log.info("------->account-service中扣减账户余额结束");
             //int i=1/0;
-
-            //暂停几秒钟线程
-            //模拟超时异常，全局事务回滚
             /*try {
                 TimeUnit.SECONDS.sleep(20);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }*/
+            //log.info("结束时间:{}",System.currentTimeMillis());
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -56,6 +57,6 @@ public class AccountServiceImpl implements AccountService {
             }
         }
 
-        log.info("------->account-service中扣减账户余额结束");
+        //log.info("------->account-service中扣减账户余额结束");
     }
 }

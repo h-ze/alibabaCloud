@@ -41,7 +41,7 @@ public class StorageServiceImpl implements StorageService {
             storageDao.decrease(productId,count);
             log.info("------->storage-service中扣减库存结束");
 
-            int i = 1/0;
+            //int i = 1/0;
 
             //return "成功";
         } catch (Exception e) {

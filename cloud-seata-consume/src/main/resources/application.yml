@@ -38,9 +38,18 @@ feign:
   sentinel: #开启sentinel熔断
     enabled: true
 
+  client:
+    config:
+      default:
+        #超时时间默认为1s
+        #建立连接所用的时间，适用于网络状况正常的情况下，两端连接所需要的时间
+        ConnectTimeOut: 10000
+        #指建立连接后从服务端读取到可用资源所用的时间
+        ReadTimeOut: 10000
+
   httpclient:
     enabled: false
-    connection-timeout: 2000
+    connection-timeout: 10000
   okhttp:
     enabled: true #开启okhttp
   compression: #开启压缩
@@ -67,12 +76,12 @@ spring:
 
   ## spring boot admin
 
-#  datasource:
-#    url: jdbc:mysql://8.142.46.67:3306/seata_order?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT&useSSL=false
-#    username: ${mysql.user}
-#    password: ${mysql.pwd}
-#    type: com.alibaba.druid.pool.DruidDataSource
-#    driver-class-name: org.gjt.mm.mysql.Driver
+  datasource:
+    url: jdbc:mysql://8.142.46.67:3306/seata_order?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT&useSSL=false
+    username: ${mysql.user}
+    password: ${mysql.pwd}
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.gjt.mm.mysql.Driver
 
   servlet:
     multipart.max-file-size: 500MB

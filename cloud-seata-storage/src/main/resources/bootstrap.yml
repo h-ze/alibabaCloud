@@ -53,5 +53,5 @@ spring:
         file-extension: yaml
 
         #共享配置 所有项目共享的配置类
-        shared-configs:
-          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+#        shared-configs:
+#          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}

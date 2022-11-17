@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.math.BigDecimal;
 
-@FeignClient(value = "seata-account",fallbackFactory = AccountFallBackFactory.class,configuration = MultipartConfig.class)
+@FeignClient(value = "seata-account",fallbackFactory = AccountFallBackFactory.class,configuration = MultipartConfig.class,decode404 = true)
 public interface AccountClient {
     @PostMapping("/account/decrease")
     String decrease(@RequestParam("userId") Long userId, @RequestParam("money") BigDecimal money);

@@ -34,7 +34,7 @@ public class OrderServiceImpl implements OrderService {
             orderDao.createOrder(order);
             log.info("------->order-service中增加订单结束");
 
-            //int i =1/0;
+            int i =1/0;
 
             return "成功";
         } catch (Exception e) {
