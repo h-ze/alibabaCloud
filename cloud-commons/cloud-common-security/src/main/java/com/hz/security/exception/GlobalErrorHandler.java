@@ -18,7 +18,7 @@ import javax.validation.ConstraintViolationException;
  * 全局异常信息捕获
  */
 
-@ControllerAdvice(annotations = RestController.class)
+//@ControllerAdvice(annotations = RestController.class)
 @Slf4j
 public class GlobalErrorHandler {
 

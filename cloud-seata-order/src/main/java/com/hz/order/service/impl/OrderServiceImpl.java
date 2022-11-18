@@ -31,19 +31,20 @@ public class OrderServiceImpl implements OrderService {
             // 创建订单
 
             log.info("------->order-service中增加订单开始");
-            orderDao.createOrder(order);
+            //orderDao.createOrder(order);
             log.info("------->order-service中增加订单结束");
 
-            int i =1/0;
+            //int i =1/0;
 
-            return "成功";
+            //return "成功";
         } catch (Exception e) {
-            e.printStackTrace();
             try {
                 GlobalTransactionContext.reload(RootContext.getXID()).rollback();
             } catch (TransactionException transactionException) {
                 transactionException.printStackTrace();
             }
+            e.printStackTrace();
+
         }
 
         return "成功";
@@ -66,7 +67,8 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public String updateOrder(Long userId, Integer status) {
         log.info("------->order-service中更新订单开始");
-        int order = orderDao.updateOrder(userId, status);
+        //int order = orderDao.updateOrder(userId, status);
+        int order =1;
         log.info("------->order-service中更新订单结束");
         if (order>0){
             return "成功";

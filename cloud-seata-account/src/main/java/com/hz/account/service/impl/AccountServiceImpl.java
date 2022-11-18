@@ -38,8 +38,9 @@ public class AccountServiceImpl implements AccountService {
             //模拟超时异常，全局事务回滚
             //暂停几秒钟线程
 
-            accountDao.decrease(userId,money);
+            //accountDao.decrease(userId,money);
             log.info("------->account-service中扣减账户余额结束");
+            throw new RuntimeException("123456");
             //int i=1/0;
             /*try {
                 TimeUnit.SECONDS.sleep(20);
@@ -49,12 +50,13 @@ public class AccountServiceImpl implements AccountService {
             //log.info("结束时间:{}",System.currentTimeMillis());
 
         } catch (Exception e) {
-            e.printStackTrace();
             try {
                 GlobalTransactionContext.reload(RootContext.getXID()).rollback();
             } catch (TransactionException transactionException) {
                 transactionException.printStackTrace();
             }
+            e.printStackTrace();
+
         }
 
         //log.info("------->account-service中扣减账户余额结束");

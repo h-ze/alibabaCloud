@@ -21,7 +21,7 @@ import javax.sql.DataSource;
 @Configuration
 public class DataSourceProxyConfig {
 
-    @Bean
+    /*@Bean
     @ConfigurationProperties(prefix = "spring.datasource")
     public DruidDataSource druidDataSource() {
         return new DruidDataSource();
@@ -31,7 +31,31 @@ public class DataSourceProxyConfig {
     @Bean
     public DataSourceProxy dataSource(DruidDataSource druidDataSource) {
         return new DataSourceProxy(druidDataSource);
+    }*/
+
+    @Bean
+    @ConfigurationProperties(prefix = "spring.datasource")
+    public DataSource druidDataSource(){
+        DruidDataSource druidDataSource = new DruidDataSource();
+        return druidDataSource;
     }
+
+    @Primary
+    @Bean("dataSource")
+    public DataSourceProxy dataSource(DataSource druidDataSource){
+        return new DataSourceProxy(druidDataSource);
+    }
+
+    @Bean
+    public SqlSessionFactory sqlSessionFactory(DataSourceProxy dataSourceProxy)throws Exception{
+        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+        sqlSessionFactoryBean.setDataSource(dataSourceProxy);
+        sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver()
+                .getResources("classpath:/com/hz/account/mapper/*.xml"));
+         sqlSessionFactoryBean.setTransactionFactory(new SpringManagedTransactionFactory());
+         return sqlSessionFactoryBean.getObject();
+    }
+
 
     /*@Value("${mybatis.mapperLocations}")
     private String mapperLocations;
