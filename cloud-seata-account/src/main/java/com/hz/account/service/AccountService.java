@@ -11,4 +11,6 @@ public interface AccountService {
      * @param money 金额
      */
     void decrease(@RequestParam("userId") Long userId, @RequestParam("money") BigDecimal money);
+
+    String testException();
 }

@@ -30,35 +30,43 @@ public class AccountServiceImpl implements AccountService {
     //@DS("account")
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void decrease(Long userId, BigDecimal money) {
-        try {
-            log.info("xId:{}", RootContext.getXID());
-            log.info("userId:{}",userId);
-            log.info("money:{}",money);
-            log.info("------->account-service中扣减账户余额开始");
-            //模拟超时异常，全局事务回滚
-            //暂停几秒钟线程
 
-            //accountDao.decrease(userId,money);
-            log.info("------->account-service中扣减账户余额结束");
-            throw new RuntimeException("123456");
-            //int i=1/0;
-            /*try {
-                TimeUnit.SECONDS.sleep(20);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }*/
-            //log.info("结束时间:{}",System.currentTimeMillis());
+        log.info("xId:{}", RootContext.getXID());
+        log.info("userId:{}",userId);
+        log.info("money:{}",money);
+        log.info("------->account-service中扣减账户余额开始");
+        //模拟超时异常，全局事务回滚
+        //暂停几秒钟线程
+        accountDao.decrease(userId,money);
+        log.info("------->account-service中扣减账户余额结束");
+        throw new RuntimeException("123456");
+        //int i=1/0;
+//        try {
+//            log.info("xId:{}", RootContext.getXID());
+//            log.info("userId:{}",userId);
+//            log.info("money:{}",money);
+//            log.info("------->account-service中扣减账户余额开始");
+//            //模拟超时异常，全局事务回滚
+//            //暂停几秒钟线程
+//            accountDao.decrease(userId,money);
+//            log.info("------->account-service中扣减账户余额结束");
+//            //throw new RuntimeException("123456");
+//            int i=1/0;
+//        } catch (Exception e) {
+//            try {
+//                GlobalTransactionContext.reload(RootContext.getXID()).rollback();
+//            } catch (TransactionException transactionException) {
+//                transactionException.printStackTrace();
+//            }
+//            throw e;
+//        }
+    }
 
-        } catch (Exception e) {
-            try {
-                GlobalTransactionContext.reload(RootContext.getXID()).rollback();
-            } catch (TransactionException transactionException) {
-                transactionException.printStackTrace();
-            }
-            e.printStackTrace();
-
+    @Override
+    public String testException() {
+        if (true){
+            throw new RuntimeException("111111");
         }
-
-        //log.info("------->account-service中扣减账户余额结束");
+        return "testException";
     }
 }

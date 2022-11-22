@@ -26,26 +26,26 @@ public class OrderServiceImpl implements OrderService {
     //@GlobalTransactional(rollbackFor = Exception.class)
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     public String createOrder(Order order) {
-        try {
+        log.info("xId:{}", RootContext.getXID());
+        // 创建订单
+        log.info("------->order-service中增加订单开始");
+        orderDao.createOrder(order);
+        log.info("------->order-service中增加订单结束");
+
+        /*try {
             log.info("xId:{}", RootContext.getXID());
             // 创建订单
-
             log.info("------->order-service中增加订单开始");
-            //orderDao.createOrder(order);
+            orderDao.createOrder(order);
             log.info("------->order-service中增加订单结束");
-
-            //int i =1/0;
-
-            //return "成功";
         } catch (Exception e) {
             try {
                 GlobalTransactionContext.reload(RootContext.getXID()).rollback();
             } catch (TransactionException transactionException) {
                 transactionException.printStackTrace();
             }
-            e.printStackTrace();
-
-        }
+            throw e;
+        }*/
 
         return "成功";
         //return new CommonResult(200,"成功");

@@ -1,4 +1,4 @@
-package com.hz.account.config;
+package com.hz.storage.config;
 
 import io.seata.core.context.RootContext;
 import io.seata.core.exception.TransactionException;
@@ -7,21 +7,19 @@ import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
 
 //@Aspect
 //@Component
-public class TestAspect {
-    private final static Logger logger = LoggerFactory.getLogger(TestAspect.class);
+public class SeataAspect {
+    private final static Logger logger = LoggerFactory.getLogger(SeataAspect.class);
 
-    @Before("execution(* com.hz.account.service.*.*(..))")
+    @Before("execution(* com.hz.storage.service.*.*(..))")
     public void before(JoinPoint joinPoint) throws TransactionException {
         MethodSignature signature = (MethodSignature)joinPoint.getSignature();
         Method method = signature.getMethod();
@@ -36,21 +34,21 @@ public class TestAspect {
         }*/
     }
 
-    @AfterThrowing(throwing = "e", pointcut = "execution(* com.hz.account.service.*.*(..))")
+    @AfterThrowing(throwing = "e", pointcut = "execution(* com.hz.storage.service.*.*(..))")
     public void doRecoveryActions(Throwable e) throws TransactionException {
         logger.info("方法执行异常:{}", e.getMessage());
         if (!StringUtils.isBlank(RootContext.getXID()))
             GlobalTransactionContext.reload(RootContext.getXID()).rollback();
     }
 
-    @AfterReturning(value = "execution(* com.hz.account.service.*.*(..))", returning = "result")
+    @AfterReturning(value = "execution(* com.hz.storage.service.*.*(..))", returning = "result")
     public void afterReturning(JoinPoint point, Object result) throws TransactionException {
         logger.info("方法执行结束:{}", result);
-         {
-            if (!StringUtils.isBlank(RootContext.getXID())) {
+        /*if ((Boolean)result)*/{
+            /*if (!StringUtils.isBlank(RootContext.getXID())) {
                 logger.info("分布式事务Id:{}", RootContext.getXID());
                 GlobalTransactionContext.reload(RootContext.getXID()).commit();
-            }
+            }*/
         }
     }
 

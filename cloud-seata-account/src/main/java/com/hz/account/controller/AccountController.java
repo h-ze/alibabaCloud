@@ -1,10 +1,8 @@
 package com.hz.account.controller;
 
+import com.common.entity.ResponseResult;
 import com.hz.account.service.AccountService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
@@ -26,5 +24,11 @@ public class AccountController {
             e.printStackTrace();
         }*/
         return "完成账号扣账";
+    }
+
+    @GetMapping("testException")
+    public ResponseResult testException(){
+        String result =accountService.testException();
+        return ResponseResult.successResult(100000,result);
     }
 }

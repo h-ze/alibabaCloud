@@ -34,22 +34,25 @@ public class StorageServiceImpl implements StorageService {
     //@GlobalTransactional(rollbackFor = Exception.class)
     public void decrease(Long productId, Integer count) {
 
+        log.info("xId:{}", RootContext.getXID());
+        log.info("------->storage-service中扣减库存开始");
+        storageDao.decrease(productId,count);
+        log.info("------->storage-service中扣减库存结束");
 
-        try {
+        /*try {
             log.info("xId:{}", RootContext.getXID());
             log.info("------->storage-service中扣减库存开始");
-            //storageDao.decrease(productId,count);
+            storageDao.decrease(productId,count);
             log.info("------->storage-service中扣减库存结束");
 
-            //return "成功";
         } catch (Exception e) {
             try {
                 GlobalTransactionContext.reload(RootContext.getXID()).rollback();
             } catch (TransactionException transactionException) {
                 transactionException.printStackTrace();
             }
-            e.printStackTrace();
+            throw e;
 
-        }
+        }*/
     }
 }

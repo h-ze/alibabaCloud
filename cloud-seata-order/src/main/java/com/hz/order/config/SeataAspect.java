@@ -16,10 +16,10 @@ import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
 
-//@Aspect
-//@Component
-public class TestAspect {
-    private final static Logger logger = LoggerFactory.getLogger(TestAspect.class);
+@Aspect
+@Component
+public class SeataAspect {
+    private final static Logger logger = LoggerFactory.getLogger(SeataAspect.class);
 
     @Before("execution(* com.hz.order.service.*.*(..))")
     public void before(JoinPoint joinPoint) throws TransactionException {
@@ -47,10 +47,10 @@ public class TestAspect {
     public void afterReturning(JoinPoint point, Object result) throws TransactionException {
         logger.info("方法执行结束:{}", result);
          {
-            if (!StringUtils.isBlank(RootContext.getXID())) {
-                logger.info("分布式事务Id:{}", RootContext.getXID());
-                GlobalTransactionContext.reload(RootContext.getXID()).commit();
-            }
+//            if (!StringUtils.isBlank(RootContext.getXID())) {
+//                logger.info("分布式事务Id:{}", RootContext.getXID());
+//                GlobalTransactionContext.reload(RootContext.getXID()).commit();
+//            }
         }
     }
 
