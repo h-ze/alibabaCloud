@@ -82,6 +82,12 @@ spring:
     discovery:
       reactive:
         enabled: false
+
+    sentinel:
+      transport:
+        # 添加sentinel的控制台地址
+        dashboard: 127.0.0.1:8080
+
     nacos:
       discovery:
         server-addr: ${nacos.server-addr}:${nacos.server-port}

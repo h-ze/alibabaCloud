@@ -38,7 +38,7 @@ public class ConsumerServiceImpl implements ConsumerService {
     private ProviderClient providerClient;
 
     @Override
-    //@SentinelResource(value = "createConsumer",blockHandlerClass = CustomerBlockHandler.class,blockHandler = "handler1",fallbackClass = Fallback.class,fallback ="fallback1" )
+    @SentinelResource(value = "createConsumer",blockHandlerClass = CustomerBlockHandler.class,blockHandler = "handler1",fallbackClass = Fallback.class,fallback ="fallback1" )
     @Transactional
     @GlobalTransactional(name = "createConsumer", rollbackFor = Exception.class)
     @Trace
@@ -86,5 +86,11 @@ public class ConsumerServiceImpl implements ConsumerService {
     public void payment() {
         //String payment = providerClient.payment("1");
         //log.info("payment: {}",payment);
+    }
+
+    @SentinelResource(value = "testExcepiton",blockHandlerClass = CustomerBlockHandler.class,blockHandler = "handler1",fallbackClass = Fallback.class,fallback ="fallback1" )
+    @Override
+    public int testException() {
+        return 0;
     }
 }

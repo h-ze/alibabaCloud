@@ -1,6 +1,7 @@
 package com.hz.consume.controller;
 
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.common.entity.ResponseResult;
 import com.hz.consume.handler.CustomerBlockHandler;
 import com.hz.consume.handler.Fallback;
 import com.hz.consume.service.ConsumerService;
@@ -25,5 +26,11 @@ public class CustomerController {
     public String createConsumer(){
         consumerService.createConsumer();
         return "success";
+    }
+
+    @PostMapping("testException")
+    public ResponseResult testException(){
+        int result =consumerService.testException();
+        return ResponseResult.successResult(100000,result);
     }
 }

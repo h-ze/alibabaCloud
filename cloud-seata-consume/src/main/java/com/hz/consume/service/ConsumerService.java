@@ -4,4 +4,6 @@ public interface ConsumerService {
     void createConsumer();
 
     void payment();
+
+    int testException();
 }

@@ -73,6 +73,11 @@ spring:
         namespace: ${nacos.namespace}
         #ip: 114.55.119.114
 
+#    sentinel:
+#      transport:
+#        # 添加sentinel的控制台地址
+#        dashboard: 127.0.0.1:8080
+
 
   ## spring boot admin
 
